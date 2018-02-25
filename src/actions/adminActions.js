@@ -1,8 +1,8 @@
-export function getAdminData(wp, adminUserId) {
+export function getAdminData(wp) {
     return {
         type: 'GET_ADMIN_DATA',
-        payload: wp.users().id(adminUserId).then(function (data) {
-            return data.admin_data;
+        payload: wp.adminData().then(function (data) {
+            return data;
         }).catch(function (err) {
             return err;
         })
