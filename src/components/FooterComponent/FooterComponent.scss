@@ -1,0 +1,29 @@
+#FooterComponent {
+  color: #ffffff;
+  .footer-first-wrapper {
+    background-color: #0e0e0e;
+  }
+  .footer-first-icon-text-wrapper {
+    display: flex;
+    font-size: 0.9rem;
+  }
+  .footer-first-icon {
+    width: 45px;
+    text-align: center;
+    color: #777777;
+  }
+  .footer-first-text {
+    line-height: 1.5rem;
+    color: #777777;
+    &-phone {
+      color: #ffffff;
+      font-size: 1rem;
+    }
+    a {
+      color: #ffffff;
+    }
+  }
+  .footer-second-wrapper {
+    background-color: #060606;
+  }
+}
