@@ -1,3 +1,6 @@
+@import '../../colors';
+@import '../../mixins';
+
 #FooterComponent {
   color: #ffffff;
   .footer-first-wrapper {
@@ -5,7 +8,7 @@
   }
   .footer-first-icon-text-wrapper {
     display: flex;
-    font-size: 0.9rem;
+    @include font-size(14);
   }
   .footer-first-icon {
     width: 45px;
@@ -17,10 +20,10 @@
     color: #777777;
     &-phone {
       color: #ffffff;
-      font-size: 1rem;
+      @include font-size(16);
     }
     a {
-      color: #ffffff;
+      color: $sushi;
     }
   }
   .footer-second-wrapper {

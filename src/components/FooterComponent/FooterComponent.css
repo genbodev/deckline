@@ -1,10 +1,11 @@
+/*need #060606*/
 #FooterComponent {
   color: #ffffff; }
   #FooterComponent .footer-first-wrapper {
     background-color: #0e0e0e; }
   #FooterComponent .footer-first-icon-text-wrapper {
     display: flex;
-    font-size: 0.9rem; }
+    font-size: 0.875rem; }
   #FooterComponent .footer-first-icon {
     width: 45px;
     text-align: center;
@@ -16,6 +17,6 @@
       color: #ffffff;
       font-size: 1rem; }
     #FooterComponent .footer-first-text a {
-      color: #ffffff; }
+      color: #89b837; }
   #FooterComponent .footer-second-wrapper {
     background-color: #060606; }

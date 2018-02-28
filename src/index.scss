@@ -4,25 +4,14 @@
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
 
-// =============================================================================
-// COLORS
-// =============================================================================
+@import './colors';
 
-$yellow-green : #c0d96b;
-$sushi : #89b837;
-$wasabi : #6c912b;
-$sushi1 : #89b836;
-$god-gray : #0e0e0e;
-$god_gray1 : #171717;
-$outer-space : #2e353e;
-$min-shaft : #333333;
-$abbey : #4d5055;
-$boulder : #777777;
-/*need #060606*/
-
-
+html {
+  font-size: 16px;
+}
 body {
   font-family: 'Open Sans', sans-serif;
+  color: $sushi1;
 }
 
 .Page-title {
