@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Col, Row, Grid, DropdownButton, MenuItem, Button, Navbar, NavDropdown, Nav, NavItem } from 'react-bootstrap';
 import './HeaderComponent.css';
 import { connect } from 'react-redux';
-
+import logo from './logo-single-green.png';
 class HeaderComponent extends Component {
     render() {
         return (
@@ -32,7 +32,7 @@ class HeaderComponent extends Component {
                         <Navbar>
                             <Navbar.Header>
                                 <Navbar.Brand>
-                                    <a href="#home"><img src="../../../public/logo-single-green.png" width={120} alt=""/></a>
+                                    <a href="#home"><img src={logo} width={120} alt=""/></a>
                                 </Navbar.Brand>
                             </Navbar.Header>
                             <Nav>

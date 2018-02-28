@@ -1,5 +1,6 @@
 const CONFIG = {
     HOST : 'http://deckline/',
+    MEDIA : 'wp-content/uploads/',
     LOGIN : 'admin',
     PASSWORD : 'admin',
     POSTS_CATEGORY_ID : 2,
