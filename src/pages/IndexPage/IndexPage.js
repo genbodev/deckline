@@ -5,8 +5,11 @@ import { connect } from 'react-redux';
 import wp from '../../index';
 import CONFIG from '../../config';
 import Header from '../../components/HeaderComponent/HeaderComponent';
+import Footer from '../../components/FooterComponent/FooterComponent';
 
-import { getPagesData } from "../../actions/pagesActions";
+import { getPagesData } from '../../actions/pagesActions';
+
+
 
 function createMarkup(html) {
     return {__html: html};
@@ -30,7 +33,9 @@ class IndexPage extends Component {
                         To get started, edit <code>src/App.js</code> and save to reload.
                     </p>
                     <div dangerouslySetInnerHTML={createMarkup(pagesData.content.rendered)}/>
+                    <Footer/>
                 </div>
+
             );
         } else {
             return (
