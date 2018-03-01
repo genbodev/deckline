@@ -1,5 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { Router, Route, browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
+
+import './index.css';
+
+import store from './store';
+import registerServiceWorker from './registerServiceWorker';
+import { getAdminData, getSettingsData } from './actions/adminActions';
+import { getCategoriesData } from './actions/categoriesActions';
+import { getPagesData } from './actions/pagesActions';
+import { getPostsData } from './actions/postsActions';
+import CONFIG from './config';
+
 import IndexPage from './pages/IndexPage/IndexPage';
 import AboutPage from './pages/AboutPage/AboutPage';
 import CatalogPage from './pages/CatalogPage/CatalogPage';
@@ -13,16 +27,7 @@ import TerraceBoardPage from './pages/TerraceBoardPage/TerraceBoardPage';
 import TerraceInstallationPage from './pages/TerraceInstallationPage/TerraceInstallationPage';
 import ThermoBoardPage from './pages/ThermoBoardPage/ThermoBoardPage';
 
-import './index.css';
-
-import registerServiceWorker from './registerServiceWorker';
-import { Provider } from 'react-redux';
-import store from './store';
-import { Router, Route, browserHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
-
-import { getAdminData, getSettingsData } from "./actions/adminActions";
-import CONFIG from './config';
+const history = syncHistoryWithStore(browserHistory, store);
 
 const WP = require('wpapi');
 const wp = new WP({
@@ -30,14 +35,14 @@ const wp = new WP({
     username: CONFIG.LOGIN,
     password: CONFIG.PASSWORD
 });
-store.dispatch(getSettingsData(wp));
 
 wp.adminData = wp.registerRoute('wp/v2', '/redux-theme-options/');
+
+store.dispatch(getSettingsData(wp));
 store.dispatch(getAdminData(wp));
-
-export default wp;
-
-const history = syncHistoryWithStore(browserHistory, store);
+store.dispatch(getCategoriesData(wp));
+store.dispatch(getPagesData(wp));
+store.dispatch(getPostsData(wp));
 
 ReactDOM.render(
     <Provider store={store}>

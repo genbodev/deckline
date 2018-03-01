@@ -1,7 +1,7 @@
-export function getPagesData(wp, pageId) {
+export function getPagesData(wp) {
     return {
         type: 'GET_PAGES_DATA',
-        payload: wp.pages().id(pageId).then(function (data) {
+        payload: wp.pages().then(function (data) {
             return data;
         }).catch(function (err) {
             return err;

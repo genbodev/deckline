@@ -1,7 +1,7 @@
-export function getPostsData(wp, categoryId) {
+export function getPostsData(wp) {
     return {
         type: 'GET_POSTS_DATA',
-        payload: wp.posts().categories(categoryId).then(function (data) {
+        payload: wp.posts().then(function (data) {
             return data;
         }).catch(function (err) {
             return err;
