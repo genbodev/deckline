@@ -1,13 +1,16 @@
-/*need #060606*/
 #FooterComponent {
   color: #ffffff; }
   #FooterComponent .footer-first-wrapper {
-    background-color: #0e0e0e; }
+    background-color: #0e0e0e;
+    padding-top: 25px;
+    padding-bottom: 25px; }
+    #FooterComponent .footer-first-wrapper h4 {
+      margin-left: 15px; }
   #FooterComponent .footer-first-icon-text-wrapper {
     display: flex;
     font-size: 0.875rem; }
   #FooterComponent .footer-first-icon {
-    width: 45px;
+    min-width: 45px;
     text-align: center;
     color: #777777; }
   #FooterComponent .footer-first-text {
@@ -17,6 +20,27 @@
       color: #ffffff;
       font-size: 1rem; }
     #FooterComponent .footer-first-text a {
-      color: #89b837; }
+      color: #ffffff; }
   #FooterComponent .footer-second-wrapper {
-    background-color: #060606; }
+    background-color: #060606;
+    padding-top: 25px;
+    padding-bottom: 25px; }
+  #FooterComponent .footer-second-logo-info-wrapper {
+    display: flex;
+    justify-content: space-between; }
+  #FooterComponent .footer-second-logo {
+    min-width: 90px; }
+  #FooterComponent .footer-second-info {
+    color: #777777;
+    margin-left: 15px; }
+  #FooterComponent .footer-second-links-wrapper {
+    display: flex;
+    justify-content: flex-end; }
+    #FooterComponent .footer-second-links-wrapper p {
+      border-right: 1px solid #505050;
+      margin-right: 10px;
+      padding-right: 10px; }
+      #FooterComponent .footer-second-links-wrapper p a {
+        color: #ffffff; }
+    #FooterComponent .footer-second-links-wrapper p:last-child {
+      border: none; }

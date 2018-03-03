@@ -1,49 +1,57 @@
 // =============================================================================
 // APP FONTS
 // =============================================================================
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
-
 @import './colors';
 
 html {
   font-size: 16px;
 }
+
 body {
   font-family: 'Open Sans', sans-serif;
   color: $sushi1;
 }
 
-.Page-title {
+.page-title {
   text-transform: uppercase;
   font-weight: 700;
 }
+
 // =============================================================================
 // Large Devices, Wide Screens
 // =============================================================================
 
-@media only screen and (max-width: 1200px) {}
+@media only screen and (max-width: 1200px) {
+}
 
 // =============================================================================
 // Medium Devices, Desktops
 // =============================================================================
 
-@media only screen and (max-width: 992px) {}
+@media only screen and (max-width: 992px) {
+  .footer-second-logo {
+    display: none;
+  }
+}
 
 // =============================================================================
 // Small Devices, Tablets
 // =============================================================================
 
-@media only screen and (max-width: 768px) {}
+@media only screen and (max-width: 768px) {
+}
 
 // =============================================================================
 // Extra Small Devices, Phones
 // =============================================================================
 
-@media only screen and (max-width: 480px) {}
+@media only screen and (max-width: 480px) {
+}
 
 // =============================================================================
 // Extra Small Devices, Phones
 // =============================================================================
 
-@media only screen and (max-width: 320px) {}
+@media only screen and (max-width: 320px) {
+}

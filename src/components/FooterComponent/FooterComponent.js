@@ -11,7 +11,7 @@ class FooterComponent extends Component {
                 <div className="footer-first-wrapper">
                     <Grid>
                         <Row>
-                            <Col xs={4}>
+                            <Col md={6} lg={4}>
                                 <h4>Контакты</h4>
                                 <div className="footer-first-icon-text-wrapper">
                                     <div className="footer-first-icon">
@@ -65,7 +65,7 @@ class FooterComponent extends Component {
                                     </div>
                                 </div>
                             </Col>
-                            <Col xs={4}>
+                            <Col md={6} lg={5}>
                                 <h4>Дополнительно</h4>
                                 <div className="footer-first-icon-text-wrapper">
                                     <div className="footer-first-icon">
@@ -80,7 +80,7 @@ class FooterComponent extends Component {
                                         <i className="fas fa-download"></i>
                                     </div>
                                     <div className="footer-first-text">
-                                        <a href="#">Скачать каталог продукции</a>
+                                        <a href="#">Скачать альбом технических решений</a>
                                     </div>
                                 </div>
                                 <div className="footer-first-icon-text-wrapper">
@@ -88,7 +88,7 @@ class FooterComponent extends Component {
                                         <i className="fas fa-download"></i>
                                     </div>
                                     <div className="footer-first-text">
-                                        <a href="#">Скачать каталог продукции</a>
+                                        <a href="#">Скачать экспертное заключение по испытаниям</a>
                                     </div>
                                 </div>
                                 <div className="footer-first-icon-text-wrapper">
@@ -96,7 +96,7 @@ class FooterComponent extends Component {
                                         <i className="fas fa-download"></i>
                                     </div>
                                     <div className="footer-first-text">
-                                        <a href="#">Скачать каталог продукции</a>
+                                        <a href="#">Скачать инструкцию по монтажу террасной доски</a>
                                     </div>
                                 </div>
                                 <div className="footer-first-icon-text-wrapper">
@@ -104,12 +104,14 @@ class FooterComponent extends Component {
                                         <i className="fas fa-download"></i>
                                     </div>
                                     <div className="footer-first-text">
-                                        <a href="#">Скачать каталог продукции</a>
+                                        <a href="#">Скачать инструкцию по монтажу ограждений</a>
                                     </div>
                                 </div>
                             </Col>
-                            <Col xs={4}>
-                                Instagram Widget
+                            <Col xs={3} xsHidden smHidden mdHidden visibleLgBlock >
+                                <div>
+                                    <img src="public/images/instagram" alt="instagram-widget"/>
+                                </div>
                             </Col>
                         </Row>
                     </Grid>
@@ -117,17 +119,24 @@ class FooterComponent extends Component {
                 <div className="footer-second-wrapper">
                     <Grid>
                         <Row>
-                            <Col xs={6}>
+                            <Col sm={12} md={6}>
                                 <div className="footer-second-logo-info-wrapper">
-                                    <div className="footer-second-logo">ЛОГО</div>
-                                    <div className="footer-second-info">ИНФО</div>
+                                    <div className="footer-second-logo">
+                                        <img src="public/images/logo-90-prz.png" alt="footer-logo"/>
+                                    </div>
+                                    <div className="footer-second-info">
+                                        <p>© 2017 POLIVAN GROUP - Все права защищены.</p>
+                                        <p>Производитель изделий из ДПК, террасная доска, ограждения.</p>
+                                        <p>ООО «ПОЛИВАН ГРУПП» ИНН: 2543111109</p>
+                                        <p>ОГРН: 1172536013650</p>
+                                    </div>
                                 </div>
                             </Col>
-                            <Col xs={6}>
+                            <Col sm={12} md={6} xsHidden smHidden>
                                 <div className="footer-second-links-wrapper">
-                                    <p>Вопрос-ответ</p>
-                                    <p>Карта сайта</p>
-                                    <p>Контакты</p>
+                                    <p><a href="#">Вопрос-ответ</a></p>
+                                    <p><a href="#">Карта сайта</a></p>
+                                    <p><a href="#">Контакты</a></p>
                                 </div>
                             </Col>
                         </Row>
