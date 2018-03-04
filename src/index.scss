@@ -3,6 +3,7 @@
 // =============================================================================
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
 @import './colors';
+@import './mixins';
 
 html {
   font-size: 16px;
@@ -10,12 +11,51 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif;
-  color: $sushi1;
+  color: $boulder;
 }
 
 .page-title {
   text-transform: uppercase;
   font-weight: 700;
+}
+
+hr {
+  background-image: linear-gradient(to right, transparent, #dbdbdb, transparent);
+  border: 0;
+  height: 1px;
+  margin: 22px 0;
+}
+
+p {
+  @include line-height(24);
+}
+
+h1 {
+  color: $shark;
+  @include font-size(35);
+  &.header-accent {
+    color: $sushi;
+  }
+}
+
+h2 {
+  &.header-accent {
+    color: $sushi;
+  }
+}
+
+h3 {
+  color: $shark;
+  @include font-size(23);
+  &.header-accent {
+    color: $sushi;
+  }
+}
+
+h4 {
+  &.header-accent {
+    color: $sushi;
+  }
 }
 
 // =============================================================================

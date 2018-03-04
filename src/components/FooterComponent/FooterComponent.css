@@ -12,7 +12,8 @@
   #FooterComponent .footer-first-icon {
     min-width: 45px;
     text-align: center;
-    color: #777777; }
+    color: #777777;
+    line-height: 1.5rem; }
   #FooterComponent .footer-first-text {
     line-height: 1.5rem;
     color: #777777; }

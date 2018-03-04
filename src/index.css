@@ -4,11 +4,38 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif;
-  color: #89b836; }
+  color: #777777; }
 
 .page-title {
   text-transform: uppercase;
   font-weight: 700; }
+
+hr {
+  background-image: linear-gradient(to right, transparent, #dbdbdb, transparent);
+  border: 0;
+  height: 1px;
+  margin: 22px 0; }
+
+p {
+  line-height: 1.5rem; }
+
+h1 {
+  color: #1d2127;
+  font-size: 2.1875rem; }
+  h1.header-accent {
+    color: #89b837; }
+
+h2.header-accent {
+  color: #89b837; }
+
+h3 {
+  color: #1d2127;
+  font-size: 1.4375rem; }
+  h3.header-accent {
+    color: #89b837; }
+
+h4.header-accent {
+  color: #89b837; }
 
 @media only screen and (max-width: 992px) {
   .footer-second-logo {

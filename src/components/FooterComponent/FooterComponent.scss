@@ -19,9 +19,10 @@
     min-width: 45px;
     text-align: center;
     color: $boulder;
+    @include line-height(24);
   }
   .footer-first-text {
-    line-height: 1.5rem;
+    @include line-height(24);
     color: $boulder;
     &-phone {
       color: #ffffff;
