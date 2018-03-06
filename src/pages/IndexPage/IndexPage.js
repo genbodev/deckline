@@ -4,7 +4,7 @@ import { StickyContainer } from 'react-sticky';
 
 import './IndexPage.css';
 
-import { drawSticky } from '../../functions';
+import { drawSticky, createMarkup } from '../../functions';
 import TopPanelComponent from '../../components/TopPanelComponent/TopPanelComponent';
 import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
@@ -24,7 +24,9 @@ class IndexPage extends Component {
                         {drawSticky(<MainNavigation/>)}
                         <MobileNavigation/>
                         <Fragment>
-                            <div className="content"><p>Content here</p></div>
+                            <div className="content">
+                                {<div dangerouslySetInnerHTML={createMarkup("<p>Content here</p>")}/>}
+                            </div>
                         </Fragment>
                     </StickyContainer>
                     <Footer/>
