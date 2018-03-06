@@ -109,7 +109,7 @@ class FooterComponent extends Component {
                                     </div>
                                 </div>
                             </Col>
-                            <Col xs={3} xsHidden smHidden mdHidden visibleLgBlock >
+                            <Col xs={3} xsHidden smHidden mdHidden>
                                 <div>
                                     <InstagramEmbed
                                         url='https://www.instagram.com/p/Bf503bDnHVV/?taken-by=deckline100'

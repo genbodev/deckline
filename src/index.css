@@ -3,12 +3,8 @@ html {
   font-size: 16px; }
 
 body {
-<<<<<<< Updated upstream
   font-family: 'Open Sans', sans-serif;
   color: #777777; }
-=======
-  font-family: 'Open Sans', sans-serif; }
->>>>>>> Stashed changes
 
 .page-title {
   text-transform: uppercase;
@@ -40,7 +36,3 @@ h3 {
 
 h4.header-accent {
   color: #89b837; }
-
-@media only screen and (max-width: 992px) {
-  .footer-second-logo {
-    display: none; } }

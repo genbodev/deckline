@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import CONFIG from '../../config';
 
 import './ContactsPage.css';
 import { connect } from 'react-redux';
 import Header from '../../components/HeaderComponent/HeaderComponent';
 import Footer from '../../components/FooterComponent/FooterComponent';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, Button, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
+import FieldGroup from './FieldGroup/FieldGroup'
+import {ReCaptcha, SITE_KEY, verifyCallback, callback, expiredCallback/*, resetReCaptcha, reCaptchaInstance*/} from './ReCaptcha/ReCaptcha'
 /*import GoogleMapComponent from '../../components/GoogleMapComponent/GoogleMapComponent';*/
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 
@@ -24,7 +27,7 @@ class ContactsPage extends Component {
             <div id="ContactsPage">
                 <Header/>
                 <div className="contacts-map">
-                    <Grid fluid="true" className="contacts-map-container">
+                    <Grid fluid className="contacts-map-container">
                         <Row>
                             <Col xs={12}>
                                 <MyMapComponent
@@ -44,6 +47,54 @@ class ContactsPage extends Component {
                             <Col lg={6}>
                                 <div className="contacts-form-wrapper">
                                     <h1>Обратная <strong>Связь</strong></h1>
+                                    <form id="contact-form">
+                                        <FieldGroup
+                                            id="name"
+                                            type="text"
+                                            label="Как Вас зовут?"
+                                            placeholder="Иван Петрович"
+                                            inputGroupIcon="<i class='far fa-comment'></i>"
+                                        />
+                                        <FieldGroup
+                                            id="email"
+                                            type="email"
+                                            label="Email"
+                                            placeholder="my@email.com"
+                                            inputGroupIcon="<i class='fas fa-at'></i>"
+                                        />
+                                        <FieldGroup
+                                            id="phone"
+                                            type="text"
+                                            label="Контактный телефон"
+                                            placeholder="1234567890"
+                                            inputGroupIcon="<i class='fas fa-phone'></i>"
+                                        />
+                                        <FormGroup controlId="formControlsTextarea">
+                                            <ControlLabel>Сообщение</ControlLabel>
+                                            <FormControl
+                                                controlId="comment"
+                                                componentClass="textarea"
+                                                placeholder="Как стать Вашим партнером?"
+                                                rows="10"
+                                            />
+                                        </FormGroup>
+                                        <ReCaptcha
+                                            /*ref={e => reCaptchaInstance = e}*/
+                                            sitekey={SITE_KEY}
+                                            size="compact"
+                                            render="explicit"
+                                            verifyCallback={verifyCallback}
+                                            onloadCallback={callback}
+                                            expiredCallback={expiredCallback}
+                                        />
+                                        <br/>
+                                        <button
+                                            /*onClick={resetReCaptcha}*/
+                                        >
+                                            Reset
+                                        </button>
+                                        <Button bsStyle="success" type="submit">Отправить</Button>
+                                    </form>
                                 </div>
                             </Col>
                             <Col lg={6}>
@@ -94,7 +145,8 @@ class ContactsPage extends Component {
                                             </div>
                                             <div className="contacts-info-office-text">
                                                 <p>
-                                                    <strong>Телефон: </strong><a href="mailto:baikaltexcom@rambler.ru">baikaltexcom@rambler.ru</a>
+                                                    <strong>Телефон: </strong><a
+                                                    href="mailto:baikaltexcom@rambler.ru">baikaltexcom@rambler.ru</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -128,13 +180,14 @@ class ContactsPage extends Component {
                                         <h3 className="header-accent"><strong>Реквизиты</strong></h3>
                                         <p>ООО "СибЛесСтрой"</p>
                                         <p><strong>Адрес: </strong>665458 г. Усолье-Сибирское, ул. Шевченко 12</p>
-                                        <br />
+                                        <br/>
                                         <p><strong>ИНН: </strong>3819018599</p>
                                         <p><strong>КПП: </strong>381901001</p>
                                         <p><strong>ОГРН: </strong>1073819000420</p>
-                                        <br />
+                                        <br/>
                                         <p><strong>Расчетный счет: </strong>40702810434150000082</p>
-                                        <p><strong>Банк: </strong>Филиал "АТБ" (ОАО) в г.Улан-Удэ ОО№111 в г.Усолье-Сибирское</p>
+                                        <p><strong>Банк: </strong>Филиал "АТБ" (ОАО) в г.Улан-Удэ ОО№111 в
+                                            г.Усолье-Сибирское</p>
                                         <p><strong>Корреспондентский счёт: </strong>30101810700000000744</p>
                                         <p><strong>БИК: </strong>048142744</p>
                                     </div>
