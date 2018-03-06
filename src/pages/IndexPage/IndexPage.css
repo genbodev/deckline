@@ -1,3 +1,6 @@
 #IndexPage .page-title {
   font-weight: 600;
   color: yellow; }
+
+#IndexPage .content {
+  min-height: 2000px; }

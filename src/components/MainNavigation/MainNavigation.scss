@@ -1,0 +1,45 @@
+@import '../../colors';
+@import '../../mixins';
+
+.sticky {
+  #MainNavigationComponent {
+    .navbar-brand {
+      img {
+        width: 200px;
+      }
+    }
+  }
+}
+
+#MainNavigationComponent {
+  a.active {
+    color: #fff !important;
+    background-color: $sushi1;
+  }
+
+  .navbar-brand {
+    padding-top: 0;
+    img {
+      width: 180px;
+      transition: all 0.35s linear;
+    }
+  }
+
+  .navbar-default {
+    background-color: #fff;
+    border-color: #fff;
+    border-radius: 0;
+
+    a {
+      @include font-size(12);
+      border-radius: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $sushi1;
+      transition: all 0.35s linear;
+      &:hover {
+        color: $min-shaft;
+      }
+    }
+  }
+}

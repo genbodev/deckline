@@ -1,0 +1,25 @@
+/*need #060606*/
+#TopPanelComponent {
+  font-size: 0.8125rem; }
+  #TopPanelComponent .btn-link, #TopPanelComponent a {
+    color: #0e0e0e; }
+    #TopPanelComponent .btn-link:hover, #TopPanelComponent a:hover {
+      text-decoration: none; }
+  #TopPanelComponent .btn-link {
+    border-radius: 4px;
+    transition: background-color 0.35s linear; }
+    #TopPanelComponent .btn-link:hover {
+      background-color: #89b836; }
+  #TopPanelComponent .top-panel {
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; }
+  #TopPanelComponent .dropdown-menu {
+    width: 100%; }
+  #TopPanelComponent .phone {
+    padding-left: 15px;
+    font-size: 1.3125rem; }
+  #TopPanelComponent #menu-dropdown {
+    background-color: #89b836; }

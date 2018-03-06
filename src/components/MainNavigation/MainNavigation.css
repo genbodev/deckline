@@ -1,0 +1,27 @@
+/*need #060606*/
+.sticky #MainNavigationComponent .navbar-brand img {
+  width: 200px; }
+
+#MainNavigationComponent a.active {
+  color: #fff !important;
+  background-color: #89b836; }
+
+#MainNavigationComponent .navbar-brand {
+  padding-top: 0; }
+  #MainNavigationComponent .navbar-brand img {
+    width: 180px;
+    transition: all 0.35s linear; }
+
+#MainNavigationComponent .navbar-default {
+  background-color: #fff;
+  border-color: #fff;
+  border-radius: 0; }
+  #MainNavigationComponent .navbar-default a {
+    font-size: 0.75rem;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #89b836;
+    transition: all 0.35s linear; }
+    #MainNavigationComponent .navbar-default a:hover {
+      color: #333333; }
