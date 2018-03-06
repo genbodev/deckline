@@ -9,6 +9,9 @@
 #ContactsPage .contacts-form-info {
   margin-bottom: 50px; }
 
+#ContactsPage .contacts-form-wrapper textarea {
+  resize: none; }
+
 #ContactsPage .contacts-info-office h3,
 #ContactsPage .contacts-info-time h3,
 #ContactsPage .contacts-info-requisites h3 {

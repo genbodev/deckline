@@ -9,6 +9,7 @@
     padding-bottom: 25px;
     h4 {
       margin-left: 15px;
+      color: #ffffff;
     }
   }
   .footer-first-icon-text-wrapper {
@@ -40,13 +41,13 @@
   .footer-second-logo-info-wrapper {
     display: flex;
     justify-content: space-between;
+    margin-left: 15px;
   }
   .footer-second-logo {
     min-width: 90px;
   }
   .footer-second-info {
     color: $boulder;
-    margin-left: 15px;
   }
   .footer-second-links-wrapper {
     display: flex;
@@ -61,6 +62,53 @@
     }
     p:last-child {
       border: none;
+      padding: 0;
+      margin: 0;
     }
   }
+}
+
+// =============================================================================
+// Large Devices, Wide Screens
+// =============================================================================
+
+@media only screen and (max-width: 1200px) {
+  #FooterComponent {
+    .footer-second-logo {
+      display: none;
+    }
+    .footer-second-links-wrapper {
+      justify-content: flex-start;
+      margin-left: 15px;
+    }
+  }
+}
+
+// =============================================================================
+// Medium Devices, Desktops
+// =============================================================================
+
+@media only screen and (max-width: 992px) {
+
+}
+
+// =============================================================================
+// Small Devices, Tablets
+// =============================================================================
+
+@media only screen and (max-width: 768px) {
+}
+
+// =============================================================================
+// Extra Small Devices, Phones
+// =============================================================================
+
+@media only screen and (max-width: 480px) {
+}
+
+// =============================================================================
+// Extra Small Devices, Phones
+// =============================================================================
+
+@media only screen and (max-width: 320px) {
 }

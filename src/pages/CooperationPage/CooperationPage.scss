@@ -1,0 +1,18 @@
+@import '../../colors';
+@import '../../mixins';
+
+#CooperationPage {
+  .cooperation-description {
+    p {
+      margin-bottom: 20px;
+    }
+  }
+  .cooperation-description-paragraph-lead {
+    @include font-size(21);
+    font-weight: 200;
+    @include line-height(31);
+  }
+  .cooperation-image {
+    margin-bottom: 50px;
+  }
+}

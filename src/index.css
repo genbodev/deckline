@@ -21,22 +21,30 @@ p {
 
 h1 {
   color: #1d2127;
-  font-size: 2.1875rem; }
+  font-size: 2.1875rem;
+  font-weight: 200;
+  margin-bottom: 25px; }
   h1.header-accent {
     color: #89b837; }
 
-h2.header-accent {
-  color: #89b837; }
+h2 {
+  color: #1d2127;
+  /*@include font-size(35);*/
+  font-weight: 200; }
+  h2.header-accent {
+    color: #89b837; }
 
 h3 {
   color: #1d2127;
-  font-size: 1.4375rem; }
+  font-size: 1.4375rem;
+  font-weight: 200;
+  line-height: 2rem; }
   h3.header-accent {
     color: #89b837; }
 
-h4.header-accent {
-  color: #89b837; }
-
-@media only screen and (max-width: 992px) {
-  .footer-second-logo {
-    display: none; } }
+h4 {
+  color: #1d2127;
+  /*@include font-size(23);*/
+  font-weight: 200; }
+  h4.header-accent {
+    color: #89b837; }
