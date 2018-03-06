@@ -28,6 +28,7 @@ hr {
 
 p {
   @include line-height(24);
+  margin-bottom: 20px;
 }
 
 h1 {
