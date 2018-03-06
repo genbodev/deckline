@@ -1,0 +1,86 @@
+@import '../../colors';
+@import '../../mixins';
+
+#MobileNavigationComponent {
+  .navbar-brand {
+    img {
+      width: 140px;
+    }
+  }
+  .navbar-header {
+    display: inline-block;
+  }
+  .btn-navigation {
+    margin: 10px 20px 10px 0;
+    float: right;
+    background-color: $sushi1;
+    color: #fff;
+    transition: background-color 0.35s linear;
+    &:hover {
+      background-color: $wasabi;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .navbar-default {
+    border-color: #fff;
+    border-radius: 0;
+    background-color: #fff;
+  }
+}
+
+#mobile-menu-modal {
+  left: auto;
+  .modal-dialog {
+    width: 280px;
+    margin: 0;
+  }
+  .modal-header {
+    background-color: $gallery;
+  }
+  .modal-title {
+    @include font-size(20);
+    font-weight: 400;
+    color: $wasabi;
+  }
+  .modal-body {
+    background-color: $min-shaft1;
+    h4 {
+      color: #fff;
+    }
+  }
+  .modal-content {
+    height: 100vh;
+    border-radius: 0;
+  }
+  .modal-footer {
+    text-align: center;
+    h4 {
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      @include font-size(20);
+      border-bottom: 2px solid $min-shaft1;
+    }
+  }
+  .close {
+    margin-top: 5px;
+    color: $god-gray;
+  }
+  .nav > li > a {
+    padding-left: 0;
+    color: $dustyGray;
+    transition: color 0.35s linear;
+    &:hover {
+      color: $wasabi;
+      background-color: $min-shaft1;
+    }
+  }
+  .active {
+    color: #fff !important;
+  }
+  .contacts-p {
+    @include font-size(18);
+  }
+}
