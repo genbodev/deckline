@@ -33,12 +33,17 @@ p {
 h1 {
   color: $shark;
   @include font-size(35);
+  font-weight: 200;
+  margin-bottom: 25px;
   &.header-accent {
     color: $sushi;
   }
 }
 
 h2 {
+  color: $shark;
+  /*@include font-size(35);*/
+  font-weight: 200;
   &.header-accent {
     color: $sushi;
   }
@@ -47,12 +52,17 @@ h2 {
 h3 {
   color: $shark;
   @include font-size(23);
+  font-weight: 200;
+  @include line-height(32);
   &.header-accent {
     color: $sushi;
   }
 }
 
 h4 {
+  color: $shark;
+  /*@include font-size(23);*/
+  font-weight: 200;
   &.header-accent {
     color: $sushi;
   }
