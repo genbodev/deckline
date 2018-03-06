@@ -1,50 +1,20 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { StickyContainer, Sticky } from 'react-sticky';
+import { StickyContainer } from 'react-sticky';
 
 import './IndexPage.css';
 
+import { drawSticky } from '../../functions';
 import TopPanelComponent from '../../components/TopPanelComponent/TopPanelComponent';
 import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
 import Footer from '../../components/FooterComponent/FooterComponent';
-
-function createMarkup(html) {
-    return {__html: html};
-}
-
-function drawSticky(stickyComponent) {
-    return (
-        <Sticky>
-            {
-                ({
-                     style,
-
-                     // the following are also available but unused in this example
-                     isSticky,
-                     wasSticky,
-                     distanceFromTop,
-                     distanceFromBottom,
-                     calculatedHeight
-                 }) => {
-                    return (
-                        <div style={style} className={isSticky ? 'sticky' : 'sticky-default'}>
-                            {stickyComponent}
-                        </div>
-                    )
-                }
-            }
-        </Sticky>);
-}
 
 class IndexPage extends Component {
     componentDidMount() {
     }
 
     render() {
-
-        //const adminData = this.props.admin ? this.props.admin.data : null;
-        //const adminSettings = this.props.admin ? this.props.admin.settings : null;
 
         if (true) {
             return (
@@ -77,9 +47,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-
-    }
+    return {}
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(IndexPage);
