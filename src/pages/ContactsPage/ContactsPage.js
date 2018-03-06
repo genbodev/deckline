@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import './ContactsPage.css';
 import { connect } from 'react-redux';
-import Header from '../../components/HeaderComponent/HeaderComponent';
 import Footer from '../../components/FooterComponent/FooterComponent';
 import { Grid, Row, Col } from 'react-bootstrap';
 /*import GoogleMapComponent from '../../components/GoogleMapComponent/GoogleMapComponent';*/
@@ -22,7 +21,6 @@ class ContactsPage extends Component {
     render() {
         return (
             <div id="ContactsPage">
-                <Header/>
                 <div className="contacts-map">
                     <Grid fluid="true" className="contacts-map-container">
                         <Row>
