@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
-import CONFIG from '../../config';
+import React, { Component, Fragment } from 'react';
 
 import './ContactsPage.css';
 import { connect } from 'react-redux';
-import Header from '../../components/HeaderComponent/HeaderComponent';
+import { StickyContainer, Sticky } from 'react-sticky';
+import TopPanelComponent from '../../components/TopPanelComponent/TopPanelComponent';
+import MainNavigation from '../../components/MainNavigation/MainNavigation';
+import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
 import Footer from '../../components/FooterComponent/FooterComponent';
 import { Grid, Row, Col, Button, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import FieldGroup from './FieldGroup/FieldGroup'
@@ -20,12 +22,43 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     </GoogleMap>
 ));
 
+function drawSticky(stickyComponent) {
+    return (
+        <Sticky>
+            {
+                ({
+                     style,
+
+                     // the following are also available but unused in this example
+                     isSticky,
+                     wasSticky,
+                     distanceFromTop,
+                     distanceFromBottom,
+                     calculatedHeight
+                 }) => {
+                    return (
+                        <div style={style} className={isSticky ? 'sticky' : 'sticky-default'}>
+                            {stickyComponent}
+                        </div>
+                    )
+                }
+            }
+        </Sticky>);
+}
+
 
 class ContactsPage extends Component {
     render() {
         return (
             <div id="ContactsPage">
-                <Header/>
+                <TopPanelComponent/>
+                <StickyContainer>
+                    {drawSticky(<MainNavigation/>)}
+                    <MobileNavigation/>
+                    <Fragment>
+                        <div className="content"><p>Content here</p></div>
+                    </Fragment>
+                </StickyContainer>
                 <div className="contacts-map">
                     <Grid fluid className="contacts-map-container">
                         <Row>
