@@ -18,18 +18,20 @@ class IndexPage extends Component {
 
         if (true) {
             return (
-                <div id="IndexPage" className="App">
-                    <TopPanelComponent/>
-                    <StickyContainer>
-                        {drawSticky(<MainNavigation/>)}
-                        <MobileNavigation/>
-                        <Fragment>
-                            <div className="content">
-                                {<div dangerouslySetInnerHTML={createMarkup("<p>Content here</p>")}/>}
-                            </div>
-                        </Fragment>
-                    </StickyContainer>
-                    <Footer/>
+                <div id="IndexPage" className="wrapper">
+                    <div className="content">
+                        <TopPanelComponent/>
+                        <StickyContainer>
+                            {drawSticky(<MainNavigation/>)}
+                            <MobileNavigation/>
+                            <Fragment>
+                                    {<div dangerouslySetInnerHTML={createMarkup("<p>Content here</p>")}/>}
+                            </Fragment>
+                        </StickyContainer>
+                    </div>
+                    <div className="footer">
+                        <Footer/>
+                    </div>
                 </div>
             );
         } else {

@@ -8,7 +8,7 @@ import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
 import Footer from '../../components/FooterComponent/FooterComponent';
 import { Grid, Row, Col } from 'react-bootstrap';
-import cooperationImage from './partnerka.jpg';
+/*import cooperationImage from './partnerka.jpg';*/
 
 function drawSticky(stickyComponent) {
     return (
@@ -55,7 +55,7 @@ class DeliveryPage extends Component {
                                             Перед погрузкой все изделия упаковываются, что предохраняет террасную доску от загрязнения при транспортировке. Все машины оснащены поддонами, которые предохраняют материалы от повреждения при загрузке и перевозке.
                                         </p>
                                         <div>
-                                            <div><img src={cooperationImage} alt="cooperation-image" className="img-responsive"/></div>
+                                            <div>{/*<img src={cooperationImage} alt="cooperation-image" className="img-responsive"/>*/}</div>
                                             <div></div>
                                             <div></div>
                                             <div></div>

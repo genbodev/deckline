@@ -5,6 +5,16 @@
 @import './colors';
 @import './mixins';
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body, #root {
+  height: 100%;
+}
+
 html {
   font-size: 16px;
 }
@@ -67,6 +77,20 @@ h4 {
   &.header-accent {
     color: $sushi;
   }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex: 0 0 auto;
 }
 
 // =============================================================================
