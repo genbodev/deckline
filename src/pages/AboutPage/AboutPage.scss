@@ -1,0 +1,31 @@
+@import '../../colors';
+@import '../../mixins';
+
+#AboutPage {
+  .about-advantages-lead {
+    @include font-size(22);
+    font-weight: 200;
+  }
+  .about-description,
+  .about-history {
+    h3 {
+      text-transform: uppercase;
+    }
+  }
+  .about-history {
+    margin-bottom: 50px;
+  }
+  .about-history-date-text-image-wrapper {
+    display: flex;
+  }
+  .about-history-image {
+    width: 200px;
+  }
+  .about-history-date-text-wrapper {
+    display: flex;
+    border: 1px solid #333;
+  }
+  .about-history-date {
+    width: 100px;
+  }
+}

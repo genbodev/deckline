@@ -1,9 +1,6 @@
 import React, { Fragment } from 'react';
 import {  FormGroup, ControlLabel, FormControl, HelpBlock, InputGroup } from 'react-bootstrap';
-
-function createMarkup(html) {
-    return {__html: html};
-}
+import { createMarkup } from '../../../functions';
 
 const FieldGroup = ({id, label, help, inputGroupIcon, ...props}) => {
     return (

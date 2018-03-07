@@ -1,0 +1,17 @@
+#DeliveryPage .delivery-description {
+  margin-bottom: 25px; }
+
+#DeliveryPage .delivery-description-image {
+  margin-bottom: 30px; }
+
+#DeliveryPage .delivery-description-footnote {
+  font-weight: 600;
+  font-style: italic; }
+
+#DeliveryPage .delivery-service-image {
+  display: flex;
+  justify-content: center;
+  margin: 10px; }
+
+#DeliveryPage .delivery-service {
+  margin-bottom: 50px; }

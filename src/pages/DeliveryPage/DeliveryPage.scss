@@ -1,0 +1,23 @@
+@import '../../colors';
+@import '../../mixins';
+
+#DeliveryPage {
+  .delivery-description {
+    margin-bottom:25px;
+  }
+  .delivery-description-image {
+    margin-bottom: 30px;
+  }
+  .delivery-description-footnote {
+    font-weight: 600;
+    font-style: italic;
+  }
+  .delivery-service-image {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+  }
+  .delivery-service {
+    margin-bottom: 50px;
+  }
+}
