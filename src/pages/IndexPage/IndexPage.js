@@ -1,10 +1,11 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment} from 'react';
 import { connect } from 'react-redux';
 import { StickyContainer } from 'react-sticky';
 
 import './IndexPage.css';
 
-import { drawSticky, createMarkup } from '../../functions';
+import { drawSticky } from '../../functions';
+import MainCarousel from './MainCarousel/MainCarousel';
 import TopPanelComponent from '../../components/TopPanelComponent/TopPanelComponent';
 import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
@@ -25,7 +26,7 @@ class IndexPage extends Component {
                             {drawSticky(<MainNavigation/>)}
                             <MobileNavigation/>
                             <Fragment>
-                                    {<div dangerouslySetInnerHTML={createMarkup("<p>Content here</p>")}/>}
+                                    <MainCarousel/>
                             </Fragment>
                         </StickyContainer>
                     </div>

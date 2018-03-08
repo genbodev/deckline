@@ -1,5 +1,7 @@
-.sticky #MainNavigationComponent .navbar-brand img {
-  width: 200px; }
+.sticky {
+  z-index: 999 !important; }
+  .sticky #MainNavigationComponent .navbar-brand img {
+    width: 200px; }
 
 #MainNavigationComponent a.active {
   color: #fff !important;

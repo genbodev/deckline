@@ -2,6 +2,7 @@
 @import '../../mixins';
 
 .sticky {
+  z-index: 999 !important;
   #MainNavigationComponent {
     .navbar-brand {
       img {
