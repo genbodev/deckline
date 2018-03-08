@@ -18,25 +18,29 @@ class MainCarousel extends Component {
                     title: 'Террасная доска для бизнеса',
                     image: banerOne,
                     description: 'Предложение для оптовых покупателей от производителя',
-                    href: '/'
+                    href: '/',
+                    additionalContent : null
                 },
                 {
                     title: 'Террасные системы проверенные временем',
                     image: banerTwo,
                     description: 'Террасная доска DECKLINE на набережной Владивостока',
-                    href: '/'
+                    href: '/',
+                    additionalContent : null
                 },
                 {
                     title: 'Терраса, как зона отдыха у воды',
                     image: banerThree,
                     description: 'Бассейны, пруды, водоемы, набережные - все это прекрасно сочетается с террасной доской.',
-                    href: '/'
+                    href: '/',
+                    additionalContent : null
                 },
                 {
                     title: 'Новинка! Террасная доска с глубокой текстурой',
                     image: banerFour,
                     description: 'Скоро в продаже, стань первым в своем городе',
-                    href: '/'
+                    href: '/',
+                    additionalContent : null
                 }
             ]
         };
@@ -56,8 +60,9 @@ class MainCarousel extends Component {
                         <Carousel.Item key={key}>
                             <img height={slideHeight} alt={`slide-${key}`} src={slide.image}/>
                             <Carousel.Caption>
-                                <h3>{slide.title}</h3>
-                                <p>{slide.description}</p>
+                                <h3 className="animated zoomInDown" data-wow-duration="2s" data-wow-delay="5s">{slide.title}</h3>
+                                <p className="animated jackInTheBox" data-wow-duration="4s" data-wow-delay="10s">{slide.description}</p>
+                                {slide.additionalContent}
                             </Carousel.Caption>
                         </Carousel.Item>
                     ))}

@@ -1,5 +1,6 @@
 @import '../../../colors';
 @import '../../../mixins';
+@import '../../../media-queries';
 
 #MainCarousel {
   .fa-caret-square-left, .fa-caret-square-right {
@@ -22,6 +23,10 @@
   .carousel-caption {
     top: 50%;
     transform: translateY(-50%);
+    @include medium() {
+      top: 35%;
+      transform: translateY(-35%);
+    }
     h3 {
       @include font-size(46);
       line-height: 1.2;
@@ -29,11 +34,23 @@
       text-transform: uppercase;
       color: #fff;
     }
+    @include large(){
+      h3 {
+        @include font-size(32);
+      }
+    }
     p {
       @include font-size(18);
       line-height: 1.2;
       font-weight: 300;
       color: #fff;
+    }
+  }
+  @include small() {
+    .item {
+      img {
+        min-height: 350px;
+      }
     }
   }
 }
