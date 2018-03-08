@@ -1,0 +1,15 @@
+#Benefits {
+  padding: 50px 0; }
+  #Benefits .title {
+    text-align: center;
+    font-size: 1.9375rem; }
+  @media only screen and (max-width: 992px) {
+    #Benefits .title {
+      color: green; } }
+  @media only screen and (max-width: 768px) {
+    #Benefits .title {
+      color: red; } }
+  #Benefits .benefits-list {
+    padding-top: 40px; }
+  #Benefits .benefit p {
+    font-size: 1.125rem; }

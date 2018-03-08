@@ -1,0 +1,29 @@
+@import '../../../colors';
+@import '../../../mixins';
+@import '../../../media-queries';
+
+#Benefits {
+  padding: 50px 0;
+  .title {
+    text-align: center;
+    @include font-size(31);
+  }
+  @include medium() {
+    .title {
+      color: green;
+    }
+  }
+  @include small() {
+    .title {
+      color: red;
+    }
+  }
+  .benefits-list {
+    padding-top: 40px;
+  }
+  .benefit {
+    p {
+      @include font-size(18);
+    }
+  }
+}
