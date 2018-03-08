@@ -1,0 +1,32 @@
+#Cooperation {
+  padding: 15px 0;
+  background-color: #171717; }
+  #Cooperation p {
+    margin-bottom: 0;
+    font-size: 1.25rem; }
+    #Cooperation p:first-of-type {
+      color: #fff; }
+    #Cooperation p:nth-of-type(2) {
+      margin-bottom: 10px;
+      color: #89b836; }
+    #Cooperation p:last-of-type {
+      font-size: 1rem; }
+  #Cooperation .cooperation-buttons {
+    padding-top: 20px; }
+  #Cooperation .contacts-btn {
+    background-color: #89b836;
+    font-size: 1.125rem;
+    font-weight: 400;
+    transition: background-color 0.35s linear; }
+    #Cooperation .contacts-btn a {
+      color: #fff; }
+      #Cooperation .contacts-btn a:hover {
+        text-decoration: none; }
+    #Cooperation .contacts-btn:hover {
+      background-color: #6c912b; }
+  #Cooperation .about-btn a {
+    color: #777777; }
+    #Cooperation .about-btn a:hover {
+      text-decoration: none; }
+  #Cooperation .about-btn:hover {
+    text-decoration: none; }
