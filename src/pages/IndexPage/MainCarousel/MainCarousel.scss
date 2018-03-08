@@ -1,0 +1,39 @@
+@import '../../../colors';
+@import '../../../mixins';
+
+#MainCarousel {
+  .fa-caret-square-left, .fa-caret-square-right {
+    position: absolute;
+    top: 50%;
+    @include font-size(35);
+    color: $cod-gray;
+  }
+  .carousel-indicators {
+    li {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: $cod-gray;
+    }
+    .active {
+      background-color: $wasabi;
+    }
+  }
+  .carousel-caption {
+    top: 50%;
+    transform: translateY(-50%);
+    h3 {
+      @include font-size(46);
+      line-height: 1.2;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    p {
+      @include font-size(18);
+      line-height: 1.2;
+      font-weight: 300;
+      color: #fff;
+    }
+  }
+}
