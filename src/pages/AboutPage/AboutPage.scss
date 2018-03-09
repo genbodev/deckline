@@ -10,6 +10,7 @@
   .about-history {
     h3 {
       text-transform: uppercase;
+      margin-bottom: 30px;
     }
   }
   .about-history {
@@ -17,15 +18,85 @@
   }
   .about-history-date-text-image-wrapper {
     display: flex;
+    background: url('curve.png') 40px repeat-x;
+    margin-bottom: 30px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .about-history-date-text-image-border {
+    max-width: 200px;
+    max-height: 200px;
+    min-width: 200px;
+    min-height: 200px;
+    border-radius: 50%;
+    border: 2px dashed rgba(51, 51, 51, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
   }
   .about-history-image {
-    width: 200px;
+    max-width: 180px;
+    max-height: 180px;
+    min-width: 180px;
+    min-height: 180px;
+    border-radius: 50%;
+    &-2016 {
+      background: url('histori-2016.jpg') center no-repeat;
+      background-size: cover;
+    }
+    &-2015 {
+      background: url('histori-2015.jpg') center no-repeat;
+      background-size: cover;
+    }
+    &-2014 {
+      background: url('histori-2014.jpg') center no-repeat;
+      background-size: cover;
+    }
+    &-2012 {
+      background: url('histori-2012.jpg') center no-repeat;
+      background-size: cover;
+    }
+    &-2011 {
+      background: url('histori-2011.jpg') center no-repeat;
+      background-size: cover;
+    }
+    &-2010 {
+      background: url('histori-2010.jpg') center no-repeat;
+      background-size: cover;
+    }
+    &-2009 {
+      background: url('histori-2009.jpg') center no-repeat;
+      background-size: cover;
+    }
+    &-2008 {
+      background: url('histori-2016.jpg') center no-repeat;
+      background-size: cover;
+    }
   }
   .about-history-date-text-wrapper {
     display: flex;
-    border: 1px solid #333;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+  .about-history-date-text-border {
+    padding: 30px;
+    display: flex;
+    margin-left: 100px;
+    border: 1px solid rgba(51, 51, 51, 0.4);
+    border-top: 1px solid #89b837;
+    box-shadow: inset 0 4px 0 #89b837;
+    border-radius: 8px;
+    background-color: #ffffff;
+    flex-grow: 1;
+
   }
   .about-history-date {
-    width: 100px;
+    color: $sushi;
+    font-weight: 600;
+    margin-right: 20px;
+    @include font-size(20);
   }
+
 }

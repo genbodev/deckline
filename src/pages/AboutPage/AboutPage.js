@@ -71,7 +71,7 @@ class AboutPage extends Component {
                                             </p>
                                         </Col>
                                         <Col sm={4}>
-
+                                            <h1>ЗДЕСЬ БУДЕТ ГАЛЕРЕЯ</h1>
                                         </Col>
                                     </Row>
                                 </Grid>
@@ -86,12 +86,165 @@ class AboutPage extends Component {
                                     <Row>
                                         <Col xs={12}>
                                             <div className="about-history-date-text-image-wrapper">
-                                                <div className="about-history-image">
-                                                    image
+                                                <div className="about-history-date-text-image-border">
+                                                    <div className="about-history-image about-history-image-2016">
+                                                    </div>
                                                 </div>
                                                 <div className="about-history-date-text-wrapper">
-                                                    <div className="about-history-date">2016</div>
-                                                    <div className="about-history-text">В начале 2016 года POLIVAN GROUP запускает вторую линию, на этот раз по производству СИСТЕМ ОГРАЖДЕНИЯ.</div>
+                                                    <div className="about-history-date-text-border">
+                                                        <div className="about-history-date">2016</div>
+                                                        <div className="about-history-text">
+                                                            <p>
+                                                                В начале 2016 года POLIVAN
+                                                                GROUP запускает вторую линию, на этот раз по
+                                                                производству
+                                                                СИСТЕМ ОГРАЖДЕНИЯ.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="about-history-date-text-image-wrapper">
+                                                <div className="about-history-date-text-image-border">
+                                                    <div className="about-history-image about-history-image-2015">
+                                                    </div>
+                                                </div>
+                                                <div className="about-history-date-text-wrapper">
+                                                    <div className="about-history-date-text-border">
+                                                        <div className="about-history-date">2015</div>
+                                                        <div className="about-history-text">
+                                                            <p>
+                                                                В начале 2015 года компания
+                                                                начинает производить комплектующие для ДПК в России. К
+                                                                середине 2015 года компания занимает одну из лидирующих
+                                                                позиций по представлению ДПК стабильного качества и
+                                                                большого
+                                                                ассортимента в Москве и Московской области. В этом же
+                                                                году
+                                                                компания принимает решение о частичном перемещении
+                                                                производственных мощностей в Россию. К концу 2015 года
+                                                                POLIVAN GROUP на базе собственной производственной
+                                                                площадки
+                                                                по переработке пиломатериалов в Иркутской области
+                                                                устанавливает линию по производству ТЕРРАСНЫХ СИСТЕМ.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="about-history-date-text-image-wrapper">
+                                                <div className="about-history-date-text-image-border">
+                                                    <div className="about-history-image about-history-image-2014">
+                                                    </div>
+                                                </div>
+                                                <div className="about-history-date-text-wrapper">
+                                                    <div className="about-history-date-text-border">
+                                                        <div className="about-history-date">2014</div>
+                                                        <div className="about-history-text">
+                                                            <p>
+                                                                В 2014 году количество дилеров увеличивается вдвое. Наша
+                                                                компания является единственным производителем на рынке ДПК,
+                                                                кто изготавливает ограждения с нанесением текстуры дерева. В
+                                                                этом же году происходит открытие официального
+                                                                представительства в Москве.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="about-history-date-text-image-wrapper">
+                                                <div className="about-history-date-text-image-border">
+                                                    <div className="about-history-image about-history-image-2012">
+                                                    </div>
+                                                </div>
+                                                <div className="about-history-date-text-wrapper">
+                                                    <div className="about-history-date-text-border">
+                                                        <div className="about-history-date">2012</div>
+                                                        <div className="about-history-text">
+                                                            <p>
+                                                                В 2012-2013 годах компания
+                                                                насчитывает около 30 дилеров в России, Казахстане и
+                                                                Белоруссии.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="about-history-date-text-image-wrapper">
+                                                <div className="about-history-date-text-image-border">
+                                                    <div className="about-history-image about-history-image-2011">
+                                                    </div>
+                                                </div>
+                                                <div className="about-history-date-text-wrapper">
+                                                    <div className="about-history-date-text-border">
+                                                        <div className="about-history-date">2011</div>
+                                                        <div className="about-history-text">
+                                                            <p>
+                                                                В 2011 году POLIVAN GROUP
+                                                                освоила поставки и реализацию материала на российский рынок.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="about-history-date-text-image-wrapper">
+                                                <div className="about-history-date-text-image-border">
+                                                    <div className="about-history-image about-history-image-2010">
+                                                    </div>
+                                                </div>
+                                                <div className="about-history-date-text-wrapper">
+                                                    <div className="about-history-date-text-border">
+                                                        <div className="about-history-date">2010</div>
+                                                        <div className="about-history-text">
+                                                            <p>
+                                                                В 2010 году производственные
+                                                                мощности были увеличены и компания вышла на второй уровень с
+                                                                собственным профилем СИСТЕМЫ ОГРАЖДЕНИЯ И ЗАБОРЫ.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="about-history-date-text-image-wrapper">
+                                                <div className="about-history-date-text-image-border">
+                                                    <div className="about-history-image about-history-image-2009">
+                                                    </div>
+                                                </div>
+                                                <div className="about-history-date-text-wrapper">
+                                                    <div className="about-history-date-text-border">
+                                                        <div className="about-history-date">2009</div>
+                                                        <div className="about-history-text">
+                                                            <p>
+                                                                В 2009 году компания POLIVAN
+                                                                GROUP запустила собственное производство в Китае. На первом
+                                                                этапе было успешно освоено производство профилей ТЕРРАСНОЙ
+                                                                СИСТЕМЫ.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="about-history-date-text-image-wrapper">
+                                                <div className="about-history-date-text-image-border">
+                                                    <div className="about-history-image about-history-image-2008">
+                                                    </div>
+                                                </div>
+                                                <div className="about-history-date-text-wrapper">
+                                                    <div className="about-history-date-text-border">
+                                                        <div className="about-history-date">2008</div>
+                                                        <div className="about-history-text">
+                                                            <p>
+                                                                История компании начинается
+                                                                с 2008 года. Именно в этот год произошла первая встреча
+                                                                инициативной группы инвесторов. Темой обсуждения стало
+                                                                производство инновационного строительного материала –
+                                                                древесно – полимерного композита (ДПК). После этого был
+                                                                подписан договор совместного сотрудничества. Основной
+                                                                поставщик оборудования – Австрия. Местом расположения
+                                                                производственных мощностей был выбран – Китай.
+                                                            </p>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </Col>

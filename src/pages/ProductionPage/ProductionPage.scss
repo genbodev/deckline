@@ -1,0 +1,67 @@
+@import '../../colors';
+@import '../../mixins';
+
+#ProductionPage {
+  .production-description {
+    h1 {
+      text-transform: uppercase;
+    }
+  }
+  .production-advantage-image-text-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $alabaster;
+    margin-bottom: 30px;
+    &-reverse {
+      flex-direction: row-reverse;
+    }
+  }
+  .production-advantage-image {
+    min-width: 50%;
+    min-height: 450px;
+    &-01 {
+      background: url('proizv-01.jpg') center no-repeat;
+      background-size: cover;
+    }
+    &-02 {
+      background: url('proizv-02.jpg') center no-repeat;
+      background-size: cover;
+    }
+    &-03 {
+      background: url('proizv-03.jpg') center no-repeat;
+      background-size: cover;
+    }
+  }
+  .production-advantage-text {
+    padding: 60px;
+  }
+  .production-products {
+    h3 {
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+  }
+  .production-products-image-text-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .production-logistic {
+    margin-bottom: 50px;
+  }
+  .production-logistic-text-image-wrapper {
+    background-color: rgba(5, 59, 255, 0.04);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  .production-logistic-text {
+    padding: 60px;
+  }
+  .production-logistic-image {
+    min-width: 440px;
+  }
+}

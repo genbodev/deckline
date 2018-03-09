@@ -1,0 +1,53 @@
+#ProductionPage .production-description h1 {
+  text-transform: uppercase; }
+
+#ProductionPage .production-advantage-image-text-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+  margin-bottom: 30px; }
+  #ProductionPage .production-advantage-image-text-wrapper-reverse {
+    flex-direction: row-reverse; }
+
+#ProductionPage .production-advantage-image {
+  min-width: 50%;
+  min-height: 450px; }
+  #ProductionPage .production-advantage-image-01 {
+    background: url("proizv-01.jpg") center no-repeat;
+    background-size: cover; }
+  #ProductionPage .production-advantage-image-02 {
+    background: url("proizv-02.jpg") center no-repeat;
+    background-size: cover; }
+  #ProductionPage .production-advantage-image-03 {
+    background: url("proizv-03.jpg") center no-repeat;
+    background-size: cover; }
+
+#ProductionPage .production-advantage-text {
+  padding: 60px; }
+
+#ProductionPage .production-products h3 {
+  text-transform: uppercase;
+  font-weight: 600; }
+
+#ProductionPage .production-products-image-text-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+#ProductionPage .production-logistic {
+  margin-bottom: 50px; }
+
+#ProductionPage .production-logistic-text-image-wrapper {
+  background-color: rgba(5, 59, 255, 0.04);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px; }
+
+#ProductionPage .production-logistic-text {
+  padding: 60px; }
+
+#ProductionPage .production-logistic-image {
+  min-width: 440px; }
