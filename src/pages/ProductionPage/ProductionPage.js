@@ -8,7 +8,7 @@ import TopPanelComponent from '../../components/TopPanelComponent/TopPanelCompon
 import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
 import Footer from '../../components/FooterComponent/FooterComponent';
-import { Grid, Row, Col, Button } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 import ProductImage01 from './product-01.jpg';
 import ProductImage02 from './product-02.jpg';

@@ -70,8 +70,7 @@ class CooperationPage extends Component {
                                 <Grid>
                                     <Row>
                                         <Col xs={12}>
-                                            <img src={cooperationImage} alt="cooperation-image"
-                                                 className="img-responsive"/>
+                                            <img src={cooperationImage} alt="cooperation-image" className="img-responsive"/>
                                         </Col>
                                     </Row>
                                 </Grid>

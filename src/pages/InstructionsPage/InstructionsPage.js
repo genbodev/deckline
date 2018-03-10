@@ -1,13 +1,122 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import './InstructionsPage.css';
 import { connect } from 'react-redux';
+import { StickyContainer } from 'react-sticky';
+import { drawSticky } from '../../functions';
+import TopPanelComponent from '../../components/TopPanelComponent/TopPanelComponent';
+import MainNavigation from '../../components/MainNavigation/MainNavigation';
+import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
+import Footer from '../../components/FooterComponent/FooterComponent';
+import { Grid, Row, Col } from 'react-bootstrap';
+
+import WebInstructionImage from './web-ico.jpg';
+import OfflineInstructionImage from './pdf-ico.jpg';
+import CatalogImage from './katalog-400.jpg';
+import AlbumImage from './teh-resh-400.jpg';
+import OpinionImage from './ecpert-zacl-400.jpg';
 
 class InstructionsPage extends Component {
     render() {
         return (
-            <div className="App">
-
+            <div id="InstructionsPage">
+                <div className="content">
+                    <TopPanelComponent/>
+                    <StickyContainer>
+                        {drawSticky(<MainNavigation/>)}
+                        <MobileNavigation/>
+                        <Fragment>
+                            <div className="instructions-main">
+                                <Grid>
+                                    <Row>
+                                        <Col xs={12}>
+                                            <div className="instructions-main-caption">
+                                                <h1>Инструкция по монтажу террасной доски</h1>
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col md={6}>
+                                            <div className="instructions-main-image-text-wrapper">
+                                                <div className="instructions-main-image">
+                                                    <img src={WebInstructionImage} alt="web-instruction"
+                                                         className="img-responsive"/>
+                                                </div>
+                                                <div className="instructions-main-text">
+                                                    <p>
+                                                        Инструкция по монтажу террасной доски<br/>
+                                                        <a href="#">Скачать</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </Col>
+                                        <Col md={6}>
+                                            <div className="instructions-main-image-text-wrapper">
+                                                <div className="instructions-main-image">
+                                                    <img src={OfflineInstructionImage} alt="web-instruction"
+                                                         className="img-responsive"/>
+                                                </div>
+                                                <div className="instructions-main-text">
+                                                    <p>
+                                                        Монтаж террасной доски из ДПК должен осуществляться на ровной
+                                                        предварительно подготовленной поверхности. Для монтажа
+                                                        необходимо
+                                                        подготовить...<br/>
+                                                        <a href="terrace-installation">Подробнее</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                </Grid>
+                            </div>
+                            <div className="instructions-additionally">
+                                <Grid>
+                                    <Row>
+                                        <Col xs={12}>
+                                            <h1>Дополнительно</h1>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col xs={12} md={4}>
+                                            <div className="instructions-additionally-image-text-wrapper">
+                                                <div className="instructions-additionally-image">
+                                                    <img src={CatalogImage} alt="catalog" className="img-responsive"/>
+                                                </div>
+                                                <div className="instructions-additionally-text">
+                                                    <a href="#">Каталог продукции</a>
+                                                </div>
+                                            </div>
+                                        </Col>
+                                        <Col xs={12} md={4}>
+                                            <div className="instructions-additionally-image-text-wrapper">
+                                                <div className="instructions-additionally-image">
+                                                    <img src={AlbumImage} alt="album" className="img-responsive"/>
+                                                </div>
+                                                <div className="instructions-additionally-text">
+                                                    <a href="#">Альбом технических решений</a>
+                                                </div>
+                                            </div>
+                                        </Col>
+                                        <Col xs={12} md={4}>
+                                            <div className="instructions-additionally-image-text-wrapper">
+                                                <div className="instructions-additionally-image">
+                                                    <img src={OpinionImage} alt="opinion" className="img-responsive"/>
+                                                </div>
+                                                <div className="instructions-additionally-text">
+                                                    <a href="#">Экспертное заключение по испытаниям</a>
+                                                </div>
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                </Grid>
+                            </div>
+                        </Fragment>
+                    </StickyContainer>
+                </div>
+                <div className="footer">
+                    <Footer/>
+                </div>
             </div>
         );
     }
@@ -15,15 +124,11 @@ class InstructionsPage extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {
-
-    }
+    return {}
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-
-    }
+    return {}
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(InstructionsPage);

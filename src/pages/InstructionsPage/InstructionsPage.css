@@ -1,0 +1,36 @@
+#InstructionsPage .instructions-main {
+  margin-bottom: 60px; }
+
+#InstructionsPage .instructions-main-caption {
+  background-color: #d1e2a9;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  padding: 30px; }
+  #InstructionsPage .instructions-main-caption h1 {
+    text-transform: uppercase; }
+
+#InstructionsPage .instructions-main-image-text-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start; }
+
+#InstructionsPage .instructions-main-image {
+  margin-right: 35px;
+  min-width: 100px;
+  max-width: 100px; }
+
+#InstructionsPage .instructions-additionally h1 {
+  text-transform: uppercase;
+  text-align: center; }
+
+#InstructionsPage .instructions-additionally {
+  margin-bottom: 50px; }
+
+#InstructionsPage .instructions-additionally-image-text-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
