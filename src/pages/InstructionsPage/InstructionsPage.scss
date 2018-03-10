@@ -1,0 +1,45 @@
+@import '../../colors';
+@import '../../mixins';
+
+#InstructionsPage {
+  .instructions-main {
+    margin-bottom: 60px;
+  }
+  .instructions-main-caption {
+    background-color: $deco;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 30px;
+    h1 {
+      text-transform: uppercase;
+    }
+  }
+  .instructions-main-image-text-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .instructions-main-image {
+    margin-right: 35px;
+    min-width: 100px;
+    max-width: 100px;
+  }
+  .instructions-additionally {
+    h1 {
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+  .instructions-additionally {
+    margin-bottom: 50px;
+  }
+  .instructions-additionally-image-text-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
