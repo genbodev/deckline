@@ -1,0 +1,48 @@
+@import '../../../colors';
+@import '../../../mixins';
+@import '../../../media-queries';
+
+#Partners {
+  .item {
+    max-height: 325px;
+  }
+  .photo-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #fff url('./no-photo.jpg') 50% 50% no-repeat;
+    background-size: 50px auto;
+  }
+  .comment {
+    padding-top: 15px;
+    @include font-size(17);
+    font-style: italic;
+    font-weight: 400;
+  }
+  .comment-author {
+    strong {
+      @include font-size(17);
+      color: $dustyGray;
+    }
+    span {
+      display: block;
+      @include font-size(12);
+      text-transform: uppercase;
+      color: $boulder;
+    }
+  }
+  li {
+    background-color: $abbey;
+    border-color: $abbey;
+  }
+  li.active {
+    background-color: $sushi1;
+    border-color: $sushi1;
+  }
+}
