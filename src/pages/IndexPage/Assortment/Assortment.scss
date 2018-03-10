@@ -1,0 +1,30 @@
+@import '../../../colors';
+@import '../../../mixins';
+@import '../../../media-queries';
+
+#Assortment {
+  h2 {
+    @include font-size(36);
+  }
+  .assortment-row {
+    padding: 20px 0;
+  }
+  .assortment-tag {
+    color: $wasabi;
+  }
+  .line-gray {
+    position: relative;
+    padding-bottom: 20px;
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 75%;
+      height: 2px;
+      position: absolute;
+      background: linear-gradient(to right, rgba(237, 237, 237, 0), rgba(237, 237, 237, 1), rgba(237, 237, 237, 0));
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

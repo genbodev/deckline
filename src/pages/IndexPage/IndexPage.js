@@ -8,6 +8,7 @@ import { drawSticky } from '../../functions';
 import MainCarousel from './MainCarousel/MainCarousel';
 import Cooperation from './Cooperation/Cooperation';
 import Benefits from './Benefits/Benefits';
+import Assortment from './Assortment/Assortment';
 import TopPanelComponent from '../../components/TopPanelComponent/TopPanelComponent';
 import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
@@ -31,6 +32,7 @@ class IndexPage extends Component {
                                 <MainCarousel/>
                                 <Cooperation/>
                                 <Benefits/>
+                                <Assortment/>
                             </Fragment>
                         </StickyContainer>
                     </div>
