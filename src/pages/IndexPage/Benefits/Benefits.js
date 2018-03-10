@@ -34,7 +34,8 @@ class Benefits extends Component {
                 {icon: <i className="fas fa-user"></i>, number: 22, text: 'Дилера в России'},
                 {icon: <i className="fas fa-coffee"></i>, number: 3800, text: 'Довольных клиентов'},
                 {icon: <i className="fas fa-chart-bar"></i>, number: 420, text: 'Обращений по рекомендации'}
-            ]
+            ],
+            numberAnimationDuration : 500000
         };
     }
 
@@ -42,7 +43,7 @@ class Benefits extends Component {
     }
 
     render() {
-        const {brand, title, lead} = this.state;
+        const { brand, title, lead, numberAnimationDuration } = this.state;
         return (
             <div id="Benefits">
                 <Grid>
@@ -57,7 +58,7 @@ class Benefits extends Component {
                         </Col>
                     </Row>
                 </Grid>
-                <Grid fluid="true" className="benefits-list">
+                <Grid fluid className="benefits-list">
                     <Grid>
                         <Row>
                             {this.state.benefitsList.map((benefit, key) => (
@@ -73,18 +74,19 @@ class Benefits extends Component {
                         </Row>
                     </Grid>
                 </Grid>
-                <Grid>
-                    {this.state.clientsList.map((client, key) => (
-                        <Col md={4}>
-                            <div className="client-icon">
-                                {client.icon}
-                            </div>
-                        </Col>
-                    ))}
-                    <AnimatedNumber component="text" value={4950} duration={10000} initialValue={0} formatValue={n => n.toFixed(0)}/>
-                    <AnimatedNumber component="text" value={22} duration={10000} initialValue={0} formatValue={n => n.toFixed(0)}/>
-                    <AnimatedNumber component="text" value={3800} duration={10000} initialValue={0} formatValue={n => n.toFixed(0)}/>
-                    <AnimatedNumber component="text" value={420} duration={10000} initialValue={0} formatValue={n => n.toFixed(0)}/>
+                <Grid className="clients-list">
+                    <Row className="wow slideInRight" data-wow-duration="2s">
+                        {this.state.clientsList.map((client, key) => (
+                            <Col key={key} md={3} className="client text-center">
+                                <div className="client-icon">
+                                    {client.icon}
+                                </div>
+                                <AnimatedNumber className="animate-number" component="text" value={client.number}
+                                                duration={numberAnimationDuration} initialValue={0} formatValue={n => n.toFixed(0)}/>
+                                <h4 className="client-text">{client.text}</h4>
+                            </Col>
+                        ))}
+                    </Row>
                 </Grid>
             </div>
         );

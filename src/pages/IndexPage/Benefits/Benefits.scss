@@ -8,22 +8,48 @@
     text-align: center;
     @include font-size(31);
   }
-  @include medium() {
-    .title {
-      color: green;
-    }
-  }
-  @include small() {
-    .title {
-      color: red;
-    }
-  }
   .benefits-list {
     padding-top: 40px;
+    background-color: $wildSand;
   }
   .benefit {
     p {
       @include font-size(18);
     }
+  }
+  .clients-list {
+    position: relative;
+    padding: 40px 0 15px 0;
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 75%;
+      height: 2px;
+      position: absolute;
+      background: linear-gradient(to right, rgba(237, 237, 237, 0), rgba(237, 237, 237, 1), rgba(237, 237, 237, 0));
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .client {
+    color: $cod-gray;
+  }
+  .client-icon {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .animate-number {
+    @include font-size(54);
+    font-weight: 700;
+  }
+  .client-text {
+    @include font-size(20);
+  }
+  .svg-inline--fa {
+    @include font-size(35);
   }
 }
