@@ -9,6 +9,7 @@ import MainCarousel from './MainCarousel/MainCarousel';
 import Cooperation from './Cooperation/Cooperation';
 import Benefits from './Benefits/Benefits';
 import Assortment from './Assortment/Assortment';
+import Certificates from './Certificates/Certificates';
 import TopPanelComponent from '../../components/TopPanelComponent/TopPanelComponent';
 import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
@@ -33,6 +34,7 @@ class IndexPage extends Component {
                                 <Cooperation/>
                                 <Benefits/>
                                 <Assortment/>
+                                <Certificates/>
                             </Fragment>
                         </StickyContainer>
                     </div>

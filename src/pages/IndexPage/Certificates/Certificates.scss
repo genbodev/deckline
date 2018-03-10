@@ -1,0 +1,92 @@
+@import '../../../colors';
+@import '../../../mixins';
+@import '../../../media-queries';
+
+#Certificates {
+  padding: 40px 0;
+  h2 {
+    @include font-size(36);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .nav-tabs {
+    display: flex;
+    justify-content: center;
+    border-bottom-color: #fff;
+    li, .tab-title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .tab-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid $boulder;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    li {
+      &:focus {
+        outline: none;
+      }
+      .tab-text {
+        p {
+          color: $cod-gray;
+        }
+      }
+      a:hover, a:focus {
+        background-color: #fff;
+        border-color: #fff;
+        outline: none;
+      }
+    }
+    li.active {
+      position: relative;
+      &:after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        background-color: $wasabi;
+      }
+      a {
+        border-color: #fff;
+        border-bottom: 1px solid #fff;
+      }
+      .tab-text {
+        p {
+          color: $wasabi;
+        }
+      }
+    }
+  }
+  .tab-text {
+    p {
+      @include font-size(16);
+    }
+  }
+  .tab-content {
+    padding: 40px 0;
+    min-height: 250px;
+  }
+  .tab-p {
+    margin: 0;
+  }
+  .certificate-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
