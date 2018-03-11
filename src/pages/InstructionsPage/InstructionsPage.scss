@@ -7,14 +7,13 @@
   }
   .instructions-main-caption {
     background-color: $deco;
-    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 25px;
-    padding: 30px;
     h1 {
       text-transform: uppercase;
+      margin: 25px;
     }
   }
   .instructions-main-image-text-wrapper {

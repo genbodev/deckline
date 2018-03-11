@@ -3,14 +3,13 @@
 
 #InstructionsPage .instructions-main-caption {
   background-color: #d1e2a9;
-  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 25px;
-  padding: 30px; }
+  margin-bottom: 25px; }
   #InstructionsPage .instructions-main-caption h1 {
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    margin: 25px; }
 
 #InstructionsPage .instructions-main-image-text-wrapper {
   display: flex;
