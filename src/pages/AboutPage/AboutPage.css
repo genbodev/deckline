@@ -7,9 +7,6 @@
   text-transform: uppercase;
   margin-bottom: 30px; }
 
-#AboutPage .about-history {
-  margin-bottom: 50px; }
-
 #AboutPage .about-history-date-text-image-wrapper {
   display: flex;
   background: url("curve.png") 40px repeat-x;

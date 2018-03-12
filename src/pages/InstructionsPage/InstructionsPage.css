@@ -25,9 +25,6 @@
   text-transform: uppercase;
   text-align: center; }
 
-#InstructionsPage .instructions-additionally {
-  margin-bottom: 50px; }
-
 #InstructionsPage .instructions-additionally-image-text-wrapper {
   display: flex;
   justify-content: center;

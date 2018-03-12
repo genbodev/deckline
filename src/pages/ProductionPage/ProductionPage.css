@@ -36,9 +36,6 @@
   align-items: center;
   flex-direction: column; }
 
-#ProductionPage .production-logistic {
-  margin-bottom: 50px; }
-
 #ProductionPage .production-logistic-text-image-wrapper {
   background-color: rgba(5, 59, 255, 0.04);
   display: flex;

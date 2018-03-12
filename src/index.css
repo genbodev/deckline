@@ -64,10 +64,11 @@ h4 {
   height: 100%; }
 
 .content {
+  padding-bottom: 60px;
   flex: 1 0 auto; }
   @media only screen and (max-width: 992px) {
     .content {
-      padding-top: 20px; } }
+      padding-top: 60px; } }
 
 .footer {
   flex: 0 0 auto; }
