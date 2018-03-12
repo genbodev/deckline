@@ -32,7 +32,7 @@
   .carousel-caption {}
   @include small() {
     .item {
-      img {
+      .carousel-image-wrapper {
         min-height: 350px;
       }
     }

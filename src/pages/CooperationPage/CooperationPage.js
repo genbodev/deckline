@@ -9,7 +9,7 @@ import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
 import Footer from '../../components/FooterComponent/FooterComponent';
 import { Grid, Row, Col } from 'react-bootstrap';
-import cooperationImage from './partnerka.jpg';
+import CooperationImage from './partnerka.jpg';
 
 class CooperationPage extends Component {
     render() {
@@ -70,7 +70,7 @@ class CooperationPage extends Component {
                                 <Grid>
                                     <Row>
                                         <Col xs={12}>
-                                            <img src={cooperationImage} alt="cooperation-image" className="img-responsive"/>
+                                            <img src={CooperationImage} alt="cooperation" className="img-responsive"/>
                                         </Col>
                                     </Row>
                                 </Grid>

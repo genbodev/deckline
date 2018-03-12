@@ -19,6 +19,7 @@ class MobileNavigation extends Component {
                 {title: 'Каталог', slug: '/catalog'},
             ],
             mainMenuRefs: [
+                {title: 'О нас', slug: '/about'},
                 {title: 'Инструкции', slug: '/instructions'},
                 {title: 'Статьи', slug: '/posts'},
                 {title: 'Производство', slug: '/production'}

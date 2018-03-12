@@ -114,21 +114,21 @@ class TerraceInstallationPage extends Component {
                                     </Row>
                                     <Row>
                                         <Col md={6}>
-                                            <img src={Picture01} alt="picture-01" className="img-responsive"/>
+                                            <img src={Picture01} alt="pic-01" className="img-responsive"/>
                                             <p>Рис. 1</p>
                                         </Col>
                                         <Col md={6}>
-                                            <img src={Picture02} alt="picture-02" className="img-responsive"/>
+                                            <img src={Picture02} alt="pic-02" className="img-responsive"/>
                                             <p>Рис. 2</p>
                                         </Col>
                                     </Row>
                                     <Row>
                                         <Col md={6}>
-                                            <img src={Picture03} alt="picture-03" className="img-responsive"/>
+                                            <img src={Picture03} alt="pic-03" className="img-responsive"/>
                                             <p>Рис. 3</p>
                                         </Col>
                                         <Col md={6}>
-                                            <img src={Picture04} alt="picture-04" className="img-responsive"/>
+                                            <img src={Picture04} alt="pic-04" className="img-responsive"/>
                                             <p>Рис. 4</p>
                                         </Col>
                                     </Row>
@@ -163,13 +163,13 @@ class TerraceInstallationPage extends Component {
                                                 ленты (рис. 5). Все лаги должны находиться в одной плоскости по
                                                 горизонту.
                                             </p>
-                                            <img src={Picture05} alt="picture-05" className="img-responsive"/>
+                                            <img src={Picture05} alt="pic-05" className="img-responsive"/>
                                             <p>Рис. 5</p>
                                             <p>
                                                 Расстояние между стеной и лагой должно составлять не менее 10 мм. Лаги
                                                 должны быть выровнены между собой (рис 6).
                                             </p>
-                                            <img src={Picture06} alt="picture-06" className="img-responsive"/>
+                                            <img src={Picture06} alt="pic-06" className="img-responsive"/>
                                             <p>Рис. 6</p>
                                             <p>
                                                 Лаги, при необходимости их продолжения, укладываются внахлест друг за
@@ -179,7 +179,7 @@ class TerraceInstallationPage extends Component {
                                                 до линии перегиба перфоленты (рис. 7) для компенсации температурного
                                                 расширения.
                                             </p>
-                                            <img src={Picture07} alt="picture-07" className="img-responsive"/>
+                                            <img src={Picture07} alt="pic-07" className="img-responsive"/>
                                             <p>Рис. 7</p>
                                             <p>
                                                 На каждый конец доски предусмотрите одну опорную лагу (рис.8), свес
@@ -189,7 +189,7 @@ class TerraceInstallationPage extends Component {
                                                 диагональной укладки досок настила, расстояние между центральными осями
                                                 соседних лаг необходимо уменьшить на 30%.
                                             </p>
-                                            <img src={Picture08} alt="picture-08" className="img-responsive"/>
+                                            <img src={Picture08} alt="pic-08" className="img-responsive"/>
                                             <p>Рис. 8</p>
                                             <h4>Монтаж настила</h4>
                                             <p>
@@ -197,7 +197,7 @@ class TerraceInstallationPage extends Component {
                                                 предполагаемого настила. Первая доска задвигается в паз стартового
                                                 крепежа до упора (рис. 9).
                                             </p>
-                                            <img src={Picture09} alt="picture-09" className="img-responsive"/>
+                                            <img src={Picture09} alt="pic-09" className="img-responsive"/>
                                             <p>Рис. 9</p>
                                             <p>
                                                 Первая доска закрепляется при помощи кляймера, который крепится к лаге
@@ -206,20 +206,20 @@ class TerraceInstallationPage extends Component {
                                                 следующая доска, действия повторяются до окончания настила (рис. 10).
                                                 Для равномерного зазора между досками используйте спейсеры.
                                             </p>
-                                            <img src={Picture10} alt="picture-10" className="img-responsive"/>
+                                            <img src={Picture10} alt="pic-10" className="img-responsive"/>
                                             <p>Рис. 10</p>
                                             <p>
                                                 Последняя доска в настиле закрепляется с помощью самореза под углом 45°
                                                 (рис. 11).
                                             </p>
-                                            <img src={Picture11} alt="picture-11" className="img-responsive"/>
+                                            <img src={Picture11} alt="pic-11" className="img-responsive"/>
                                             <p>Рис. 11</p>
                                             <p>
                                                 Торцы настила закрываются при помощи уголка. Уголок крепится к доскам в
                                                 настиле на саморезы в предварительно просверленное отверстие на 1-1,2 мм
                                                 больше, чем диаметр самореза (рис. 12).
                                             </p>
-                                            <img src={Picture12} alt="picture-12" className="img-responsive"/>
+                                            <img src={Picture12} alt="pic-12" className="img-responsive"/>
                                             <p>Рис. 12</p>
                                             <p>
                                                 Рекомендуем дополнительно высверливать в нижней стенке доски отверстия
@@ -235,41 +235,41 @@ class TerraceInstallationPage extends Component {
                                     </Row>
                                     <Row>
                                         <Col md={6}>
-                                            <img src={Picture13} alt="picture-13" className="img-responsive"/>
+                                            <img src={Picture13} alt="pic-13" className="img-responsive"/>
                                             <p>Вариант укладки «СТАНДАРТ»</p>
                                         </Col>
                                         <Col md={6}>
-                                            <img src={Picture14} alt="picture-14" className="img-responsive"/>
+                                            <img src={Picture14} alt="pic-14" className="img-responsive"/>
                                             <p>Вариант укладки «КОЛОР»</p>
                                         </Col>
                                     </Row>
                                     <Row>
                                         <Col md={6}>
-                                            <img src={Picture15} alt="picture-15" className="img-responsive"/>
+                                            <img src={Picture15} alt="pic-15" className="img-responsive"/>
                                             <p>Вариант укладки «ПАРКЕТ»</p>
                                         </Col>
                                         <Col md={6}>
-                                            <img src={Picture16} alt="picture-16" className="img-responsive"/>
+                                            <img src={Picture16} alt="pic-16" className="img-responsive"/>
                                             <p>Вариант укладки «СТАНДАРТ-ПЕРЕХОД»</p>
                                         </Col>
                                     </Row>
                                     <Row>
                                         <Col md={6}>
-                                            <img src={Picture17} alt="picture-17" className="img-responsive"/>
+                                            <img src={Picture17} alt="pic-17" className="img-responsive"/>
                                             <p>Вариант укладки «РАМКА»</p>
                                         </Col>
                                         <Col md={6}>
-                                            <img src={Picture18} alt="picture-18" className="img-responsive"/>
+                                            <img src={Picture18} alt="pic-18" className="img-responsive"/>
                                             <p>Вариант укладки «БРИЛЛИАНТ»</p>
                                         </Col>
                                     </Row>
                                     <Row>
                                         <Col md={6}>
-                                            <img src={Picture19} alt="picture-19" className="img-responsive"/>
+                                            <img src={Picture19} alt="pic-19" className="img-responsive"/>
                                             <p>Вариант укладки «ШАХМАТЫ»</p>
                                         </Col>
                                         <Col md={6}>
-                                            <img src={Picture20} alt="picture-20" className="img-responsive"/>
+                                            <img src={Picture20} alt="pic-20" className="img-responsive"/>
                                             <p>Вариант укладки «СЕМИУГОЛЬНИК»</p>
                                         </Col>
                                     </Row>

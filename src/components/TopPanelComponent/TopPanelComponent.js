@@ -10,6 +10,7 @@ class TopPanelComponent extends Component {
         this.state = {
             topMenuTitle: 'Полезные ссылки',
             topMenuItems: [
+                {title: 'О нас', slug: '/about'},
                 {title: 'Инструкции', slug: '/instructions'},
                 {title: 'Статьи', slug: '/posts'},
                 {title: 'Производство', slug: '/production'}

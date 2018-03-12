@@ -10,11 +10,10 @@ import MobileNavigation from '../../components/MobileNavigation/MobileNavigation
 import Footer from '../../components/FooterComponent/FooterComponent';
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import deliveryImage from './dostavka.jpg';
-import deliveryServiceImage1 from './logo-ratek.jpg';
-import deliveryServiceImage2 from './logo-vl-logistik.png';
-import deliveryServiceImage3 from './delovie_linii-250.jpg';
-
+import DeliveryImage from './dostavka.jpg';
+import DeliveryServiceImage1 from './logo-ratek.jpg';
+import DeliveryServiceImage2 from './logo-vl-logistik.png';
+import DeliveryServiceImage3 from './delovie_linii-250.jpg';
 
 class DeliveryPage extends Component {
     render() {
@@ -44,7 +43,7 @@ class DeliveryPage extends Component {
                                                 которые предохраняют материалы от повреждения при загрузке и перевозке.
                                             </p>
                                             <div className="delivery-description-image">
-                                                <img src={deliveryImage} alt="delivery-image"
+                                                <img src={DeliveryImage} alt="delivery"
                                                      className="img-responsive"/>
                                             </div>
                                             <p>
@@ -72,19 +71,19 @@ class DeliveryPage extends Component {
                                     <Row>
                                         <Col sm={4}>
                                             <div className="delivery-service-image">
-                                                <img src={deliveryServiceImage1} alt="delivery-service-image1"
+                                                <img src={DeliveryServiceImage1} alt="delivery-service-1"
                                                      className="img-responsive"/>
                                             </div>
                                         </Col>
                                         <Col sm={4}>
                                             <div className="delivery-service-image">
-                                                <img src={deliveryServiceImage2} alt="delivery-service-image2"
+                                                <img src={DeliveryServiceImage2} alt="delivery-service-2"
                                                      className="img-responsive"/>
                                             </div>
                                         </Col>
                                         <Col sm={4}>
                                             <div className="delivery-service-image">
-                                                <img src={deliveryServiceImage3} alt="delivery-service-image3"
+                                                <img src={DeliveryServiceImage3} alt="delivery-service-3"
                                                      className="img-responsive"/>
                                             </div>
                                         </Col>

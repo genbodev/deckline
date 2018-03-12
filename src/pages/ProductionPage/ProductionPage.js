@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router';
 
 import './ProductionPage.css';
 import { connect } from 'react-redux';
@@ -117,10 +118,10 @@ class ProductionPage extends Component {
                                             <div className="production-products-image-text-wrapper">
                                                 <div>
                                                     <img src={ProductImage01} className="img-responsive"
-                                                         alt="product-image-01"/>
+                                                         alt="product-01"/>
                                                 </div>
                                                 <div>
-                                                    <p><a href="#">Террасная доска из ДПК</a></p>
+                                                    <p><Link to="/terrace-board">Террасная доска из ДПК</Link></p>
                                                 </div>
                                             </div>
                                         </Col>
@@ -128,10 +129,10 @@ class ProductionPage extends Component {
                                             <div className="production-products-image-text-wrapper">
                                                 <div>
                                                     <img src={ProductImage02} className="img-responsive"
-                                                         alt="product-image-02"/>
+                                                         alt="product-02"/>
                                                 </div>
                                                 <div>
-                                                    <p><a href="#">Универсальная доска</a></p>
+                                                    <p><Link href="#">Универсальная доска</Link></p>
                                                 </div>
                                             </div>
                                         </Col>
@@ -168,7 +169,7 @@ class ProductionPage extends Component {
                                                         производителей ДПК).</p>
                                                 </div>
                                                 <div className="production-logistic-image">
-                                                    <img src={LogisticImage} alt="logistic-image"
+                                                    <img src={LogisticImage} alt="logistic"
                                                          className="img-responsive"/>
                                                 </div>
                                             </div>

@@ -4,10 +4,6 @@ import './PostsPage.css';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
-function createMarkup(html) {
-    return {__html: html};
-}
-
 class PostsPage extends Component {
     componentDidMount() {
 

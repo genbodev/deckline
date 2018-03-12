@@ -1,6 +1,5 @@
-import React, { Component, Fragment } from 'react';
-import { Grid, Col, Row, Button } from 'react-bootstrap';
-import { Link } from 'react-router';
+import React, { Component } from 'react';
+import { Grid, Col, Row } from 'react-bootstrap';
 
 import './Assortment.css';
 

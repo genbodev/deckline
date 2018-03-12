@@ -59,7 +59,7 @@ class PageCarousel extends Component {
                     {slides.map((slide, key) => (
                         <Carousel.Item key={key}>
                             <div className="carousel-image-wrapper">
-                                <img height={slideHeight} alt={`slide-${key}`} src={slide.image}/>
+                                <img className="img-responsive" height={slideHeight} alt={`slide-${key}`} src={slide.image}/>
                             </div>
                             <Carousel.Caption>
                             </Carousel.Caption>

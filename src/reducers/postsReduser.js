@@ -1,6 +1,6 @@
-import CONFIG from '../config';
+//import CONFIG from '../config';
 
-const { CATEGORIES } = CONFIG;
+//const { CATEGORIES } = CONFIG;
 
 function sortPostsByCategory(data = []) {
     return data;

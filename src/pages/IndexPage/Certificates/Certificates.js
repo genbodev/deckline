@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Grid, Col, Row, Button, Tabs, Tab } from 'react-bootstrap';
+import { Grid, Col, Row, Tabs, Tab } from 'react-bootstrap';
 import Lightbox from 'react-image-lightbox';
-import { Link } from 'react-router';
 
 import './Certificates.css';
 

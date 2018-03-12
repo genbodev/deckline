@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Grid, Col, Row, Button, Carousel } from 'react-bootstrap';
-import { Link } from 'react-router';
+import { Grid, Carousel } from 'react-bootstrap';
 
 import './Partners.css';
 
@@ -50,7 +49,8 @@ class Partners extends Component {
                             <img height={200} alt="900x500" src={parallax}/>
                             <Carousel.Caption>
                                 <div className="photo-wrap">
-                                    <div className="photo"></div>
+                                    <div className="photo">
+                                    </div>
                                 </div>
                                 <p className="comment">{slide.comment}</p>
                                 <p className="comment-author">{slide.author}</p>

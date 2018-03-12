@@ -81,7 +81,7 @@ class Benefits extends Component {
                                 <div className="client-icon">
                                     {client.icon}
                                 </div>
-                                <AnimatedNumber className="animate-number" component="text" value={client.number}
+                                <AnimatedNumber className="animate-number" component="span" value={client.number}
                                                 duration={numberAnimationDuration} initialValue={0} formatValue={n => n.toFixed(0)}/>
                                 <h4 className="client-text">{client.text}</h4>
                             </Col>

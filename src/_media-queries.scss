@@ -27,6 +27,7 @@
   }
 
   @media #{$media-type} #{$expr} {
+
     @content;
   }
 }
