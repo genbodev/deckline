@@ -1,0 +1,241 @@
+#ThermoBoardPage .thermo-board-banner {
+  margin-bottom: 25px; }
+  #ThermoBoardPage .thermo-board-banner h1 {
+    text-transform: uppercase;
+    text-align: center; }
+
+#ThermoBoardPage .thermo-board-banner-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#ThermoBoardPage .thermo-board-sorts {
+  background: #dbdbdb linear-gradient(to top, #a8acab 2.1%, #e5e4df 100%, #a09fa1);
+  box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.2);
+  min-height: 400px;
+  padding: 25px 0 25px 0;
+  margin-bottom: 25px; }
+  #ThermoBoardPage .thermo-board-sorts h1 {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 60px; }
+
+#ThermoBoardPage .thermo-board-sorts-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  #ThermoBoardPage .thermo-board-sorts-options table {
+    font-size: 1.25rem;
+    color: #000000;
+    margin-bottom: 20px; }
+    #ThermoBoardPage .thermo-board-sorts-options table th {
+      padding: 0 20px 0 20px; }
+    #ThermoBoardPage .thermo-board-sorts-options table td {
+      text-align: center;
+      font-weight: 200; }
+
+#ThermoBoardPage .thermo-board-sorts-image-text-main {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#ThermoBoardPage .thermo-board-sorts-image-text-wrapper {
+  width: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+#ThermoBoardPage .thermo-board-sorts-text {
+  text-align: center;
+  font-size: 0.75rem; }
+
+#ThermoBoardPage .thermo-board-sorts-button-wrapper {
+  text-align: center; }
+
+#ThermoBoardPage .thermo-board-products h1 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px; }
+
+#ThermoBoardPage .thermo-board-products-image-text-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 25px; }
+
+#ThermoBoardPage .thermo-board-products-text {
+  text-align: center; }
+
+#ThermoBoardPage .thermo-board-have-questions {
+  background-color: #89b837;
+  min-height: 300px;
+  padding: 65px;
+  margin-bottom: 25px; }
+
+#ThermoBoardPage .thermo-board-have-questions-operator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px; }
+
+#ThermoBoardPage .thermo-board-have-questions-text-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 180px; }
+
+#ThermoBoardPage .thermo-board-have-questions-title {
+  color: #ffdc05;
+  font-size: 1.375rem;
+  text-transform: uppercase;
+  font-weight: 600; }
+
+#ThermoBoardPage .thermo-board-have-questions-phone {
+  color: #c0d971;
+  font-size: 2.1875rem;
+  font-weight: 600; }
+
+#ThermoBoardPage .thermo-board-have-questions-time {
+  color: rgba(254, 252, 255, 0.61);
+  font-size: 0.6875rem;
+  margin-bottom: 10px; }
+
+#ThermoBoardPage .thermo-board-have-questions-download {
+  color: rgba(248, 250, 255, 0.51); }
+  #ThermoBoardPage .thermo-board-have-questions-download a {
+    color: rgba(248, 250, 255, 0.51); }
+
+#ThermoBoardPage .thermo-board-have-questions-link {
+  margin-left: 10px; }
+
+#ThermoBoardPage .thermo-board-have-questions-buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 180px; }
+
+#ThermoBoardPage .thermo-board-have-questions-button {
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  width: 300px;
+  padding: 15px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.125rem;
+  margin-bottom: 10px; }
+  #ThermoBoardPage .thermo-board-have-questions-button a {
+    color: #ffffff;
+    margin-left: 10px; }
+  #ThermoBoardPage .thermo-board-have-questions-button a:hover {
+    text-decoration: none; }
+
+#ThermoBoardPage .thermo-board-examples {
+  margin-bottom: 25px; }
+  #ThermoBoardPage .thermo-board-examples h1 {
+    text-transform: uppercase;
+    text-align: center; }
+
+#ThermoBoardPage .thermo-board-examples-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center; }
+
+#ThermoBoardPage .thermo-board-example-image-wrapper {
+  position: relative;
+  border: 1px solid #dddddd;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 5px; }
+  #ThermoBoardPage .thermo-board-example-image-wrapper img {
+    width: 200px;
+    height: 150px;
+    cursor: pointer; }
+
+#ThermoBoardPage .thermo-board-example-zoom {
+  background: #6c912b;
+  border-radius: 100%;
+  bottom: 8px;
+  color: #FFF;
+  display: block;
+  height: 30px;
+  padding: 6px;
+  position: absolute;
+  right: 8px;
+  text-align: center;
+  width: 30px;
+  cursor: pointer; }
+
+#ThermoBoardPage .thermo-board-description h1 {
+  text-align: center;
+  margin-bottom: 25px; }
+
+#ThermoBoardPage .thermo-board-buy h1 {
+  text-align: center;
+  text-transform: uppercase; }
+
+#ThermoBoardPage .thermo-board-buy h3 {
+  text-align: center;
+  margin-bottom: 25px; }
+
+#ThermoBoardPage .thermo-board-buy-image-text-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 25px; }
+
+#ThermoBoardPage .thermo-board-buy-office {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  #ThermoBoardPage .thermo-board-buy-office h3 {
+    margin-bottom: 30px; }
+
+#ThermoBoardPage .thermo-board-buy-office-icon-text-wrapper {
+  display: flex;
+  font-size: 0.875rem; }
+
+#ThermoBoardPage .thermo-board-buy-office-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  min-width: 24px;
+  min-height: 24px;
+  max-height: 24px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #6c912b;
+  margin-right: 20px; }
+
+#ThermoBoardPage .thermo-board-buy-office-text {
+  color: #777777; }
+  #ThermoBoardPage .thermo-board-buy-office-text p {
+    line-height: 1.375rem; }
+  #ThermoBoardPage .thermo-board-buy-office-text a {
+    color: #777777; }
+
+@media only screen and (max-width: 480px) {
+  #ThermoBoardPage .thermo-board-have-questions-title {
+    font-size: 0.9375rem; }
+  #ThermoBoardPage .thermo-board-have-questions-phone {
+    font-size: 1.375rem; }
+  #ThermoBoardPage .thermo-board-have-questions-download {
+    font-size: 0.6875rem; } }
+
+@media only screen and (max-width: 992px) {
+  #ThermoBoardPage .thermo-board-sorts-main-wrapper-left {
+    justify-content: flex-end; }
+  #ThermoBoardPage .thermo-board-sorts-main-wrapper-right {
+    justify-content: flex-start; } }
+
+@media only screen and (max-width: 1440px) {
+  #ThermoBoardPage .thermo-board-have-questions-button {
+    width: 250px; } }

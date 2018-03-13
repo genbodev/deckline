@@ -1,0 +1,278 @@
+@import '../../colors';
+@import '../../mixins';
+@import '../../media-queries';
+@import '../../colors';
+@import '../../mixins';
+@import '../../media-queries';
+
+#ThermoBoardPage {
+  .thermo-board-banner {
+    h1 {
+      text-transform: uppercase;
+      text-align: center;
+    }
+    margin-bottom: 25px;
+  }
+  .thermo-board-banner-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .thermo-board-sorts {
+    background: #dbdbdb linear-gradient(to top, #a8acab 2.1%, #e5e4df 100%, #a09fa1);
+    box-shadow: 0 6px 4px -4px rgba(0, 0, 0, .2);
+    min-height: 400px;
+    padding: 25px 0 25px 0;
+    margin-bottom: 25px;
+    h1 {
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+  }
+  .thermo-board-sorts-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    table {
+      @include font-size(20);
+      color: #000000;
+      margin-bottom: 20px;
+      th {
+        padding: 0 20px 0 20px;
+      }
+      td {
+        text-align: center;
+        font-weight: 200;
+      }
+    }
+  }
+  .thermo-board-sorts-image-text-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .thermo-board-sorts-image-text-wrapper {
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .thermo-board-sorts-text {
+    text-align: center;
+    @include font-size(12);
+  }
+  .thermo-board-sorts-button-wrapper {
+    text-align: center;
+  }
+  .thermo-board-products {
+    h1 {
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  }
+  .thermo-board-products-image-text-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+  .thermo-board-products-text {
+    text-align: center;
+  }
+  .thermo-board-have-questions {
+    background-color: $sushi;
+    min-height: 300px;
+    padding: 65px;
+    margin-bottom: 25px;
+  }
+  .thermo-board-have-questions-operator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+  }
+  .thermo-board-have-questions-text-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 180px;
+  }
+  .thermo-board-have-questions-title {
+    color: $school-bus;
+    @include font-size(22);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .thermo-board-have-questions-phone {
+    color: $yellow-green;
+    @include font-size(35);
+    font-weight: 600;
+  }
+  .thermo-board-have-questions-time {
+    color: rgba(254, 252, 255, 0.61);
+    @include font-size(11);
+    margin-bottom: 10px;
+  }
+  .thermo-board-have-questions-download {
+    color: rgba(248, 250, 255, 0.51);
+    a {
+      color: rgba(248, 250, 255, 0.51);
+    }
+  }
+  .thermo-board-have-questions-link {
+    margin-left: 10px;
+  }
+  .thermo-board-have-questions-buttons-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 180px;
+  }
+  .thermo-board-have-questions-button {
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    width: 300px;
+    padding: 15px;
+    text-align: center;
+    color: #ffffff;
+    @include font-size(18);
+    margin-bottom: 10px;
+    a {
+      color: #ffffff;
+      margin-left: 10px;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  }
+  .thermo-board-examples {
+    margin-bottom: 25px;
+    h1 {
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+  .thermo-board-examples-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .thermo-board-example-image-wrapper {
+    position: relative;
+    border: 1px solid #dddddd;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    img {
+      width: 200px;
+      height: 150px;
+      cursor: pointer;
+    }
+  }
+  .thermo-board-example-zoom {
+    background: $wasabi;
+    border-radius: 100%;
+    bottom: 8px;
+    color: #FFF;
+    display: block;
+    height: 30px;
+    padding: 6px;
+    position: absolute;
+    right: 8px;
+    text-align: center;
+    width: 30px;
+    cursor: pointer;
+  }
+  .thermo-board-description {
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+  }
+  .thermo-board-buy {
+    h1 {
+      text-align: center;
+      text-transform: uppercase;
+    }
+    h3 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+  }
+  .thermo-board-buy-image-text-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+  .thermo-board-buy-office {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h3 {
+      margin-bottom: 30px;
+    }
+  }
+  .thermo-board-buy-office-icon-text-wrapper {
+    display: flex;
+    @include font-size(14);
+  }
+  .thermo-board-buy-office-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    min-width: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    text-align: center;
+    color: #ffffff;
+    background-color: $wasabi;
+    margin-right: 20px;
+  }
+  .thermo-board-buy-office-text {
+    color: $boulder;
+    p {
+      @include line-height(22);
+    }
+    a {
+      color: $boulder;
+    }
+  }
+  @include extra-small {
+    .thermo-board-have-questions-title {
+      @include font-size(15);
+    }
+    .thermo-board-have-questions-phone {
+      @include font-size(22);
+    }
+    .thermo-board-have-questions-download {
+      @include font-size(11);
+    }
+  }
+  @include medium() {
+    .thermo-board-sorts-main-wrapper {
+      &-left {
+        justify-content: flex-end;
+      }
+      &-right {
+        justify-content: flex-start;
+      }
+    }
+  }
+  @include extra-large() {
+    .thermo-board-have-questions-button {
+      width: 250px;
+    }
+  }
+}

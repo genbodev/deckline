@@ -334,7 +334,7 @@ class TerraceBoardPage extends Component {
                                 <Grid>
                                     <Row>
                                         <Col xs={12}>
-                                            <h1>Примеры использования террсной доски</h1>
+                                            <h1>Примеры использования террасной доски</h1>
                                             <div className="terrace-board-examples-wrapper">
                                                 <div className="terrace-board-example-image-wrapper">
                                                     <img src={ExampleImage01} alt="example-01"

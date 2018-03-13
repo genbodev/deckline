@@ -162,7 +162,7 @@ class ContactsPage extends Component {
                                                         </div>
                                                         <div className="contacts-info-office-text">
                                                             <p>
-                                                                <strong>Телефон: </strong><a
+                                                                <strong>Email: </strong><a
                                                                 href="mailto:baikaltexcom@rambler.ru">baikaltexcom@rambler.ru</a>
                                                             </p>
                                                         </div>
