@@ -114,7 +114,7 @@ class ContactsPage extends Component {
                                             <div className="contacts-info-wrapper">
                                                 <div>
                                                     <p>
-                                                        В настоящее время POLIVAN GROUP – успешная компания. Этот успех
+                                                        В настоящее время DECKLINE GROUP – успешная компания. Этот успех
                                                         мы
                                                         заслужили
                                                         своим трудом, ответственностью, инновационным подходом. Мы

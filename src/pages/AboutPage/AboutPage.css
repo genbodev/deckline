@@ -1,3 +1,6 @@
+#AboutPage .about-advantages button {
+  outline: none; }
+
 #AboutPage .about-advantages-lead {
   font-size: 1.375rem;
   font-weight: 200; }

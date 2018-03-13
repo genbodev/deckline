@@ -3,10 +3,10 @@ import { Carousel } from 'react-bootstrap';
 
 import './PageCarousel.css';
 
-import SlideImage01 from './doska-polivan-01.jpg';
-import SlideImage02 from './doska-polivan-02.jpg';
-import SlideImage03 from './doska-polivan-03.jpg';
-import SlideImage04 from './doska-polivan-04.jpg';
+import SlideImage01 from './doska-01.jpg';
+import SlideImage02 from './doska-02.jpg';
+import SlideImage03 from './doska-03.jpg';
+import SlideImage04 from './doska-04.jpg';
 
 class PageCarousel extends Component {
     constructor(props) {

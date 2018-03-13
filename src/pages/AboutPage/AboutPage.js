@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router';
 
 import './AboutPage.css';
 import { connect } from 'react-redux';
@@ -32,7 +33,7 @@ class AboutPage extends Component {
                                                 заслужили своим трудом, ответственностью, инновационным подходом. Мы
                                                 продолжаем свое развитие и готовы к новым достижениям..
                                             </p>
-                                            <Button bsStyle="success">Присоединяйся к нам!</Button>
+                                            <Button href="/contacts" bsStyle="success">Присоединяйся к нам!</Button>
                                         </Col>
                                     </Row>
                                 </Grid>
@@ -49,8 +50,8 @@ class AboutPage extends Component {
                                                 возникла идея о поиске инновационного материала, способного облегчить
                                                 ремонт и строительство для наших будущих клиентов. Это должен был быть
                                                 не просто современный красивый материал, но качественный и долговечный.
-                                                Именно поэтому наше внимание привлек такой материал как <a
-                                                href="#">ДПК</a> (древесно-полимерный композит). Изучив все свойства и
+                                                Именно поэтому наше внимание привлек такой материал как <Link
+                                                to="/terrace-board">ДПК</Link> (древесно-полимерный композит). Изучив все свойства и
                                                 характеристики
                                                 данного материала, было принято решение о запуске собственного
                                                 производства. В то время в России о таком материале знали лишь единицы,
@@ -95,7 +96,7 @@ class AboutPage extends Component {
                                                         <div className="about-history-date">2016</div>
                                                         <div className="about-history-text">
                                                             <p>
-                                                                В начале 2016 года POLIVAN
+                                                                В начале 2016 года DECKLINE
                                                                 GROUP запускает вторую линию, на этот раз по
                                                                 производству
                                                                 СИСТЕМ ОГРАЖДЕНИЯ.
@@ -123,7 +124,7 @@ class AboutPage extends Component {
                                                                 году
                                                                 компания принимает решение о частичном перемещении
                                                                 производственных мощностей в Россию. К концу 2015 года
-                                                                POLIVAN GROUP на базе собственной производственной
+                                                                DECKLINE GROUP на базе собственной производственной
                                                                 площадки
                                                                 по переработке пиломатериалов в Иркутской области
                                                                 устанавливает линию по производству ТЕРРАСНЫХ СИСТЕМ.
@@ -180,7 +181,7 @@ class AboutPage extends Component {
                                                         <div className="about-history-date">2011</div>
                                                         <div className="about-history-text">
                                                             <p>
-                                                                В 2011 году POLIVAN GROUP
+                                                                В 2011 году DECKLINE GROUP
                                                                 освоила поставки и реализацию материала на российский рынок.
                                                             </p>
                                                         </div>
@@ -215,7 +216,7 @@ class AboutPage extends Component {
                                                         <div className="about-history-date">2009</div>
                                                         <div className="about-history-text">
                                                             <p>
-                                                                В 2009 году компания POLIVAN
+                                                                В 2009 году компания DECKLINE
                                                                 GROUP запустила собственное производство в Китае. На первом
                                                                 этапе было успешно освоено производство профилей ТЕРРАСНОЙ
                                                                 СИСТЕМЫ.
