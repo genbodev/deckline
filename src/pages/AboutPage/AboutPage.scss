@@ -1,5 +1,6 @@
 @import '../../colors';
 @import '../../mixins';
+@import '../../media-queries';
 
 #AboutPage {
   .about-advantages {
@@ -101,6 +102,14 @@
     font-weight: 600;
     margin-right: 20px;
     @include font-size(20);
+  }
+  @include small {
+    .about-history-date-text-image-border {
+      display: none;
+    }
+    .about-history-date-text-border {
+      margin: 0;
+    }
   }
 
 }

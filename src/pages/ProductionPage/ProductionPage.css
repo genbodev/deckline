@@ -48,3 +48,18 @@
 
 #ProductionPage .production-logistic-image {
   min-width: 440px; }
+
+@media only screen and (max-width: 992px) {
+  #ProductionPage .production-advantage-image-text-wrapper {
+    flex-direction: column; }
+  #ProductionPage .production-advantage-image {
+    width: 100%;
+    height: 450px; }
+  #ProductionPage .production-logistic-text-image-wrapper {
+    flex-direction: column; }
+  #ProductionPage .production-logistic-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: auto;
+    padding-bottom: 20px; } }

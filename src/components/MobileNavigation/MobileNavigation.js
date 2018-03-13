@@ -15,7 +15,7 @@ class MobileNavigation extends Component {
                 {title: 'Главная', slug: '/'},
                 {title: 'Террасная доска', slug: '/terrace-board'},
                 {title: 'Термо доска', slug: '/thermo-board'},
-                {title: 'Сотруднечество', slug: '/cooperation'},
+                {title: 'Сотрудничество', slug: '/cooperation'},
                 {title: 'Каталог', slug: '/catalog'},
             ],
             mainMenuRefs: [

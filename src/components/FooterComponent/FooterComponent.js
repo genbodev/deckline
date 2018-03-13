@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 import './FooterComponent.css';
 import { connect } from 'react-redux';
@@ -31,7 +32,8 @@ class FooterComponent extends Component {
                                     </div>
                                     <div className="footer-first-text">
                                         <p>
-                                            <strong>Телефон: </strong><span className="footer-first-text-phone">8-902-5-677-789</span>
+                                            <strong>Телефон: </strong><span
+                                            className="footer-first-text-phone">8-902-5-677-789</span>
                                         </p>
                                     </div>
                                 </div>
@@ -51,7 +53,8 @@ class FooterComponent extends Component {
                                     </div>
                                     <div className="footer-first-text">
                                         <p>
-                                            <strong>E-mail: </strong><a href="mailto:baikaltexcom@rambler.ru">baikaltexcom@rambler.ru</a>
+                                            <strong>E-mail: </strong><a
+                                            href="mailto:baikaltexcom@rambler.ru">baikaltexcom@rambler.ru</a>
                                         </p>
                                     </div>
                                 </div>
@@ -61,7 +64,8 @@ class FooterComponent extends Component {
                                     </div>
                                     <div className="footer-first-text">
                                         <p>
-                                            <strong>Рабочее время: </strong>Пн - Пт / 09:00 - 18:00 по Владивостоку (+7ч к Москве)
+                                            <strong>Рабочее время: </strong>Пн - Пт / 09:00 - 18:00 по Владивостоку (+7ч
+                                            к Москве)
                                         </p>
                                     </div>
                                 </div>
@@ -73,7 +77,7 @@ class FooterComponent extends Component {
                                         <i className="fas fa-download"></i>
                                     </div>
                                     <div className="footer-first-text">
-                                        <a href="#">Скачать каталог продукции</a>
+                                        <a href="buklet-a4-FINAL.pdf">Скачать каталог продукции</a>
                                     </div>
                                 </div>
                                 <div className="footer-first-icon-text-wrapper">
@@ -81,7 +85,8 @@ class FooterComponent extends Component {
                                         <i className="fas fa-download"></i>
                                     </div>
                                     <div className="footer-first-text">
-                                        <a href="#">Скачать альбом технических решений</a>
+                                        <a href="albom-tehnicheskih-resheby-deckline-group-2.pdf">Скачать альбом
+                                            технических решений</a>
                                     </div>
                                 </div>
                                 <div className="footer-first-icon-text-wrapper">
@@ -89,7 +94,8 @@ class FooterComponent extends Component {
                                         <i className="fas fa-download"></i>
                                     </div>
                                     <div className="footer-first-text">
-                                        <a href="#">Скачать экспертное заключение по испытаниям</a>
+                                        <a href="zakluchenie-po-ispytaniyam-dpk-deckline.pdf">Скачать экспертное
+                                            заключение по испытаниям</a>
                                     </div>
                                 </div>
                                 <div className="footer-first-icon-text-wrapper">
@@ -97,15 +103,8 @@ class FooterComponent extends Component {
                                         <i className="fas fa-download"></i>
                                     </div>
                                     <div className="footer-first-text">
-                                        <a href="#">Скачать инструкцию по монтажу террасной доски</a>
-                                    </div>
-                                </div>
-                                <div className="footer-first-icon-text-wrapper">
-                                    <div className="footer-first-icon">
-                                        <i className="fas fa-download"></i>
-                                    </div>
-                                    <div className="footer-first-text">
-                                        <a href="#">Скачать инструкцию по монтажу ограждений</a>
+                                        <a href="instrukcia-po-montagu-terrsy.pdf">Скачать инструкцию по монтажу
+                                            террасной доски</a>
                                     </div>
                                 </div>
                             </Col>
@@ -117,10 +116,14 @@ class FooterComponent extends Component {
                                         hideCaption={false}
                                         containerTagName='div'
                                         protocol=''
-                                        onLoading={() => {}}
-                                        onSuccess={() => {}}
-                                        onAfterRender={() => {}}
-                                        onFailure={() => {}}
+                                        onLoading={() => {
+                                        }}
+                                        onSuccess={() => {
+                                        }}
+                                        onAfterRender={() => {
+                                        }}
+                                        onFailure={() => {
+                                        }}
                                     />
                                 </div>
                             </Col>
@@ -145,9 +148,9 @@ class FooterComponent extends Component {
                             </Col>
                             <Col sm={12} md={6} xsHidden smHidden>
                                 <div className="footer-second-links-wrapper">
-                                    <p><a href="#">Вопрос-ответ</a></p>
-                                    <p><a href="#">Карта сайта</a></p>
-                                    <p><a href="#">Контакты</a></p>
+                                    <p><Link to="#">Вопрос-ответ</Link></p>
+                                    <p><Link to="#">Карта сайта</Link></p>
+                                    <p><Link to="/contacts">Контакты</Link></p>
                                 </div>
                             </Col>
                         </Row>

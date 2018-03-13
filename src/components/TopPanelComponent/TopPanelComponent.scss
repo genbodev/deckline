@@ -34,4 +34,9 @@
   #menu-dropdown {
     background-color: $sushi1;
   }
+  .dropdown-menu {
+    a:focus {
+      outline: none;
+    }
+  }
 }

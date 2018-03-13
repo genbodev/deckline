@@ -117,8 +117,10 @@ class ProductionPage extends Component {
                                         <Col sm={6}>
                                             <div className="production-products-image-text-wrapper">
                                                 <div>
-                                                    <img src={ProductImage01} className="img-responsive"
-                                                         alt="product-01"/>
+                                                    <Link to="/terrace-board">
+                                                        <img src={ProductImage01} className="img-responsive"
+                                                             alt="product-01"/>
+                                                    </Link>
                                                 </div>
                                                 <div>
                                                     <p><Link to="/terrace-board">Террасная доска из ДПК</Link></p>
@@ -128,11 +130,13 @@ class ProductionPage extends Component {
                                         <Col sm={6}>
                                             <div className="production-products-image-text-wrapper">
                                                 <div>
-                                                    <img src={ProductImage02} className="img-responsive"
-                                                         alt="product-02"/>
+                                                    <Link to="/terrace-board">
+                                                        <img src={ProductImage02} className="img-responsive"
+                                                             alt="product-02"/>
+                                                    </Link>
                                                 </div>
                                                 <div>
-                                                    <p><Link href="#">Универсальная доска</Link></p>
+                                                    <p><Link to="/terrace-board">Универсальная доска</Link></p>
                                                 </div>
                                             </div>
                                         </Col>

@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router';
 
 import './InstructionsPage.css';
 import { connect } from 'react-redux';
@@ -45,7 +46,7 @@ class InstructionsPage extends Component {
                                                 <div className="instructions-main-text">
                                                     <p>
                                                         Инструкция по монтажу террасной доски<br/>
-                                                        <a href="#">Скачать</a>
+                                                        <a href="instrukcia-po-montagu-terrsy.pdf">Скачать</a>
                                                     </p>
                                                 </div>
                                             </div>
@@ -62,7 +63,7 @@ class InstructionsPage extends Component {
                                                         предварительно подготовленной поверхности. Для монтажа
                                                         необходимо
                                                         подготовить...<br/>
-                                                        <a href="terrace-installation">Подробнее</a>
+                                                        <Link to="terrace-installation">Подробнее</Link>
                                                     </p>
                                                 </div>
                                             </div>
@@ -81,30 +82,40 @@ class InstructionsPage extends Component {
                                         <Col xs={12} md={4}>
                                             <div className="instructions-additionally-image-text-wrapper">
                                                 <div className="instructions-additionally-image">
-                                                    <img src={CatalogImage} alt="catalog" className="img-responsive"/>
+                                                    <a href="buklet-a4-FINAL.pdf">
+                                                        <img src={CatalogImage} alt="catalog"
+                                                             className="img-responsive"/>
+                                                    </a>
                                                 </div>
                                                 <div className="instructions-additionally-text">
-                                                    <a href="#">Каталог продукции</a>
+                                                    <a href="buklet-a4-FINAL.pdf">Каталог продукции</a>
                                                 </div>
                                             </div>
                                         </Col>
                                         <Col xs={12} md={4}>
                                             <div className="instructions-additionally-image-text-wrapper">
                                                 <div className="instructions-additionally-image">
-                                                    <img src={AlbumImage} alt="album" className="img-responsive"/>
+                                                    <a href="albom-tehnicheskih-resheby-deckline-group-2.pdf">
+                                                        <img src={AlbumImage} alt="album" className="img-responsive"/>
+                                                    </a>
                                                 </div>
                                                 <div className="instructions-additionally-text">
-                                                    <a href="#">Альбом технических решений</a>
+                                                    <a href="albom-tehnicheskih-resheby-deckline-group-2.pdf">Альбом
+                                                        технических решений</a>
                                                 </div>
                                             </div>
                                         </Col>
                                         <Col xs={12} md={4}>
                                             <div className="instructions-additionally-image-text-wrapper">
                                                 <div className="instructions-additionally-image">
-                                                    <img src={OpinionImage} alt="opinion" className="img-responsive"/>
+                                                    <a href="zakluchenie-po-ispytaniyam-dpk-deckline.pdf">
+                                                        <img src={OpinionImage} alt="opinion"
+                                                             className="img-responsive"/>
+                                                    </a>
                                                 </div>
                                                 <div className="instructions-additionally-text">
-                                                    <a href="#">Экспертное заключение по испытаниям</a>
+                                                    <a href="zakluchenie-po-ispytaniyam-dpk-deckline.pdf">Экспертное
+                                                        заключение по испытаниям</a>
                                                 </div>
                                             </div>
                                         </Col>

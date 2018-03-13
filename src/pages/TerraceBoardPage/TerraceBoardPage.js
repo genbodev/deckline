@@ -151,13 +151,13 @@ class TerraceBoardPage extends Component {
                                         <Col sm={4}>
                                             <div className="terrace-board-products-image-text-wrapper">
                                                 <div>
-                                                    <Link href="/">
+                                                    <Link to="#">
                                                         <img src={ProductImage01} alt="product-01"
                                                              className="img-responsive"/>
                                                     </Link>
                                                 </div>
                                                 <div className="terrace-board-products-text">
-                                                    <Link href="/">
+                                                    <Link to="#">
                                                         Уголок завершающий (4 цвета) 43х43х3000мм
                                                     </Link>
                                                 </div>
@@ -166,13 +166,13 @@ class TerraceBoardPage extends Component {
                                         <Col sm={4}>
                                             <div className="terrace-board-products-image-text-wrapper">
                                                 <div>
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         <img src={ProductImage02} alt="product-02"
                                                              className="img-responsive"/>
                                                     </Link>
                                                 </div>
                                                 <div className="terrace-board-products-text">
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         Заглушка торцевая (4 цвета) 17х23х140 мм
                                                     </Link>
                                                 </div>
@@ -181,13 +181,13 @@ class TerraceBoardPage extends Component {
                                         <Col sm={4}>
                                             <div className="terrace-board-products-image-text-wrapper">
                                                 <div>
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         <img src={ProductImage03} alt="product-03"
                                                              className="img-responsive"/>
                                                     </Link>
                                                 </div>
                                                 <div className="terrace-board-products-text">
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         Универсальная доска (4 цвета) 10х140х3000 мм
                                                     </Link>
                                                 </div>
@@ -198,13 +198,13 @@ class TerraceBoardPage extends Component {
                                         <Col sm={4}>
                                             <div className="terrace-board-products-image-text-wrapper">
                                                 <div>
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         <img src={ProductImage04} alt="product-04"
                                                              className="img-responsive"/>
                                                     </Link>
                                                 </div>
                                                 <div className="terrace-board-products-text">
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         Кляймер металлический (зазор 5мм) 9х27х40мм
                                                     </Link>
                                                 </div>
@@ -213,13 +213,13 @@ class TerraceBoardPage extends Component {
                                         <Col sm={4}>
                                             <div className="terrace-board-products-image-text-wrapper">
                                                 <div>
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         <img src={ProductImage05} alt="product-05"
                                                              className="img-responsive"/>
                                                     </Link>
                                                 </div>
                                                 <div className="terrace-board-products-text">
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         Кляймер стартовый металлический 9х15х28мм
                                                     </Link>
                                                 </div>
@@ -228,13 +228,13 @@ class TerraceBoardPage extends Component {
                                         <Col sm={4}>
                                             <div className="terrace-board-products-image-text-wrapper">
                                                 <div>
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         <img src={ProductImage06} alt="product-06"
                                                              className="img-responsive"/>
                                                     </Link>
                                                 </div>
                                                 <div className="terrace-board-products-text">
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         Кляймер пластиковый (зазор 5мм) 9х17х40мм
                                                     </Link>
                                                 </div>
@@ -245,13 +245,13 @@ class TerraceBoardPage extends Component {
                                         <Col sm={4}>
                                             <div className="terrace-board-products-image-text-wrapper">
                                                 <div>
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         <img src={ProductImage07} alt="product-07"
                                                              className="img-responsive"/>
                                                     </Link>
                                                 </div>
                                                 <div className="terrace-board-products-text">
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         Лага ДПК 30х40х3000 мм.
                                                     </Link>
                                                 </div>
@@ -260,13 +260,13 @@ class TerraceBoardPage extends Component {
                                         <Col sm={4}>
                                             <div className="terrace-board-products-image-text-wrapper">
                                                 <div>
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         <img src={ProductImage08} alt="product-08"
                                                              className="img-responsive"/>
                                                     </Link>
                                                 </div>
                                                 <div className="terrace-board-products-text">
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         Лага алюминивая 28х37х3000 мм.
                                                     </Link>
                                                 </div>
@@ -296,9 +296,9 @@ class TerraceBoardPage extends Component {
                                                 </div>
                                                 <div className="terrace-board-have-questions-download"><i
                                                     className="fas fa-download"/>
-                                                    <Link href="#" className="terrace-board-have-questions-link">
+                                                    <a href="katalog.pdf" className="terrace-board-have-questions-link">
                                                         Скачать каталог продукции
-                                                    </Link>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </Col>
@@ -307,11 +307,11 @@ class TerraceBoardPage extends Component {
                                             <div className="terrace-board-have-questions-buttons-wrapper">
                                                 <div className="terrace-board-have-questions-button">
                                                     <i className="far fa-address-card"/>
-                                                    <Link href="/contacts">Контакты</Link>
+                                                    <Link to="/contacts">Контакты</Link>
                                                 </div>
                                                 <div className="terrace-board-have-questions-button">
                                                     <i className="fas fa-briefcase"/>
-                                                    <Link href="/cooperation">Оптовикам</Link>
+                                                    <Link to="/cooperation">Оптовикам</Link>
                                                 </div>
                                             </div>
                                         </Col>
@@ -319,11 +319,11 @@ class TerraceBoardPage extends Component {
                                             <div className="terrace-board-have-questions-buttons-wrapper">
                                                 <div className="terrace-board-have-questions-button">
                                                     <i className="fas fa-car"/>
-                                                    <Link href="/delivery">Доставка по РФ</Link>
+                                                    <Link to="/delivery">Доставка по РФ</Link>
                                                 </div>
                                                 <div className="terrace-board-have-questions-button">
                                                     <i className="far far fa-folder"/>
-                                                    <Link href="/instructions">Монтажные схемы</Link>
+                                                    <Link to="/instructions">Монтажные схемы</Link>
                                                 </div>
                                             </div>
                                         </Col>
@@ -418,37 +418,37 @@ class TerraceBoardPage extends Component {
                                             <h1>Применение</h1>
                                             <div className="terrace-board-description-applying">
                                                 <div className="terrace-board-description-applying-image">
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         <img src={ApplyingBenchImage} alt="applying-bench"
                                                              className="img-responsive"/>
                                                     </Link>
                                                 </div>
                                                 <div className="terrace-board-description-applying-image">
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         <img src={ApplyingPoolImage} alt="applying-pool"
                                                              className="img-responsive"/>
                                                     </Link>
                                                 </div>
                                                 <div className="terrace-board-description-applying-image">
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         <img src={ApplyingFacadeImage} alt="applying-facade"
                                                              className="img-responsive"/>
                                                     </Link>
                                                 </div>
                                                 <div className="terrace-board-description-applying-image">
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         <img src={ApplyingCafeImage} alt="applying-cafe"
                                                              className="img-responsive"/>
                                                     </Link>
                                                 </div>
                                                 <div className="terrace-board-description-applying-image">
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         <img src={ApplyingPierImage} alt="applying-pier"
                                                              className="img-responsive"/>
                                                     </Link>
                                                 </div>
                                                 <div className="terrace-board-description-applying-image">
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         <img src={ApplyingHouseImage} alt="applying-house"
                                                              className="img-responsive"/>
                                                     </Link>

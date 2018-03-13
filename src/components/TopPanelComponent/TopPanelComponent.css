@@ -22,3 +22,5 @@
     font-size: 1.3125rem; }
   #TopPanelComponent #menu-dropdown {
     background-color: #89b836; }
+  #TopPanelComponent .dropdown-menu a:focus {
+    outline: none; }

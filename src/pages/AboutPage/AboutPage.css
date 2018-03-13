@@ -82,3 +82,9 @@
   font-weight: 600;
   margin-right: 20px;
   font-size: 1.25rem; }
+
+@media only screen and (max-width: 768px) {
+  #AboutPage .about-history-date-text-image-border {
+    display: none; }
+  #AboutPage .about-history-date-text-border {
+    margin: 0; } }

@@ -203,13 +203,13 @@ class TerraceBoardPage extends Component {
                                         <Col sm={4}>
                                             <div className="thermo-board-products-image-text-wrapper">
                                                 <div>
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         <img src={ProductImage01} alt="product-01"
                                                              className="img-responsive"/>
                                                     </Link>
                                                 </div>
                                                 <div className="thermo-board-products-text">
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         Косой планкен (фасадная доска)
                                                     </Link>
                                                 </div>
@@ -218,13 +218,13 @@ class TerraceBoardPage extends Component {
                                         <Col sm={4}>
                                             <div className="thermo-board-products-image-text-wrapper">
                                                 <div>
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         <img src={ProductImage02} alt="product-02"
                                                              className="img-responsive"/>
                                                     </Link>
                                                 </div>
                                                 <div className="thermo-board-products-text">
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         Террасная доска Ясень экстра
                                                     </Link>
                                                 </div>
@@ -233,13 +233,13 @@ class TerraceBoardPage extends Component {
                                         <Col sm={4}>
                                             <div className="thermo-board-products-image-text-wrapper">
                                                 <div>
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         <img src={ProductImage03} alt="product-03"
                                                              className="img-responsive"/>
                                                     </Link>
                                                 </div>
                                                 <div className="thermo-board-products-text">
-                                                    <Link href="#">
+                                                    <Link to="#">
                                                         Крепеж змейка (зазор 6 мм)
                                                     </Link>
                                                 </div>
