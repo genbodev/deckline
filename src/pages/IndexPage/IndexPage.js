@@ -11,6 +11,7 @@ import Benefits from './Benefits/Benefits';
 import Assortment from './Assortment/Assortment';
 import Certificates from './Certificates/Certificates';
 import Partners from './Partners/Partners';
+import PartnersInfo from './PartnersInfo/PartnersInfo';
 import TopPanelComponent from '../../components/TopPanelComponent/TopPanelComponent';
 import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
@@ -37,6 +38,7 @@ class IndexPage extends Component {
                                 <Assortment/>
                                 <Certificates/>
                                 <Partners/>
+                                <PartnersInfo/>
                             </Fragment>
                         </StickyContainer>
                     </div>
