@@ -3,6 +3,12 @@
   top: 50%;
   font-size: 2.1875rem;
   color: #060606; }
+  @media only screen and (max-width: 768px) {
+    #MainCarousel .fa-caret-square-left, #MainCarousel .fa-caret-square-right {
+      display: none; } }
+
+#MainCarousel .fa-caret-square-left {
+  transform: translateX(-50%); }
 
 #MainCarousel .carousel-indicators li {
   width: 25px;

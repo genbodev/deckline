@@ -4,10 +4,16 @@
 
 #MainCarousel {
   .fa-caret-square-left, .fa-caret-square-right {
+    @include small() {
+      display: none;
+    }
     position: absolute;
     top: 50%;
     @include font-size(35);
     color: $cod-gray;
+  }
+  .fa-caret-square-left {
+    transform: translateX(-50%);
   }
   .carousel-indicators {
     li {

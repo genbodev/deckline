@@ -2,6 +2,11 @@
 @import '../../../mixins';
 @import '../../../media-queries';
 
+@include medium() {
+  #Partners {
+    display: none;
+  }
+}
 #Partners {
   .item {
     max-height: 325px;
