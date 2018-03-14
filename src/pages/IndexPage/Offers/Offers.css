@@ -1,0 +1,16 @@
+#Offers {
+  padding-top: 40px; }
+  #Offers .offers-row {
+    min-height: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  #Offers .offers-btn {
+    padding: 10px 10px;
+    font-size: 1.125rem;
+    font-weight: 500;
+    background-color: #89b836;
+    color: #fff;
+    transition: 0.35s background-color linear; }
+    #Offers .offers-btn:hover {
+      background-color: #6c912b; }

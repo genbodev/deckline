@@ -1,0 +1,24 @@
+@import '../../../colors';
+@import '../../../mixins';
+@import '../../../media-queries';
+
+#Offers {
+  padding-top: 40px;
+  .offers-row {
+    min-height: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .offers-btn {
+    padding: 10px 10px;
+    @include font-size(18);
+    font-weight: 500;
+    background-color: $sushi1;
+    color: #fff;
+    transition: 0.35s background-color linear;
+    &:hover {
+      background-color: $wasabi;
+    }
+  }
+}
