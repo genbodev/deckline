@@ -1,6 +1,8 @@
-import React, { Component, Fragment} from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { StickyContainer } from 'react-sticky';
+import { Scrollbars } from 'react-custom-scrollbars';
+import Loader from 'react-loader-spinner';
 
 import './IndexPage.css';
 
@@ -17,14 +19,30 @@ import TopPanelComponent from '../../components/TopPanelComponent/TopPanelCompon
 import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
 import Footer from '../../components/FooterComponent/FooterComponent';
+import ScrollTop from '../../components/ScrollTop/ScrollTop';
+
 
 class IndexPage extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            loading: true
+        };
+    }
+
+    loadingHandler() {
+        setTimeout(() => {
+            this.setState({loading: false});
+        }, 3000);
+    }
+
     componentDidMount() {
+        this.loadingHandler();
     }
 
     render() {
-
-        if (true) {
+        const {loading} = this.state;
+        if (!loading) {
             return (
                 <div id="IndexPage" className="wrapper">
                     <div className="content">
@@ -41,6 +59,7 @@ class IndexPage extends Component {
                                 <Partners/>
                                 <PartnersInfo/>
                                 <Offers/>
+                                <ScrollTop/>
                             </Fragment>
                         </StickyContainer>
                     </div>
@@ -51,7 +70,9 @@ class IndexPage extends Component {
             );
         } else {
             return (
-                <div>Loading...</div>
+                <div id="Loader">
+                    <Loader type="Circles" color="#6c912b" height={80} width={80}/>
+                </div>
             );
         }
     }

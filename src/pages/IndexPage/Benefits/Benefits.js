@@ -35,7 +35,7 @@ class Benefits extends Component {
                 {icon: <i className="fas fa-coffee"></i>, number: 3800, text: 'Довольных клиентов'},
                 {icon: <i className="fas fa-chart-bar"></i>, number: 420, text: 'Обращений по рекомендации'}
             ],
-            numberAnimationDuration : 500000
+            numberAnimationDuration : 5000
         };
     }
 

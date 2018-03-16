@@ -1,0 +1,16 @@
+@import '../../colors';
+@import '../../mixins';
+@import '../../media-queries';
+
+#Scroll-to-top {
+  text-align: center;
+  color: $wasabi;
+  .scroll-icon {
+    @include font-size(30);
+  }
+  .scroll-text {
+    text-transform: uppercase;
+    @include font-size(14);
+    font-weight: 700;
+  }
+}

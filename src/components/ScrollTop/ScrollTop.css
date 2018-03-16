@@ -1,0 +1,9 @@
+#Scroll-to-top {
+  text-align: center;
+  color: #6c912b; }
+  #Scroll-to-top .scroll-icon {
+    font-size: 1.875rem; }
+  #Scroll-to-top .scroll-text {
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    font-weight: 700; }
