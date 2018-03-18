@@ -1,7 +1,7 @@
 import CONFIG from '../config';
 const {HOST, REST_API_URL, POSTS_PER_PAGE} = CONFIG;
 
-export function getPostsData(wp) {
+export function getPostsData() {
     return {
         type: 'GET_POSTS_DATA',
         payload: fetch(`${HOST}${REST_API_URL}posts?per_page=${POSTS_PER_PAGE}`)

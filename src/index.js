@@ -44,7 +44,7 @@ store.dispatch(getSettingsData(wp));
 store.dispatch(getAdminData(wp));
 store.dispatch(getCategoriesData(wp));
 store.dispatch(getPagesData(wp));
-store.dispatch(getPostsData(wp));
+store.dispatch(getPostsData());
 
 let wow = new WOW(
     {
