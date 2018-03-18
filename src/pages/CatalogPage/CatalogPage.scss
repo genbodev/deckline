@@ -1,0 +1,32 @@
+@import '../../colors';
+@import '../../mixins';
+
+#CatalogPage {
+  .vertical-menu {
+
+  }
+  .vertical-menu a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: $boulder;
+  }
+  .vertical-menu a.active {
+    color: $wasabi;
+  }
+  .vertical-menu-title {
+    @include font-size(14);
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 500;
+  }
+  .product-title {
+    text-align: center;
+  }
+  .product-img {
+    text-align: center;
+    img {
+      display: inline-block;
+    }
+  }
+}

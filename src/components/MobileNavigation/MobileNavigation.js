@@ -16,7 +16,7 @@ class MobileNavigation extends Component {
                 {title: 'Террасная доска', slug: '/terrace-board'},
                 {title: 'Термо доска', slug: '/thermo-board'},
                 {title: 'Сотрудничество', slug: '/cooperation'},
-                {title: 'Каталог', slug: '/catalog'},
+                {title: 'Каталог', slug: '/catalog/laga-alyuminivaya?id=174'},
             ],
             mainMenuRefs: [
                 {title: 'О нас', slug: '/about'},

@@ -1,0 +1,22 @@
+#CatalogPage .vertical-menu a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: #777777; }
+
+#CatalogPage .vertical-menu a.active {
+  color: #6c912b; }
+
+#CatalogPage .vertical-menu-title {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 500; }
+
+#CatalogPage .product-title {
+  text-align: center; }
+
+#CatalogPage .product-img {
+  text-align: center; }
+  #CatalogPage .product-img img {
+    display: inline-block; }

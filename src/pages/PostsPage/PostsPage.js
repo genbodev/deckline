@@ -34,7 +34,7 @@ class PostsPage extends Component {
 const mapStateToProps = (state) => {
     return {
         admin: state.admin,
-        posts: state.posts
+        posts: state.posts.regular
     }
 };
 

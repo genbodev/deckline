@@ -1,17 +1,38 @@
-//import CONFIG from '../config';
+import CONFIG from '../config';
 
-//const { CATEGORIES } = CONFIG;
+const {CATEGORIES} = CONFIG;
+const {regularPosts, productPosts, thermoBoardPosts, terraceBoardPosts} = CATEGORIES;
 
-function sortPostsByCategory(data = []) {
-    return data;
-}
+const sortPostsByCategoryId = (data = [], categotyId = regularPosts.id) => {
+    if (data && data.length) {
+        let posts = [];
+        data.map((post) => {
+            let isCategoryExists = post.categories.find((category) => {
+                if (category === categotyId) return true;
+                return false;
+            });
+
+            if (typeof isCategoryExists === 'number') {
+                posts.push(post);
+            }
+            return false;
+        });
+        return posts;
+    } else {
+        return null;
+    }
+};
 
 const postsReducer = (state = null, action) => {
     switch (action.type) {
         case "GET_POSTS_DATA_FULFILLED":
             state = {
                 ...state,
-                data: sortPostsByCategory(action.payload)
+                regular: sortPostsByCategoryId(action.payload),
+                product: sortPostsByCategoryId(action.payload, productPosts.id),
+                thermo: sortPostsByCategoryId(action.payload, thermoBoardPosts.id),
+                terrace: sortPostsByCategoryId(action.payload, terraceBoardPosts.id),
+                isPostsReady: true
             };
             break;
         default:

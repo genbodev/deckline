@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Grid, Col, Button } from 'react-bootstrap';
-import { Link } from 'react-router';
 
 import './Offers.css';
 

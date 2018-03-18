@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { StickyContainer } from 'react-sticky';
-import { Scrollbars } from 'react-custom-scrollbars';
 import Loader from 'react-loader-spinner';
 
 import './IndexPage.css';
