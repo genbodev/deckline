@@ -10,15 +10,11 @@ import MobileNavigation from '../../components/MobileNavigation/MobileNavigation
 import Footer from '../../components/FooterComponent/FooterComponent';
 import { Grid, Row, Col, Button, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import FieldGroup from './FieldGroup/FieldGroup'
-import {
-    ReCaptcha,
-    SITE_KEY,
-    verifyCallback,
-    callback,
-    expiredCallback/*, resetReCaptcha, reCaptchaInstance*/
-} from './ReCaptcha/ReCaptcha'
-/*import GoogleMapComponent from '../../components/GoogleMapComponent/GoogleMapComponent';*/
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import validator from 'validator';
+import CONFIG from "../../config";
+export const { SITE_KEY } = CONFIG;
+export const { HOST } = CONFIG;
 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
@@ -29,7 +25,97 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     </GoogleMap>
 ));
 
+const Recaptcha = require('react-recaptcha');
+
+
+
 class ContactsPage extends Component {
+    static defaultProps = {
+        name: '',
+        email: '',
+        phone: '',
+        comment: ''
+    };
+    state = {
+        name: this.props.name,
+        email: this.props.email,
+        phone: this.props.phone,
+        comment: this.props.comment,
+
+        isNameValid: false,
+        isEmailValid: true,
+        isPhoneValid: false,
+    };
+    handleOnNameChange = (e) => this.onNameChange(e);
+    handleOnEmailChange = (e) => this.onEmailChange(e);
+    handleOnPhoneChange = (e) => this.onPhoneChange(e);
+    handleOnCommentChange = (e) => this.onCommentChange(e);
+
+    handleVerifyCallback = (e) => this.verifyCallback(e);
+    handleCallback = (e) => this.callback(e);
+
+    handleSubmit = (e) => this.submit(e);
+
+    onNameChange(e) {
+        let val = e.target.value;
+        this.setState({name: val, isNameValid: validator.isAlpha(val)});
+    }
+
+    onEmailChange(e) {
+        let val = e.target.value;
+        if (val !== '') {
+            this.setState({email: val, isEmailValid: validator.isEmail(val)});
+        } else {
+            this.setState({email: val, isEmailValid: true});
+        }
+    }
+
+    onPhoneChange(e) {
+        let val = e.target.value;
+        this.setState({phone: val, isPhoneValid: validator.isMobilePhone(val, 'ru-RU')});
+    }
+
+    onCommentChange(e) {
+        let val = e.target.value;
+        this.setState({comment: val});
+    }
+
+    submit(e) {
+        e.preventDefault();
+        if (this.state.isNameValid === true ||
+            this.state.isEmailValid === true ||
+            this.state.isPhoneValid === true) {
+
+            console.log('All fields is valid!');
+
+            let formData = new FormData(e.target);
+
+            fetch(HOST +'wp-content/themes/deckline/backend/sendmail.php', {
+                method: 'post',
+                headers: {
+                    "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+                },
+                body: formData
+            })
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log('Request failed', error);
+                });
+        } else {
+            alert('wrong');
+        }
+    }
+
+    verifyCallback(e) {
+        console.log('verify');
+    }
+
+    callback(e) {
+        console.log('callback');
+    }
+
     render() {
         return (
             <div id="ContactsPage" className="wrapper">
@@ -41,17 +127,13 @@ class ContactsPage extends Component {
                         <Fragment>
                             <div className="contacts-map">
                                 <Grid fluid className="contacts-map-container">
-                                    <Row>
-                                        <Col xs={12}>
-                                            <MyMapComponent
-                                                isMarkerShown
-                                                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHHQXm7Ow8z88XbirQ6glbg3dsLIiYDfw&v=3.exp&libraries=geometry,drawing,places"
-                                                loadingElement={<div style={{height: `100%`}}/>}
-                                                containerElement={<div style={{height: `400px`}}/>}
-                                                mapElement={<div style={{height: `100%`}}/>}
-                                            />
-                                        </Col>
-                                    </Row>
+                                    <MyMapComponent
+                                        isMarkerShown
+                                        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHHQXm7Ow8z88XbirQ6glbg3dsLIiYDfw&v=3.exp&libraries=geometry,drawing,places"
+                                        loadingElement={<div style={{height: `100%`}}/>}
+                                        containerElement={<div style={{height: `400px`}}/>}
+                                        mapElement={<div style={{height: `100%`}}/>}
+                                    />
                                 </Grid>
                             </div>
                             <div className="contacts-form-info">
@@ -60,13 +142,15 @@ class ContactsPage extends Component {
                                         <Col lg={6}>
                                             <div className="contacts-form-wrapper">
                                                 <h1>Обратная <strong>Связь</strong></h1>
-                                                <form id="contact-form">
+                                                <form id="contact-form" onSubmit={this.handleSubmit}>
                                                     <FieldGroup
                                                         id="name"
                                                         type="text"
                                                         label="Как Вас зовут?"
                                                         placeholder="Иван Петрович"
                                                         inputGroupIcon="<i class='far fa-comment'></i>"
+                                                        value={this.state.name}
+                                                        onChange={this.handleOnNameChange}
                                                     />
                                                     <FieldGroup
                                                         id="email"
@@ -74,6 +158,8 @@ class ContactsPage extends Component {
                                                         label="Email"
                                                         placeholder="my@email.com"
                                                         inputGroupIcon="<i class='fas fa-at'></i>"
+                                                        value={this.state.email}
+                                                        onChange={this.handleOnEmailChange}
                                                     />
                                                     <FieldGroup
                                                         id="phone"
@@ -81,31 +167,28 @@ class ContactsPage extends Component {
                                                         label="Контактный телефон"
                                                         placeholder="1234567890"
                                                         inputGroupIcon="<i class='fas fa-phone'></i>"
+                                                        value={this.state.phone}
+                                                        onChange={this.handleOnPhoneChange}
                                                     />
-                                                    <FormGroup controlId="formControlsTextarea">
+                                                    <FormGroup>
                                                         <ControlLabel>Сообщение</ControlLabel>
                                                         <FormControl
-                                                            controlId="comment"
+                                                            id="comment"
                                                             componentClass="textarea"
                                                             placeholder="Как стать Вашим партнером?"
                                                             rows="10"
+                                                            value={this.state.comment}
+                                                            onChange={this.handleOnCommentChange}
                                                         />
                                                     </FormGroup>
-                                                    <ReCaptcha
-                                                        /*ref={e => reCaptchaInstance = e}*/
+                                                    <Recaptcha
                                                         sitekey={SITE_KEY}
-                                                        size="compact"
                                                         render="explicit"
-                                                        verifyCallback={verifyCallback}
-                                                        onloadCallback={callback}
-                                                        expiredCallback={expiredCallback}
+                                                        verifyCallback={this.handleVerifyCallback}
+                                                        onloadCallback={this.handleCallback}
                                                     />
                                                     <br/>
-                                                    <button
-                                                        /*onClick={resetReCaptcha}*/
-                                                    >
-                                                        Reset
-                                                    </button>
+
                                                     <Button bsStyle="success" type="submit">Отправить</Button>
                                                 </form>
                                             </div>
@@ -127,7 +210,7 @@ class ContactsPage extends Component {
                                                     <h3 className="header-accent"><strong>Офис</strong></h3>
                                                     <div className="contacts-info-office-icon-text-wrapper">
                                                         <div className="contacts-info-office-icon">
-                                                            <i className="fas fa-map-marker-alt"></i>
+                                                            <i className="fas fa-map-marker-alt"/>
                                                         </div>
                                                         <div className="contacts-info-office-text">
                                                             <p>
@@ -138,7 +221,7 @@ class ContactsPage extends Component {
                                                     </div>
                                                     <div className="contacts-info-office-icon-text-wrapper">
                                                         <div className="contacts-info-office-icon">
-                                                            <i className="fas fa-phone"></i>
+                                                            <i className="fas fa-phone"/>
                                                         </div>
                                                         <div className="contacts-info-office-text">
                                                             <p>
@@ -148,7 +231,7 @@ class ContactsPage extends Component {
                                                     </div>
                                                     <div className="contacts-info-office-icon-text-wrapper">
                                                         <div className="contacts-info-office-icon">
-                                                            <i className="fas fa-phone"></i>
+                                                            <i className="fas fa-phone"/>
                                                         </div>
                                                         <div className="contacts-info-office-text">
                                                             <p>
@@ -158,7 +241,7 @@ class ContactsPage extends Component {
                                                     </div>
                                                     <div className="contacts-info-office-icon-text-wrapper">
                                                         <div className="contacts-info-office-icon">
-                                                            <i className="fas fa-envelope"></i>
+                                                            <i className="fas fa-envelope"/>
                                                         </div>
                                                         <div className="contacts-info-office-text">
                                                             <p>
@@ -173,7 +256,7 @@ class ContactsPage extends Component {
                                                     <h3 className="header-accent">Рабочее <strong>Время</strong></h3>
                                                     <div className="contacts-info-time-icon-text-wrapper">
                                                         <div className="contacts-info-time-icon">
-                                                            <i className="fas fa-clock"></i>
+                                                            <i className="fas fa-clock"/>
                                                         </div>
                                                         <div className="contacts-info-time-text">
                                                             <p>
@@ -183,7 +266,7 @@ class ContactsPage extends Component {
                                                     </div>
                                                     <div className="contacts-info-time-icon-text-wrapper">
                                                         <div className="contacts-info-time-icon">
-                                                            <i className="fas fa-clock"></i>
+                                                            <i className="fas fa-clock"/>
                                                         </div>
                                                         <div className="contacts-info-time-text">
                                                             <p>
