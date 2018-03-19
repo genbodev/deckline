@@ -10,6 +10,7 @@ import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
 import Footer from '../../components/FooterComponent/FooterComponent';
 import { Grid, Row, Col, Clearfix } from 'react-bootstrap';
+import ScrollTop from '../../components/ScrollTop/ScrollTop';
 
 import PageCarousel from './PageCarousel/PageCarousel';
 
@@ -461,6 +462,7 @@ class TerraceBoardPage extends Component {
                             <div className="terrace-board-certificates">
                                 <Certificates/>
                             </div>
+                            <ScrollTop/>
                         </Fragment>
                     </StickyContainer>
                 </div>

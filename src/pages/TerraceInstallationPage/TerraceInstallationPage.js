@@ -9,6 +9,7 @@ import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
 import Footer from '../../components/FooterComponent/FooterComponent';
 import { Grid, Row, Col } from 'react-bootstrap';
+import ScrollTop from '../../components/ScrollTop/ScrollTop';
 
 import Picture01 from './terrasnaya-doska-montag-01.jpg';
 import Picture02 from './terrasnaya-doska-montag-02.jpg';
@@ -331,6 +332,7 @@ class TerraceInstallationPage extends Component {
                                     </Row>
                                 </Grid>
                             </div>
+                            <ScrollTop/>
                         </Fragment>
                     </StickyContainer>
                 </div>

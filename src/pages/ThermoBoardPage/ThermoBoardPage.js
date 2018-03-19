@@ -10,6 +10,7 @@ import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
 import Footer from '../../components/FooterComponent/FooterComponent';
 import { Grid, Row, Col, Clearfix, Button } from 'react-bootstrap';
+import ScrollTop from '../../components/ScrollTop/ScrollTop';
 
 import BannerImage01 from './termodoska-01.jpg';
 
@@ -455,6 +456,7 @@ class TerraceBoardPage extends Component {
                                     </Row>
                                 </Grid>
                             </div>
+                            <ScrollTop/>
                         </Fragment>
                     </StickyContainer>
                 </div>

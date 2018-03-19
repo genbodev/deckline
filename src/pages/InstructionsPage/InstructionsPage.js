@@ -10,6 +10,7 @@ import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
 import Footer from '../../components/FooterComponent/FooterComponent';
 import { Grid, Row, Col } from 'react-bootstrap';
+import ScrollTop from '../../components/ScrollTop/ScrollTop';
 
 import WebInstructionImage from './web-ico.jpg';
 import OfflineInstructionImage from './pdf-ico.jpg';
@@ -122,6 +123,7 @@ class InstructionsPage extends Component {
                                     </Row>
                                 </Grid>
                             </div>
+                            <ScrollTop/>
                         </Fragment>
                     </StickyContainer>
                 </div>

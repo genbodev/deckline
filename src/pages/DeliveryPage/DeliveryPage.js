@@ -9,6 +9,7 @@ import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
 import Footer from '../../components/FooterComponent/FooterComponent';
 import { Grid, Row, Col } from 'react-bootstrap';
+import ScrollTop from '../../components/ScrollTop/ScrollTop';
 
 import DeliveryImage from './dostavka.jpg';
 import DeliveryServiceImage1 from './logo-ratek.jpg';
@@ -90,6 +91,7 @@ class DeliveryPage extends Component {
                                     </Row>
                                 </Grid>
                             </div>
+                            <ScrollTop/>
                         </Fragment>
                     </StickyContainer>
                 </div>

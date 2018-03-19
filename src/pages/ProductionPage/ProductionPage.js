@@ -10,6 +10,7 @@ import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
 import Footer from '../../components/FooterComponent/FooterComponent';
 import { Grid, Row, Col } from 'react-bootstrap';
+import ScrollTop from '../../components/ScrollTop/ScrollTop';
 
 import ProductImage01 from './product-01.jpg';
 import ProductImage02 from './product-02.jpg';
@@ -192,6 +193,7 @@ class ProductionPage extends Component {
                                     </Row>
                                 </Grid>
                             </div>
+                            <ScrollTop/>
                         </Fragment>
                     </StickyContainer>
                 </div>

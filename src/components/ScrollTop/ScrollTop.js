@@ -7,7 +7,7 @@ class ScrollTop extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            scrollText : 'На верх',
+            scrollText : 'Наверх',
             scrollOffset : 160
         };
     }

@@ -10,6 +10,7 @@ import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
 import Footer from '../../components/FooterComponent/FooterComponent';
 import { Grid, Row, Col, Button } from 'react-bootstrap';
+import ScrollTop from '../../components/ScrollTop/ScrollTop';
 
 //import deliveryImage from './dostavka.jpg';
 
@@ -51,7 +52,8 @@ class AboutPage extends Component {
                                                 ремонт и строительство для наших будущих клиентов. Это должен был быть
                                                 не просто современный красивый материал, но качественный и долговечный.
                                                 Именно поэтому наше внимание привлек такой материал как <Link
-                                                to="/terrace-board">ДПК</Link> (древесно-полимерный композит). Изучив все свойства и
+                                                to="/terrace-board">ДПК</Link> (древесно-полимерный композит). Изучив
+                                                все свойства и
                                                 характеристики
                                                 данного материала, было принято решение о запуске собственного
                                                 производства. В то время в России о таком материале знали лишь единицы,
@@ -144,8 +146,10 @@ class AboutPage extends Component {
                                                         <div className="about-history-text">
                                                             <p>
                                                                 В 2014 году количество дилеров увеличивается вдвое. Наша
-                                                                компания является единственным производителем на рынке ДПК,
-                                                                кто изготавливает ограждения с нанесением текстуры дерева. В
+                                                                компания является единственным производителем на рынке
+                                                                ДПК,
+                                                                кто изготавливает ограждения с нанесением текстуры
+                                                                дерева. В
                                                                 этом же году происходит открытие официального
                                                                 представительства в Москве.
                                                             </p>
@@ -182,7 +186,8 @@ class AboutPage extends Component {
                                                         <div className="about-history-text">
                                                             <p>
                                                                 В 2011 году DECKLINE GROUP
-                                                                освоила поставки и реализацию материала на российский рынок.
+                                                                освоила поставки и реализацию материала на российский
+                                                                рынок.
                                                             </p>
                                                         </div>
                                                     </div>
@@ -199,7 +204,8 @@ class AboutPage extends Component {
                                                         <div className="about-history-text">
                                                             <p>
                                                                 В 2010 году производственные
-                                                                мощности были увеличены и компания вышла на второй уровень с
+                                                                мощности были увеличены и компания вышла на второй
+                                                                уровень с
                                                                 собственным профилем СИСТЕМЫ ОГРАЖДЕНИЯ И ЗАБОРЫ.
                                                             </p>
                                                         </div>
@@ -217,8 +223,10 @@ class AboutPage extends Component {
                                                         <div className="about-history-text">
                                                             <p>
                                                                 В 2009 году компания DECKLINE
-                                                                GROUP запустила собственное производство в Китае. На первом
-                                                                этапе было успешно освоено производство профилей ТЕРРАСНОЙ
+                                                                GROUP запустила собственное производство в Китае. На
+                                                                первом
+                                                                этапе было успешно освоено производство профилей
+                                                                ТЕРРАСНОЙ
                                                                 СИСТЕМЫ.
                                                             </p>
                                                         </div>
@@ -252,6 +260,7 @@ class AboutPage extends Component {
                                     </Row>
                                 </Grid>
                             </div>
+                            <ScrollTop/>
                         </Fragment>
                     </StickyContainer>
                 </div>

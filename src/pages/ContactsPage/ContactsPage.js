@@ -9,6 +9,7 @@ import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
 import Footer from '../../components/FooterComponent/FooterComponent';
 import { Grid, Row, Col, Button, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
+import ScrollTop from '../../components/ScrollTop/ScrollTop';
 import FieldGroup from './FieldGroup/FieldGroup'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 import validator from 'validator';
@@ -298,6 +299,7 @@ class ContactsPage extends Component {
                                     </Row>
                                 </Grid>
                             </div>
+                            <ScrollTop/>
                         </Fragment>
                     </StickyContainer>
                 </div>

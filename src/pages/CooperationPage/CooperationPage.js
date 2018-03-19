@@ -9,6 +9,8 @@ import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
 import Footer from '../../components/FooterComponent/FooterComponent';
 import { Grid, Row, Col } from 'react-bootstrap';
+import ScrollTop from '../../components/ScrollTop/ScrollTop';
+
 import CooperationImage from './partnerka.jpg';
 
 class CooperationPage extends Component {
@@ -75,6 +77,7 @@ class CooperationPage extends Component {
                                     </Row>
                                 </Grid>
                             </div>
+                            <ScrollTop/>
                         </Fragment>
                     </StickyContainer>
                 </div>
