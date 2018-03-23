@@ -12,7 +12,8 @@ import { Grid, Row, Col, Button, FormGroup, ControlLabel, FormControl } from 're
 import ScrollTop from '../../components/ScrollTop/ScrollTop';
 import FieldGroup from './FieldGroup/FieldGroup'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
-import validator from 'validator';
+import Inputmask from "inputmask";
+import swal from 'sweetalert2'
 import CONFIG from "../../config";
 export const { SITE_KEY } = CONFIG;
 export const { HOST } = CONFIG;
@@ -27,8 +28,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
 ));
 
 const Recaptcha = require('react-recaptcha');
-
-
+const validator = require('validator');
 
 class ContactsPage extends Component {
     static defaultProps = {
@@ -73,7 +73,8 @@ class ContactsPage extends Component {
 
     onPhoneChange(e) {
         let val = e.target.value;
-        this.setState({phone: val, isPhoneValid: validator.isMobilePhone(val, 'ru-RU')});
+        let phone = parseInt(val.replace(/\D+/g,''), 10);
+        this.setState({phone: phone, isPhoneValid: validator.isMobilePhone(phone + '', 'ru-RU')});
     }
 
     onCommentChange(e) {
@@ -83,8 +84,9 @@ class ContactsPage extends Component {
 
     submit(e) {
         e.preventDefault();
-        if (this.state.isNameValid === true ||
-            this.state.isEmailValid === true ||
+        debugger;
+        if (this.state.isNameValid === true &&
+            this.state.isEmailValid === true &&
             this.state.isPhoneValid === true) {
 
             console.log('All fields is valid!');
@@ -105,7 +107,22 @@ class ContactsPage extends Component {
                     console.log('Request failed', error);
                 });
         } else {
-            alert('wrong');
+            let msg = '';
+            if (this.state.isNameValid === false) {
+                msg = 'Кажется Вы не ввели Ваше имя...';
+            }
+            if (this.state.isEmailValid === false) {
+                msg = 'Кажется Вы не правильно ввели E-mail';
+            }
+            if (this.state.isPhoneValid === false) {
+                msg = 'Кажется Вы не правильно ввели номер телефона';
+            }
+            swal({
+                type: 'error',
+                title: 'Ошибка',
+                text: 'Что-то пошло не так!',
+                footer: msg,
+            })
         }
     }
 
@@ -115,6 +132,10 @@ class ContactsPage extends Component {
 
     callback(e) {
         console.log('callback');
+    }
+
+    componentDidMount() {
+        Inputmask({'mask': '(999) 999-99-99'}).mask(document.getElementById('phone'));
     }
 
     render() {
@@ -155,7 +176,7 @@ class ContactsPage extends Component {
                                                     />
                                                     <FieldGroup
                                                         id="email"
-                                                        type="email"
+                                                        type="text"
                                                         label="Email"
                                                         placeholder="my@email.com"
                                                         inputGroupIcon="<i class='fas fa-at'></i>"
