@@ -17,12 +17,12 @@ import { getPostsData } from './actions/postsActions';
 import CONFIG from './config';
 
 import IndexPage from './pages/IndexPage/IndexPage';
-import AboutPage from './pages/AboutPage/AboutPage';
+//import AboutPage from './pages/AboutPage/AboutPage';
 import CatalogPage from './pages/CatalogPage/CatalogPage';
 import ContactsPage from './pages/ContactsPage/ContactsPage';
 //import CooperationPage from './pages/CooperationPage/CooperationPage';
 import DeliveryPage from './pages/DeliveryPage/DeliveryPage';
-import InstructionsPage from './pages/InstructionsPage/InstructionsPage';
+//import InstructionsPage from './pages/InstructionsPage/InstructionsPage';
 import PostsPage from './pages/PostsPage/PostsPage';
 import ProductionPage from './pages/ProductionPage/ProductionPage';
 import TerraceBoardPage from './pages/TerraceBoardPage/TerraceBoardPage';
@@ -67,12 +67,12 @@ ReactDOM.render(
     <Provider store={store}>
         <Router history={history}>
             <Route path='/' component={IndexPage}/>
-            <Route path='/about' component={AboutPage}/>
+            {/*<Route path='/about' component={AboutPage}/>*/}
             <Route path='/catalog/:product' component={CatalogPage}/>
             <Route path='/contacts' component={ContactsPage}/>
             {/*<Route path='/cooperation' component={CooperationPage}/>*/}
             <Route path='/delivery' component={DeliveryPage}/>
-            <Route path='/instructions' component={InstructionsPage}/>
+            {/*<Route path='/instructions' component={InstructionsPage}/>*/}
             <Route path='/posts' component={PostsPage}/>
             <Route path='/production' component={ProductionPage}/>
             <Route path='/terrace-board' component={TerraceBoardPage}/>

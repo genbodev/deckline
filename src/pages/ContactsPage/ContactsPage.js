@@ -246,8 +246,7 @@ class ContactsPage extends Component {
                                                         </div>
                                                         <div className="contacts-info-office-text">
                                                             <p>
-                                                                <strong>Адрес: </strong>665458 г. Усолье-Сибирское, ул.
-                                                                Шевченко 12
+                                                                <strong>Адрес: </strong>Иркутская обл. г.Усолье-Сибирское, район Усолье-Сибирского Химфарм завода
                                                             </p>
                                                         </div>
                                                     </div>
@@ -311,8 +310,7 @@ class ContactsPage extends Component {
                                                 <div className="contacts-info-requisites">
                                                     <h3 className="header-accent"><strong>Реквизиты</strong></h3>
                                                     <p>ООО "СибЛесСтрой"</p>
-                                                    <p><strong>Адрес: </strong>665458 г. Усолье-Сибирское, ул. Шевченко
-                                                        12
+                                                    <p><strong>Адрес: </strong>Иркутская обл. г.Усолье-Сибирское, район Усолье-Сибирского Химфарм завода
                                                     </p>
                                                     <br/>
                                                     <p><strong>ИНН: </strong>3819018599</p>

@@ -22,7 +22,7 @@ class FooterComponent extends Component {
                                     </div>
                                     <div className="footer-first-text">
                                         <p>
-                                            <strong>Адрес: </strong>665458 г. Усолье-Сибирское, ул. Шевченко 12
+                                            <strong>Адрес: </strong>Иркутская обл. г.Усолье-Сибирское, район Усолье-Сибирского Химфарм завода
                                         </p>
                                     </div>
                                 </div>
