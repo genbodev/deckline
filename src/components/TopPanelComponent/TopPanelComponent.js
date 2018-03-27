@@ -16,7 +16,7 @@ class TopPanelComponent extends Component {
                 {title: 'Производство', slug: '/production'}
             ],
             contactsTitle: 'Контакты',
-            phone: '8 800 1000 575'
+            phone: '(39543) 52953, 52952'
         };
     }
 

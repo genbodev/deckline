@@ -1,0 +1,40 @@
+@import '../../../colors';
+@import '../../../mixins';
+@import '../../../media-queries';
+
+#PageCarousel {
+  .carousel-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .fa-caret-square-left, .fa-caret-square-right {
+    position: absolute;
+    top: 50%;
+    @include font-size(35);
+    color: $cod-gray;
+  }
+  .carousel-indicators {
+    bottom: -10px;
+    li {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: $cod-gray;
+    }
+    .active {
+      background-color: $wasabi;
+    }
+  }
+  .carousel-control {
+    background: none;
+  }
+  .carousel-caption {}
+  @include small() {
+    .item {
+      .carousel-image-wrapper {
+        min-height: 350px;
+      }
+    }
+  }
+}

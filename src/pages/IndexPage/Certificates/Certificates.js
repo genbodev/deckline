@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
-import { Grid, Col, Row, Tabs, Tab } from 'react-bootstrap';
-import Lightbox from 'react-image-lightbox';
+import { Grid, Col, Row /*, Tabs, Tab*/ } from 'react-bootstrap';
+//import Lightbox from 'react-image-lightbox';
 
 import './Certificates.css';
 
-import exam from './001-exam-gren.svg';
-import fire from './002-fire-extinguisher-gren.svg';
-import diploma from './003-diploma-gren.svg';
-import certificate001 from './sootvetstvija-600x865.jpg';
-import certificate002 from './iso-600x865.jpg';
-import certificate003 from './razreshenienasootvetstvie-600x865.jpg';
-import certificate004 from './pozharnyj-600x865.jpg';
-import certificate005 from './ekspertnonzakl1-600x865.jpg';
-import certificate006 from './ekspertnoezakl2-600x865.jpg';
+//import exam from './001-exam-gren.svg';
+//import fire from './002-fire-extinguisher-gren.svg';
+//import diploma from './003-diploma-gren.svg';
+
+//import certificate001 from './sootvetstvija-600x865.jpg';
+//import certificate002 from './iso-600x865.jpg';
+//import certificate003 from './razreshenienasootvetstvie-600x865.jpg';
+//import certificate004 from './pozharnyj-600x865.jpg';
+//import certificate005 from './ekspertnonzakl1-600x865.jpg';
+//import certificate006 from './ekspertnoezakl2-600x865.jpg';
+import certificate007 from './sertif.jpeg';
+import certificate008 from './titul.jpg';
 
 
-const imagesOne = [
+/*const imagesOne = [
     certificate001,
     certificate002,
     certificate003,
@@ -28,15 +31,17 @@ const imagesTwo = [
 const imagesThree = [
     certificate005,
     certificate006
-];
+];*/
 
 class Certificates extends Component {
     constructor(props) {
         super(props);
         this.state = {
             tabsTitle: 'СЕРТИФИКАТЫ',
-            tabsLeadOne: 'Вся наша продукция сертифицирована, а так же имеет пожарные сертификаты.',
-            tabsLeadTwo: 'Мы постоянно проводим испытания, о чем свидетельствует собранные протоколы.',
+            tabsLeadOne: '',
+            tabsLeadTwo: '',
+            //tabsLeadOne: 'Вся наша продукция сертифицирована, а так же имеет пожарные сертификаты.',
+            //tabsLeadTwo: 'Мы постоянно проводим испытания, о чем свидетельствует собранные протоколы.',
             photoIndex: 0,
             photoIndexTwo: 0,
             photoIndexThree: 0,
@@ -50,10 +55,10 @@ class Certificates extends Component {
     }
 
     render() {
-        const {photoIndex, isOpen, photoIndexTwo, isOpenTwo, isOpenThree, photoIndexThree, tabsTitle, tabsLeadOne, tabsLeadTwo} = this.state;
+        //const {photoIndex, isOpen, photoIndexTwo, isOpenTwo, isOpenThree, photoIndexThree, tabsTitle, tabsLeadOne, tabsLeadTwo} = this.state;
         return (
             <div id="Certificates">
-                <Grid>
+                {/*<Grid>
                     <h2 className="text-center">{tabsTitle}</h2>
                     <p className="text-center tab-p">{tabsLeadOne}</p>
                     <p className="text-center tab-p">{tabsLeadTwo}</p>
@@ -185,6 +190,20 @@ class Certificates extends Component {
                             </div>
                         </Tab>
                     </Tabs>
+                </Grid>*/}
+                <Grid>
+                    <Row>
+                        <Col xs={2}>
+                        </Col>
+                        <Col xs={4}>
+                            <img src={certificate007} alt="certificate-01" className="img-responsive"/>
+                        </Col>
+                        <Col xs={4}>
+                            <img src={certificate008} alt="certificate-08" className="img-responsive"/>
+                        </Col>
+                        <Col xs={2}>
+                        </Col>
+                    </Row>
                 </Grid>
             </div>
         );

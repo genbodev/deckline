@@ -38,19 +38,29 @@
       line-height: 1.2;
       font-weight: 800;
       text-transform: uppercase;
-      color: #fff;
+      color: $god_gray1;
+      text-shadow: 4px 3px 0 #fff, 9px 8px 0 rgba(0,0,0,0.15);
     }
-    @include large(){
+    @include large() {
       h3 {
         @include font-size(32);
       }
     }
     p {
-      @include font-size(18);
+      @include font-size(46);
       line-height: 1.2;
-      font-weight: 300;
-      color: #fff;
+      font-weight: 600;
+      color: $god_gray1;
+      text-shadow: 1px 1px 0 #fff, 9px 8px 0 rgba(0,0,0,0.15);
     }
+    @include large() {
+      p {
+        @include font-size(32);
+      }
+    }
+  }
+  .carousel-control {
+    background-image: none;
   }
   @include small() {
     .item {

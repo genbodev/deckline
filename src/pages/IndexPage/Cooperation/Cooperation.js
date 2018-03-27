@@ -10,7 +10,7 @@ class Cooperation extends Component {
         this.state = {
             textOne: 'Вы ищите себе надежного партнера по поставкам',
             textTwo: 'Древесно-полимерного композита',
-            textThree: 'Древесно-полимерного композита',
+            textThree: 'Опишите свою компанию, и мы пришлем коммерческое предложения для вас.',
             buttonContacts: 'Контакты',
             buttonAbout: 'подробнее о нас.',
             buttonContactsHref: '/contacts',

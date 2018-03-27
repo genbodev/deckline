@@ -4,9 +4,12 @@ import { Carousel } from 'react-bootstrap';
 import './MainCarousel.css';
 
 import banerOne from './baner-gl-002.jpg';
-import banerTwo from './baner-gl-005.jpg';
-import banerThree from './baner-gl-006.jpg';
-import banerFour from './baner-gl-007.jpg';
+import banerTwo from './baner-gl-004.jpg';
+import banerThree from './baner-gl-009.jpg';
+import banerFour from './baner-gl-010.jpg';
+import banerFive from './baner-gl-011.jpg';
+import banerSix from './baner-gl-018.jpg';
+import banerSeven from './baner-gl-019.jpg';
 
 class MainCarousel extends Component {
     constructor(props) {
@@ -15,33 +18,54 @@ class MainCarousel extends Component {
             slideHeight: 500,
             slides: [
                 {
-                    title: 'Террасная доска для бизнеса',
+                    title: 'Изделия из ДПК',
                     image: banerOne,
-                    description: 'Предложение для оптовых покупателей от производителя',
+                    description: 'Собственного производства',
                     href: '/',
                     additionalContent : null
                 },
                 {
-                    title: 'Террасные системы проверенные временем',
+                    title: 'Изделия из ДПК',
                     image: banerTwo,
-                    description: 'Террасная доска DECKLINE на набережной Владивостока',
+                    description: 'Собственного производства',
                     href: '/',
                     additionalContent : null
                 },
                 {
-                    title: 'Терраса, как зона отдыха у воды',
+                    title: 'Изделия из ДПК',
                     image: banerThree,
-                    description: 'Бассейны, пруды, водоемы, набережные - все это прекрасно сочетается с террасной доской.',
+                    description: 'Собственного производства',
                     href: '/',
                     additionalContent : null
                 },
                 {
-                    title: 'Новинка! Террасная доска с глубокой текстурой',
+                    title: 'Изделия из ДПК',
                     image: banerFour,
-                    description: 'Скоро в продаже, стань первым в своем городе',
+                    description: 'Собственного производства',
                     href: '/',
                     additionalContent : null
-                }
+                },
+                {
+                    title: 'Изделия из ДПК',
+                    image: banerFive,
+                    description: 'Собственного производства',
+                    href: '/',
+                    additionalContent : null
+                },
+                {
+                    title: 'Изделия из ДПК',
+                    image: banerSix,
+                    description: 'Собственного производства',
+                    href: '/',
+                    additionalContent : null
+                },
+                {
+                    title: 'Изделия из ДПК',
+                    image: banerSeven,
+                    description: 'Собственного производства',
+                    href: '/',
+                    additionalContent : null
+                },
             ]
         };
     }

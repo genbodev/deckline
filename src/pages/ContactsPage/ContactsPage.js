@@ -15,8 +15,9 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-map
 import Inputmask from "inputmask";
 import swal from 'sweetalert2'
 import CONFIG from "../../config";
-export const { SITE_KEY } = CONFIG;
-export const { HOST } = CONFIG;
+
+export const {SITE_KEY} = CONFIG;
+export const {HOST} = CONFIG;
 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
@@ -59,7 +60,7 @@ class ContactsPage extends Component {
 
     onNameChange(e) {
         let val = e.target.value;
-        this.setState({name: val, isNameValid: validator.isAlpha(val)});
+        this.setState({name: val, isNameValid: validator.isAlpha(val, 'ru-RU')});
     }
 
     onEmailChange(e) {
@@ -73,7 +74,7 @@ class ContactsPage extends Component {
 
     onPhoneChange(e) {
         let val = e.target.value;
-        let phone = parseInt(val.replace(/\D+/g,''), 10);
+        let phone = parseInt(val.replace(/\D+/g, ''), 10);
         this.setState({phone: phone, isPhoneValid: validator.isMobilePhone(phone + '', 'ru-RU')});
     }
 
@@ -91,21 +92,30 @@ class ContactsPage extends Component {
 
             console.log('All fields is valid!');
 
-            let formData = new FormData(e.target);
+            let ajaxurl = '/wp-admin/admin-ajax.php';
+            let request = new Request(ajaxurl + '?action=send_mail', {
+                headers: new Headers({
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                }),
+                method: 'POST',
+                body: JSON.stringify(
+                    {
+                        name: this.state.name,
+                        email: this.state.email,
+                        phone: this.state.phone,
+                        comment: this.state.comment,
+                    }
+                )
+            });
 
-            fetch(HOST +'wp-content/themes/deckline/backend/sendmail.php', {
-                method: 'post',
-                headers: {
-                    "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-                },
-                body: formData
-            })
-                .then(function (response) {
-                    console.log(response);
-                })
-                .catch(function (error) {
-                    console.log('Request failed', error);
-                });
+            fetch(request).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                console.log(data);
+            }).catch(function (error) {
+                console.log('Request failed', error);
+            });
+
         } else {
             let msg = '';
             if (this.state.isNameValid === false) {
@@ -247,7 +257,7 @@ class ContactsPage extends Component {
                                                         </div>
                                                         <div className="contacts-info-office-text">
                                                             <p>
-                                                                <strong>Телефон: </strong>8-902-5-677-789
+                                                                <strong>Телефон: </strong>(39543) 52953, 52952
                                                             </p>
                                                         </div>
                                                     </div>
@@ -257,7 +267,7 @@ class ContactsPage extends Component {
                                                         </div>
                                                         <div className="contacts-info-office-text">
                                                             <p>
-                                                                <strong>Телефон: </strong>+7 (39543) 52-9-52
+                                                                <strong>Телефон: </strong>(39543) 52953, 52952
                                                             </p>
                                                         </div>
                                                     </div>

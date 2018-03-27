@@ -261,10 +261,9 @@ class TerraceBoardPage extends Component {
                                             <div className="thermo-board-have-questions-text-wrapper">
                                                 <div className="thermo-board-have-questions-title">Остались вопросы?
                                                 </div>
-                                                <div className="thermo-board-have-questions-phone">8 902 56 777 89
+                                                <div className="thermo-board-have-questions-phone">(39543) 52953, 52952
                                                 </div>
-                                                <div className="thermo-board-have-questions-time">с 10 до 20 по
-                                                    Владивостоку
+                                                <div className="thermo-board-have-questions-time">с 9:00 до 18:00
                                                 </div>
                                                 <div className="thermo-board-have-questions-download"><i
                                                     className="fas fa-download"/>
@@ -426,7 +425,7 @@ class TerraceBoardPage extends Component {
                                                     </div>
                                                     <div className="thermo-board-buy-office-text">
                                                         <p>
-                                                            <strong>Телефон: </strong>8-902-5-677-789
+                                                            <strong>Телефон: </strong>(39543) 52953, 52952
                                                         </p>
                                                     </div>
                                                 </div>
@@ -436,7 +435,7 @@ class TerraceBoardPage extends Component {
                                                     </div>
                                                     <div className="thermo-board-buy-office-text">
                                                         <p>
-                                                            <strong>Телефон: </strong>+7 (39543) 52-9-52
+                                                            <strong>Телефон: </strong>(39543) 52953, 52952
                                                         </p>
                                                     </div>
                                                 </div>

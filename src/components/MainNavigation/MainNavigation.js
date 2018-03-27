@@ -13,8 +13,8 @@ class MainNavigation extends Component {
             mainMenuItems: [
                 {title: 'Главная', slug: '/'},
                 {title: 'Террасная доска', slug: '/terrace-board'},
-                {title: 'Термо доска', slug: '/thermo-board'},
-                {title: 'Сотрудничество', slug: '/cooperation'},
+                {title: 'Система ограждений', slug: '/fencing-system'},
+                {title: 'Производство', slug: '/production'},
                 {title: 'Каталог', slug: '/catalog/laga-alyuminivaya?id=174'},
             ],
             show: false

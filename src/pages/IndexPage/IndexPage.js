@@ -11,9 +11,9 @@ import Cooperation from './Cooperation/Cooperation';
 import Benefits from './Benefits/Benefits';
 import Assortment from './Assortment/Assortment';
 import Certificates from './Certificates/Certificates';
-import Partners from './Partners/Partners';
-import PartnersInfo from './PartnersInfo/PartnersInfo';
-import Offers from './Offers/Offers';
+//import Partners from './Partners/Partners';
+//import PartnersInfo from './PartnersInfo/PartnersInfo';
+//import Offers from './Offers/Offers';
 import TopPanelComponent from '../../components/TopPanelComponent/TopPanelComponent';
 import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
@@ -55,9 +55,9 @@ class IndexPage extends Component {
                                 <Benefits/>
                                 <Assortment/>
                                 <Certificates/>
-                                <Partners/>
-                                <PartnersInfo/>
-                                <Offers/>
+                                {/*<Partners/>*/}
+                                {/*<PartnersInfo/>*/}
+                                {/*<Offers/>*/}
                                 <ScrollTop/>
                             </Fragment>
                         </StickyContainer>

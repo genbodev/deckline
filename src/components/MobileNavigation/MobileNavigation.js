@@ -14,8 +14,8 @@ class MobileNavigation extends Component {
             mainMenuItems: [
                 {title: 'Главная', slug: '/'},
                 {title: 'Террасная доска', slug: '/terrace-board'},
-                {title: 'Термо доска', slug: '/thermo-board'},
-                {title: 'Сотрудничество', slug: '/cooperation'},
+                {title: 'Система ограждений', slug: '/fencing-system'},
+                {title: 'Производство', slug: '/production'},
                 {title: 'Каталог', slug: '/catalog/laga-alyuminivaya?id=174'},
             ],
             mainMenuRefs: [
@@ -78,7 +78,7 @@ class MobileNavigation extends Component {
                                 <i className="fas fa-envelope"></i>&nbsp;<span>user@gmail.com</span>
                             </p>
                             <p className="contacts-p">
-                                <i className="fas fa-phone"></i>&nbsp;<span>8 800 1000 575</span>
+                                <i className="fas fa-phone"></i>&nbsp;<span>(39543) 52953, 52952</span>
                             </p>
                         </Modal.Footer>
                     </Modal>

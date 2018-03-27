@@ -1,0 +1,204 @@
+#FencingSystemPage .fencing-system-carousel {
+  margin-bottom: 25px; }
+  #FencingSystemPage .fencing-system-carousel .container-fluid {
+    padding: 0; }
+
+#FencingSystemPage .fencing-system-colors {
+  background: #dbdbdb linear-gradient(to top, #a8acab 2.1%, #e5e4df 100%, #a09fa1);
+  box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.2);
+  min-height: 400px;
+  padding: 25px 0 25px 0;
+  margin-bottom: 25px; }
+  #FencingSystemPage .fencing-system-colors h1 {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 60px; }
+
+#FencingSystemPage .fencing-system-colors-main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px; }
+
+#FencingSystemPage .fencing-system-colors-image-text-wrapper {
+  width: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+#FencingSystemPage .fencing-system-colors-text {
+  text-align: center;
+  font-size: 0.75rem; }
+
+#FencingSystemPage .fencing-system-colors-parameters-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #000000;
+  margin-bottom: 5px;
+  font-size: 1.25rem; }
+
+#FencingSystemPage .fencing-system-colors-parameters-key {
+  font-weight: 600; }
+
+#FencingSystemPage .fencing-system-colors-parameters-value {
+  font-weight: 200; }
+
+#FencingSystemPage .fencing-system-products h1 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px; }
+
+#FencingSystemPage .fencing-system-products-image-text-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 25px; }
+
+#FencingSystemPage .fencing-system-products-text {
+  text-align: center; }
+
+#FencingSystemPage .fencing-system-have-questions {
+  background-color: #89b837;
+  min-height: 300px;
+  padding: 65px;
+  margin-bottom: 25px; }
+
+#FencingSystemPage .fencing-system-have-questions-operator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px; }
+
+#FencingSystemPage .fencing-system-have-questions-text-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 180px; }
+
+#FencingSystemPage .fencing-system-have-questions-title {
+  color: #ffdc05;
+  font-size: 1.375rem;
+  text-transform: uppercase;
+  font-weight: 600; }
+
+#FencingSystemPage .fencing-system-have-questions-phone {
+  color: #c0d971;
+  font-size: 2.1875rem;
+  font-weight: 600; }
+
+#FencingSystemPage .fencing-system-have-questions-time {
+  color: rgba(254, 252, 255, 0.61);
+  font-size: 0.6875rem;
+  margin-bottom: 10px; }
+
+#FencingSystemPage .fencing-system-have-questions-download {
+  color: rgba(248, 250, 255, 0.51); }
+  #FencingSystemPage .fencing-system-have-questions-download a {
+    color: rgba(248, 250, 255, 0.51); }
+
+#FencingSystemPage .fencing-system-have-questions-link {
+  margin-left: 10px; }
+
+#FencingSystemPage .fencing-system-have-questions-buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 180px; }
+
+#FencingSystemPage .fencing-system-have-questions-button {
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  width: 300px;
+  padding: 15px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.125rem;
+  margin-bottom: 10px; }
+  #FencingSystemPage .fencing-system-have-questions-button a {
+    color: #ffffff;
+    margin-left: 10px; }
+  #FencingSystemPage .fencing-system-have-questions-button a:hover {
+    text-decoration: none; }
+
+#FencingSystemPage .fencing-system-examples {
+  margin-bottom: 25px; }
+  #FencingSystemPage .fencing-system-examples h1 {
+    text-transform: uppercase;
+    text-align: center; }
+
+#FencingSystemPage .fencing-system-examples-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center; }
+
+#FencingSystemPage .fencing-system-example-image-wrapper {
+  position: relative;
+  border: 1px solid #dddddd;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 5px; }
+  #FencingSystemPage .fencing-system-example-image-wrapper img {
+    width: 200px;
+    height: 150px;
+    cursor: pointer; }
+
+#FencingSystemPage .fencing-system-example-zoom {
+  background: #6c912b;
+  border-radius: 100%;
+  bottom: 8px;
+  color: #FFF;
+  display: block;
+  height: 30px;
+  padding: 6px;
+  position: absolute;
+  right: 8px;
+  text-align: center;
+  width: 30px;
+  cursor: pointer; }
+
+#FencingSystemPage .fencing-system-description h1 {
+  text-align: center;
+  margin-bottom: 25px; }
+
+#FencingSystemPage .fencing-system-description-applying {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap; }
+
+#FencingSystemPage .fencing-system-description-applying-image {
+  margin: 15px;
+  cursor: pointer;
+  border-bottom: 5px solid transparent;
+  padding: 15px; }
+  #FencingSystemPage .fencing-system-description-applying-image:hover {
+    transition: .5s;
+    border-bottom: 5px solid #89b837; }
+  #FencingSystemPage .fencing-system-description-applying-image:not(:hover) {
+    transition: 1s;
+    border-bottom: 5px solid transparent; }
+
+@media only screen and (max-width: 480px) {
+  #FencingSystemPage .fencing-system-have-questions-title {
+    font-size: 0.9375rem; }
+  #FencingSystemPage .fencing-system-have-questions-phone {
+    font-size: 1.375rem; }
+  #FencingSystemPage .fencing-system-have-questions-download {
+    font-size: 0.6875rem; } }
+
+@media only screen and (max-width: 992px) {
+  #FencingSystemPage .fencing-system-colors-main-wrapper-left {
+    justify-content: flex-end; }
+  #FencingSystemPage .fencing-system-colors-main-wrapper-right {
+    justify-content: flex-start; } }
+
+@media only screen and (max-width: 1440px) {
+  #FencingSystemPage .fencing-system-have-questions-button {
+    width: 250px; } }

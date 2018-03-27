@@ -33,20 +33,20 @@ class FooterComponent extends Component {
                                     <div className="footer-first-text">
                                         <p>
                                             <strong>Телефон: </strong><span
-                                            className="footer-first-text-phone">8-902-5-677-789</span>
+                                            className="footer-first-text-phone">(39543) 52953, 52952</span>
                                         </p>
                                     </div>
                                 </div>
-                                <div className="footer-first-icon-text-wrapper">
+                                {/*<div className="footer-first-icon-text-wrapper">
                                     <div className="footer-first-icon">
                                         <i className="fas fa-phone"></i>
                                     </div>
                                     <div className="footer-first-text">
                                         <p>
-                                            <strong>Телефон: </strong>+7 (39543) 52-9-52
+                                            <strong>Телефон: </strong>(39543) 52953, 52952
                                         </p>
                                     </div>
-                                </div>
+                                </div>*/}
                                 <div className="footer-first-icon-text-wrapper">
                                     <div className="footer-first-icon">
                                         <i className="fas fa-envelope"></i>
@@ -64,8 +64,7 @@ class FooterComponent extends Component {
                                     </div>
                                     <div className="footer-first-text">
                                         <p>
-                                            <strong>Рабочее время: </strong>Пн - Пт / 09:00 - 18:00 по Владивостоку (+7ч
-                                            к Москве)
+                                            <strong>Рабочее время: </strong>с 09:00 до 18:00
                                         </p>
                                     </div>
                                 </div>
@@ -89,7 +88,7 @@ class FooterComponent extends Component {
                                             технических решений</a>
                                     </div>
                                 </div>
-                                <div className="footer-first-icon-text-wrapper">
+                                {/*<div className="footer-first-icon-text-wrapper">
                                     <div className="footer-first-icon">
                                         <i className="fas fa-download"></i>
                                     </div>
@@ -97,7 +96,7 @@ class FooterComponent extends Component {
                                         <a href="zakluchenie-po-ispytaniyam-dpk-deckline.pdf">Скачать экспертное
                                             заключение по испытаниям</a>
                                     </div>
-                                </div>
+                                </div>*/}
                                 <div className="footer-first-icon-text-wrapper">
                                     <div className="footer-first-icon">
                                         <i className="fas fa-download"></i>
@@ -141,8 +140,6 @@ class FooterComponent extends Component {
                                     <div className="footer-second-info">
                                         <p>© 2018 СибЛесСтрой - Все права защищены.</p>
                                         <p>Производитель изделий из ДПК, террасная доска, ограждения.</p>
-                                        <p>ООО "СибЛесСтрой" / ИНН: 3819018599</p>
-                                        <p>ОГРН: 1073819000420</p>
                                     </div>
                                 </div>
                             </Col>

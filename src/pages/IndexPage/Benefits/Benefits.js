@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Col, Row } from 'react-bootstrap';
-import AnimatedNumber from 'react-animated-number';
+//import AnimatedNumber from 'react-animated-number';
 
 import slideOne from './doska-i-ogragd.jpg';
 import iconOne from './01-58x58.png';
@@ -20,7 +20,7 @@ class Benefits extends Component {
         this.state = {
             brand: 'DECKLINE',
             title: 'Преимущества продукции',
-            lead: 'На нашем сайте представлен широкий ассортимент изделий из ДПК: террасная доска, универсальная доска, декоративные ограждения, и все необходимые комплектующие. Мы обеспечиваем наших клиентов только качественной продукцией, высоким уровнем сервиса и своевременными поставками.',
+            lead: 'На нашем сайте представлен широкий ассортимент изделий из древесно-полимерного композита собственного производства. Мы гарантируем нашим клиентам поставку только качественной продукции',
             benefitsList: [
                 {icon: iconOne, text: 'Долговечность. Срок службы 25 лет'},
                 {icon: iconTwo, text: 'Не подвержена разрушению от насекомых и грибка'},
@@ -43,7 +43,7 @@ class Benefits extends Component {
     }
 
     render() {
-        const { brand, title, lead, numberAnimationDuration } = this.state;
+        const { brand, title, lead/*, numberAnimationDuration*/ } = this.state;
         return (
             <div id="Benefits">
                 <Grid>
@@ -74,7 +74,7 @@ class Benefits extends Component {
                         </Row>
                     </Grid>
                 </Grid>
-                <Grid className="clients-list">
+                {/*<Grid className="clients-list">
                     <Row className="wow slideInRight" data-wow-duration="2s">
                         {this.state.clientsList.map((client, key) => (
                             <Col key={key} md={3} className="client text-center">
@@ -87,7 +87,7 @@ class Benefits extends Component {
                             </Col>
                         ))}
                     </Row>
-                </Grid>
+                </Grid>*/}
             </div>
         );
     }

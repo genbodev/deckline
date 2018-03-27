@@ -1,0 +1,27 @@
+#PageCarousel .carousel-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#PageCarousel .fa-caret-square-left, #PageCarousel .fa-caret-square-right {
+  position: absolute;
+  top: 50%;
+  font-size: 2.1875rem;
+  color: #060606; }
+
+#PageCarousel .carousel-indicators {
+  bottom: -10px; }
+  #PageCarousel .carousel-indicators li {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #060606; }
+  #PageCarousel .carousel-indicators .active {
+    background-color: #6c912b; }
+
+#PageCarousel .carousel-control {
+  background: none; }
+
+@media only screen and (max-width: 768px) {
+  #PageCarousel .item .carousel-image-wrapper {
+    min-height: 350px; } }
