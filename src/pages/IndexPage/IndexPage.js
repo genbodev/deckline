@@ -11,9 +11,6 @@ import Cooperation from './Cooperation/Cooperation';
 import Benefits from './Benefits/Benefits';
 import Assortment from './Assortment/Assortment';
 import Certificates from './Certificates/Certificates';
-//import Partners from './Partners/Partners';
-//import PartnersInfo from './PartnersInfo/PartnersInfo';
-//import Offers from './Offers/Offers';
 import TopPanelComponent from '../../components/TopPanelComponent/TopPanelComponent';
 import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
@@ -29,19 +26,11 @@ class IndexPage extends Component {
         };
     }
 
-    loadingHandler() {
-        setTimeout(() => {
-            this.setState({loading: false});
-        }, 3000);
-    }
-
-    componentDidMount() {
-        this.loadingHandler();
-    }
-
     render() {
-        const {loading} = this.state;
-        if (!loading) {
+        const {isSettingsReady, isAdminReady} = this.props.admin;
+        const {isPagesReady} = this.props.pages;
+
+        if (isSettingsReady && isAdminReady && isPagesReady) {
             return (
                 <div id="IndexPage" className="wrapper">
                     <div className="content">
@@ -55,9 +44,6 @@ class IndexPage extends Component {
                                 <Benefits/>
                                 <Assortment/>
                                 <Certificates/>
-                                {/*<Partners/>*/}
-                                {/*<PartnersInfo/>*/}
-                                {/*<Offers/>*/}
                                 <ScrollTop/>
                             </Fragment>
                         </StickyContainer>

@@ -24,3 +24,8 @@
     background-color: #89b836; }
   #TopPanelComponent .dropdown-menu a:focus {
     outline: none; }
+  #TopPanelComponent .top-panel-link {
+    display: block;
+    padding: 5px 5px 5px 13px; }
+    #TopPanelComponent .top-panel-link:hover {
+      background-color: #ededed; }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Col, Row } from 'react-bootstrap';
-//import AnimatedNumber from 'react-animated-number';
+import WOW from 'wowjs';
 
 import slideOne from './doska-i-ogragd.jpg';
 import iconOne from './01-58x58.png';
@@ -9,7 +9,6 @@ import iconThree from './03-58x58.png';
 import iconFour from './05-58x58.png';
 import iconFive from './06-58x58.png';
 import iconSix from './07-58x58.png';
-
 import iconMaterial from './002-material.png';
 
 import './Benefits.css';
@@ -35,15 +34,29 @@ class Benefits extends Component {
                 {icon: <i className="fas fa-coffee"></i>, number: 3800, text: 'Довольных клиентов'},
                 {icon: <i className="fas fa-chart-bar"></i>, number: 420, text: 'Обращений по рекомендации'}
             ],
-            numberAnimationDuration : 5000
+            numberAnimationDuration: 5000
         };
     }
 
     componentDidMount() {
+        new WOW.WOW(
+            {
+                boxClass: 'wow',      // animated element css class (default is wow)
+                animateClass: 'animated', // animation css class (default is animated)
+                offset: 0,          // distance to the element when triggering the animation (default is 0)
+                mobile: true,       // trigger animations on mobile devices (default is true)
+                live: false,       // act on asynchronously loaded content (default is true)
+                callback: function (box) {
+                    // the callback is fired every time an animation is started
+                    // the argument that is passed in is the DOM node being animated
+                },
+                scrollContainer: null // optional scroll container selector, otherwise use window
+            }
+        ).init();
     }
 
     render() {
-        const { brand, title, lead/*, numberAnimationDuration*/ } = this.state;
+        const {brand, title, lead} = this.state;
         return (
             <div id="Benefits">
                 <Grid>
@@ -53,7 +66,7 @@ class Benefits extends Component {
                             <p className="lead">{lead}</p>
                             <div className="slide-one">
                                 <img src={slideOne} alt="slideOne" className="img-responsive wow bounceInLeft"
-                                     data-wow-duration="2s"/>
+                                     data-wow-duration="4s"/>
                             </div>
                         </Col>
                     </Row>
@@ -74,20 +87,6 @@ class Benefits extends Component {
                         </Row>
                     </Grid>
                 </Grid>
-                {/*<Grid className="clients-list">
-                    <Row className="wow slideInRight" data-wow-duration="2s">
-                        {this.state.clientsList.map((client, key) => (
-                            <Col key={key} md={3} className="client text-center">
-                                <div className="client-icon">
-                                    {client.icon}
-                                </div>
-                                <AnimatedNumber className="animate-number" component="span" value={client.number}
-                                                duration={numberAnimationDuration} initialValue={0} formatValue={n => n.toFixed(0)}/>
-                                <h4 className="client-text">{client.text}</h4>
-                            </Col>
-                        ))}
-                    </Row>
-                </Grid>*/}
             </div>
         );
     }

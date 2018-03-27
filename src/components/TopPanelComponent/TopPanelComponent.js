@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { Col, Row, Grid, DropdownButton, MenuItem, Button, Clearfix } from 'react-bootstrap';
+import { Col, Row, Grid, DropdownButton, Button, Clearfix } from 'react-bootstrap';
 
 import './TopPanelComponent.css';
 
@@ -31,13 +31,13 @@ class TopPanelComponent extends Component {
                                 <Col mdOffset={4} md={8}>
                                     <div className="top-panel">
                                         <DropdownButton
+                                            style={{display : 'none'}}
                                             id="menu-dropdown"
                                             title={<span><i
                                                 className="fas fa-angle-right"></i>&nbsp;{topMenuTitle}</span>}
                                         >
                                             {topMenuItems.map((item, key) => (
-                                                <MenuItem key={key} eventKey={key}
-                                                          href={item.slug}><i className="fas fa-angle-right"></i>&nbsp;{item.title}</MenuItem>))}
+                                                <div key={key}><Link to={item.slug} className="top-panel-link"><i className="fas fa-angle-right"></i>&nbsp;{item.title}</Link></div>))}
                                         </DropdownButton>
                                         <Button bsStyle="link"><Link to='/contacts'><i
                                             className="fas fa-angle-right"></i>&nbsp;{contactsTitle}</Link></Button>

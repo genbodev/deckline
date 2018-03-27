@@ -39,4 +39,11 @@
       outline: none;
     }
   }
+  .top-panel-link {
+    display: block;
+    padding: 5px 5px 5px 13px;
+    &:hover {
+      background-color: $gallery;
+    }
+  }
 }

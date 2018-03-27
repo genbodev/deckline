@@ -17,22 +17,16 @@ class MobileNavigation extends Component {
                 {title: 'Система ограждений', slug: '/fencing-system'},
                 {title: 'Производство', slug: '/production'},
                 {title: 'Каталог', slug: '/catalog/laga-alyuminivaya?id=174'},
-            ],
-            mainMenuRefs: [
-                {title: 'О нас', slug: '/about'},
-                {title: 'Инструкции', slug: '/instructions'},
-                {title: 'Статьи', slug: '/posts'},
-                {title: 'Производство', slug: '/production'}
             ]
         };
     }
 
     handleClose() {
-        this.setState({ show: false });
+        this.setState({show: false});
     }
 
     handleShow() {
-        this.setState({ show: true });
+        this.setState({show: true});
     }
 
     render() {
@@ -45,7 +39,8 @@ class MobileNavigation extends Component {
                                 <div className="navbar-header">
                                     <Link className="navbar-brand" to="/"><img src={logo} alt="deckline-logo"/></Link>
                                 </div>
-                                <Button className="btn-navigation" onClick={() => this.handleShow()}><i className="fas fa-bars"></i></Button>
+                                <Button className="btn-navigation" onClick={() => this.handleShow()}><i
+                                    className="fas fa-bars"></i></Button>
                             </div>
                         </nav>
                     </div>
@@ -59,20 +54,11 @@ class MobileNavigation extends Component {
                             <nav className="navbar">
                                 <ul className="nav">
                                     {this.state.mainMenuItems.map((item, key) => (
-                                        <li key={key}><Link to={item.slug} activeClassName="active"><i className="fa fa-th" aria-hidden="true"></i>&nbsp;{item.title}</Link></li>
+                                        <li key={key}><Link to={item.slug} activeClassName="active"><i
+                                            className="fa fa-th" aria-hidden="true"></i>&nbsp;{item.title}</Link></li>
                                     ))}
                                 </ul>
                             </nav>
-                            <h4>Полезные ссылки</h4>
-                            <nav className="navbar">
-                                <ul className="nav">
-                                    {this.state.mainMenuRefs.map((item, key) => (
-                                        <li key={key}><Link to={item.slug} activeClassName="active"><i className="fas fa-link"></i>&nbsp;{item.title}</Link></li>
-                                    ))}
-                                </ul>
-                            </nav>
-                        </Modal.Body>
-                        <Modal.Footer>
                             <h4>Контакты</h4>
                             <p className="contacts-p">
                                 <i className="fas fa-envelope"></i>&nbsp;<span>user@gmail.com</span>
@@ -80,6 +66,8 @@ class MobileNavigation extends Component {
                             <p className="contacts-p">
                                 <i className="fas fa-phone"></i>&nbsp;<span>(39543) 52953, 52952</span>
                             </p>
+                        </Modal.Body>
+                        <Modal.Footer>
                         </Modal.Footer>
                     </Modal>
                 </div>

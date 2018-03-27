@@ -93,8 +93,6 @@ class Assortment extends Component {
             </div>
         );
     }
-
-
 }
 
 
