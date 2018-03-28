@@ -2,10 +2,12 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { StickyContainer } from 'react-sticky';
 import Loader from 'react-loader-spinner';
+import { Helmet } from 'react-helmet';
 
 import './IndexPage.css';
 
-import { drawSticky } from '../../functions';
+import config from '../../config';
+import { drawSticky, getPageDataBySlug } from '../../functions';
 import MainCarousel from './MainCarousel/MainCarousel';
 import Cooperation from './Cooperation/Cooperation';
 import Benefits from './Benefits/Benefits';
@@ -17,12 +19,14 @@ import MobileNavigation from '../../components/MobileNavigation/MobileNavigation
 import Footer from '../../components/FooterComponent/FooterComponent';
 import ScrollTop from '../../components/ScrollTop/ScrollTop';
 
+const {home} = config.SLUGS;
+const {DEFAULT_TITLE} = config;
 
 class IndexPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            loading: true
+            slug: home
         };
     }
 
@@ -31,8 +35,20 @@ class IndexPage extends Component {
         const {isPagesReady} = this.props.pages;
 
         if (isSettingsReady && isAdminReady && isPagesReady) {
+            const {slug} = this.state;
+            const {data} = this.props.pages;
+            const currentPage = getPageDataBySlug(data, slug);
+            const title = currentPage.title.rendered.length > 1 ? `${DEFAULT_TITLE} - ${currentPage.title.rendered}` : DEFAULT_TITLE;
+            const description = currentPage.acf.meta_description;
+            const keywords = currentPage.acf.meta_key_words;
+
             return (
                 <div id="IndexPage" className="wrapper">
+                    <Helmet>
+                        <title>{title}</title>
+                        <meta name="keywords" content={keywords}/>
+                        <meta name="description" content={description}/>
+                    </Helmet>
                     <div className="content">
                         <TopPanelComponent/>
                         <StickyContainer>

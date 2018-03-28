@@ -76,7 +76,7 @@ class FooterComponent extends Component {
                                         <i className="fas fa-download"></i>
                                     </div>
                                     <div className="footer-first-text">
-                                        <a href="buklet-a4-FINAL.pdf">Скачать каталог продукции</a>
+                                        <a href="/files/buklet-a4-FINAL.pdf">Скачать каталог продукции</a>
                                     </div>
                                 </div>
                                 <div className="footer-first-icon-text-wrapper">
@@ -84,7 +84,7 @@ class FooterComponent extends Component {
                                         <i className="fas fa-download"></i>
                                     </div>
                                     <div className="footer-first-text">
-                                        <a href="albom-tehnicheskih-resheby-deckline-group-2.pdf">Скачать альбом
+                                        <a href="/files/albom-tehnicheskih-resheby-deckline-group-2.pdf">Скачать альбом
                                             технических решений</a>
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@ class FooterComponent extends Component {
                                         <i className="fas fa-download"></i>
                                     </div>
                                     <div className="footer-first-text">
-                                        <a href="instrukcia-po-montagu-terrsy.pdf">Скачать инструкцию по монтажу
+                                        <a href="/files/instrukcia-po-montagu-terrsy.pdf">Скачать инструкцию по монтажу
                                             террасной доски</a>
                                     </div>
                                 </div>

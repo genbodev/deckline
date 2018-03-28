@@ -28,3 +28,16 @@ export function drawSticky(stickyComponent) {
             }
         </Sticky>);
 }
+
+export function getPageDataBySlug(pages = [], slug = '') {
+    if (pages && pages.length && slug) {
+        let currentPage = '';
+        pages.map((page) => {
+            if (page.slug === slug) currentPage = page;
+            return false;
+        });
+        return currentPage;
+    } else {
+        return null;
+    }
+}
