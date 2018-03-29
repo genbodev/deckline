@@ -113,6 +113,7 @@
   }
   .fencing-system-have-questions-link {
     margin-left: 10px;
+    cursor: pointer;
   }
   .fencing-system-have-questions-buttons-wrapper {
     display: flex;
@@ -130,6 +131,9 @@
     color: #ffffff;
     @include font-size(18);
     margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     a {
       color: #ffffff;
       margin-left: 10px;

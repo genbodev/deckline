@@ -307,7 +307,7 @@ class ContactsPage extends Component {
                                                     </div>
                                                 </div>
                                                 <hr/>
-                                                <div className="contacts-info-requisites">
+                                                {/*<div className="contacts-info-requisites">
                                                     <h3 className="header-accent"><strong>Реквизиты</strong></h3>
                                                     <p>ООО "СибЛесСтрой"</p>
                                                     <p><strong>Адрес: </strong>Иркутская обл. г.Усолье-Сибирское, район Усолье-Сибирского Химфарм завода
@@ -322,7 +322,7 @@ class ContactsPage extends Component {
                                                         г.Усолье-Сибирское</p>
                                                     <p><strong>Корреспондентский счёт: </strong>30101810700000000744</p>
                                                     <p><strong>БИК: </strong>048142744</p>
-                                                </div>
+                                                </div>*/}
                                             </div>
                                         </Col>
                                     </Row>

@@ -13,6 +13,7 @@ import MobileNavigation from '../../components/MobileNavigation/MobileNavigation
 import Footer from '../../components/FooterComponent/FooterComponent';
 import { Grid, Row, Col, Clearfix } from 'react-bootstrap';
 import ScrollTop from '../../components/ScrollTop/ScrollTop';
+import swal from "sweetalert2";
 
 import PageCarousel from './PageCarousel/PageCarousel';
 
@@ -53,6 +54,11 @@ class FencingSystemPage extends Component {
         this.state = {
             slug: fencingSystem
         };
+    }
+    handleClick = (e) => this.showMsg(e);
+
+    showMsg(e) {
+        swal('Доставка по РФ и странам СНГ осуществляется любой транспортной компанией исходя из предпочтений заказчика. Мы ценим плоды своего труда, поэтому перед отправкой все изделия тщательно упаковываются для обеспечения сохранности при транспортировке')
     }
     render() {
         const {isSettingsReady, isAdminReady} = this.props.admin;
@@ -319,7 +325,7 @@ class FencingSystemPage extends Component {
                                                     </div>
                                                     <div className="fencing-system-have-questions-download"><i
                                                         className="fas fa-download"/>
-                                                        <a href="katalog.pdf"
+                                                        <a href="/files/ogr-price.xls"
                                                            className="fencing-system-have-questions-link">
                                                             Скачать каталог продукции
                                                         </a>
@@ -335,7 +341,10 @@ class FencingSystemPage extends Component {
                                                     </div>
                                                     <div className="fencing-system-have-questions-button">
                                                         <i className="fas fa-briefcase"/>
-                                                        <Link to="/cooperation">Оптовикам</Link>
+                                                        <a href="/files/prices.zip"
+                                                           className="fencing-system-have-questions-link">
+                                                            Оптовикам
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </Col>
@@ -343,11 +352,17 @@ class FencingSystemPage extends Component {
                                                 <div className="fencing-system-have-questions-buttons-wrapper">
                                                     <div className="fencing-system-have-questions-button">
                                                         <i className="fas fa-car"/>
-                                                        <Link to="/delivery">Доставка по РФ</Link>
+                                                        <div className="fencing-system-have-questions-link"
+                                                             onClick={this.handleClick}>
+                                                            Доставка по РФ
+                                                        </div>
                                                     </div>
                                                     <div className="fencing-system-have-questions-button">
                                                         <i className="far far fa-folder"/>
-                                                        <Link to="/instructions">Монтажные схемы</Link>
+                                                        <a href="/files/instr.doc"
+                                                           className="fencing-system-have-questions-link">
+                                                            Монтажные схемы
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </Col>

@@ -13,6 +13,7 @@ import MobileNavigation from '../../components/MobileNavigation/MobileNavigation
 import Footer from '../../components/FooterComponent/FooterComponent';
 import { Grid, Row, Col, Clearfix } from 'react-bootstrap';
 import ScrollTop from '../../components/ScrollTop/ScrollTop';
+import swal from 'sweetalert2'
 
 import PageCarousel from './PageCarousel/PageCarousel';
 
@@ -60,6 +61,11 @@ class TerraceBoardPage extends Component {
         this.state = {
             slug: terraceBoard
         };
+    }
+    handleClick = (e) => this.showMsg(e);
+
+    showMsg(e) {
+        swal('Доставка по РФ и странам СНГ осуществляется любой транспортной компанией исходя из предпочтений заказчика. Мы ценим плоды своего труда, поэтому перед отправкой все изделия тщательно упаковываются для обеспечения сохранности при транспортировке')
     }
     render() {
         const {isSettingsReady, isAdminReady} = this.props.admin;
@@ -150,7 +156,7 @@ class TerraceBoardPage extends Component {
                                             <Col sm={4}>
                                                 <div className="terrace-board-colors-parameters-wrapper">
                                                     <div className="terrace-board-colors-parameters-key">Высота</div>
-                                                    <div className="terrace-board-colors-parameters-value">23 мм</div>
+                                                    <div className="terrace-board-colors-parameters-value">24 мм</div>
                                                 </div>
                                             </Col>
                                             <Col sm={4}>
@@ -323,7 +329,8 @@ class TerraceBoardPage extends Component {
                                                     </div>
                                                     <div className="terrace-board-have-questions-download"><i
                                                         className="fas fa-download"/>
-                                                        <a href="katalog.pdf" className="terrace-board-have-questions-link">
+                                                        <a href="/files/doska-price.xls"
+                                                           className="terrace-board-have-questions-link">
                                                             Скачать каталог продукции
                                                         </a>
                                                     </div>
@@ -338,7 +345,10 @@ class TerraceBoardPage extends Component {
                                                     </div>
                                                     <div className="terrace-board-have-questions-button">
                                                         <i className="fas fa-briefcase"/>
-                                                        <Link to="/cooperation">Оптовикам</Link>
+                                                        <a href="/files/prices.zip"
+                                                           className="terrace-board-have-questions-link">
+                                                            Оптовикам
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </Col>
@@ -346,11 +356,17 @@ class TerraceBoardPage extends Component {
                                                 <div className="terrace-board-have-questions-buttons-wrapper">
                                                     <div className="terrace-board-have-questions-button">
                                                         <i className="fas fa-car"/>
-                                                        <Link to="/delivery">Доставка по РФ</Link>
+                                                        <div className="terrace-board-have-questions-link"
+                                                             onClick={this.handleClick}>
+                                                            Доставка по РФ
+                                                        </div>
                                                     </div>
                                                     <div className="terrace-board-have-questions-button">
                                                         <i className="far far fa-folder"/>
-                                                        <Link to="/instructions">Монтажные схемы</Link>
+                                                        <a href="/files/instr.doc"
+                                                           className="terrace-board-have-questions-link">
+                                                            Монтажные схемы
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </Col>

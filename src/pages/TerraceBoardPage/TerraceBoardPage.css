@@ -102,7 +102,8 @@
     color: rgba(248, 250, 255, 0.51); }
 
 #TerraceBoardPage .terrace-board-have-questions-link {
-  margin-left: 10px; }
+  margin-left: 10px;
+  cursor: pointer; }
 
 #TerraceBoardPage .terrace-board-have-questions-buttons-wrapper {
   display: flex;
@@ -119,7 +120,10 @@
   text-align: center;
   color: #ffffff;
   font-size: 1.125rem;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
   #TerraceBoardPage .terrace-board-have-questions-button a {
     color: #ffffff;
     margin-left: 10px; }

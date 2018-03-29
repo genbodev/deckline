@@ -76,7 +76,7 @@ class FooterComponent extends Component {
                                         <i className="fas fa-download"></i>
                                     </div>
                                     <div className="footer-first-text">
-                                        <a href="/files/buklet-a4-FINAL.pdf">Скачать каталог продукции</a>
+                                        <a href="/files/ogr-price.xls">ДПК ограждения, прайс-лист</a>
                                     </div>
                                 </div>
                                 <div className="footer-first-icon-text-wrapper">
@@ -84,8 +84,7 @@ class FooterComponent extends Component {
                                         <i className="fas fa-download"></i>
                                     </div>
                                     <div className="footer-first-text">
-                                        <a href="/files/albom-tehnicheskih-resheby-deckline-group-2.pdf">Скачать альбом
-                                            технических решений</a>
+                                        <a href="/files/doska-price.xls">ДПК террасная доска, прайс-лист</a>
                                     </div>
                                 </div>
                                 {/*<div className="footer-first-icon-text-wrapper">
@@ -102,8 +101,7 @@ class FooterComponent extends Component {
                                         <i className="fas fa-download"></i>
                                     </div>
                                     <div className="footer-first-text">
-                                        <a href="/files/instrukcia-po-montagu-terrsy.pdf">Скачать инструкцию по монтажу
-                                            террасной доски</a>
+                                        <a href="/files/instr.doc">Скачать инструкцию по монтажу</a>
                                     </div>
                                 </div>
                             </Col>

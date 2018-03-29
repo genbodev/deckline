@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { StickyContainer } from 'react-sticky';
+
 import Loader from 'react-loader-spinner';
 import { Helmet } from 'react-helmet';
 
@@ -8,14 +9,15 @@ import './IndexPage.css';
 
 import config from '../../config';
 import { drawSticky, getPageDataBySlug } from '../../functions';
-import MainCarousel from './MainCarousel/MainCarousel';
 import Cooperation from './Cooperation/Cooperation';
 import Benefits from './Benefits/Benefits';
 import Assortment from './Assortment/Assortment';
 import Certificates from './Certificates/Certificates';
+
 import TopPanelComponent from '../../components/TopPanelComponent/TopPanelComponent';
 import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
+import MainCarousel from './MainCarousel/MainCarousel';
 import Footer from '../../components/FooterComponent/FooterComponent';
 import ScrollTop from '../../components/ScrollTop/ScrollTop';
 
