@@ -28,7 +28,7 @@ class PostsPage extends Component {
                                 <Grid>
                                     {regular.map((post, key) => (
                                         <Col md={6} key={key}>
-                                            <img src={post.better_featured_image.source_url} className="img-responsive" alt=""/>
+                                            {(post.better_featured_image && post.better_featured_image.source_url) && <img src={post.better_featured_image.source_url} className="img-responsive" alt=""/>}
                                             <h5 key={key}>{post.title.rendered}</h5>
                                         </Col>
                                     ))}

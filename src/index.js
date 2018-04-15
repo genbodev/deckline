@@ -50,7 +50,7 @@ ReactDOM.render(
         <Router history={history}>
             <Route path='/' component={IndexPage}/>
             {/*<Route path='/about' component={AboutPage}/>*/}
-            <Route path='/catalog/:product' component={CatalogPage}/>
+            <Route path='/catalog' component={CatalogPage}/>
             <Route path='/contacts' component={ContactsPage}/>
             {/*<Route path='/cooperation' component={CooperationPage}/>*/}
             <Route path='/delivery' component={DeliveryPage}/>

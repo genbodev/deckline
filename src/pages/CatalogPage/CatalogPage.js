@@ -15,6 +15,7 @@ import MobileNavigation from '../../components/MobileNavigation/MobileNavigation
 import Footer from '../../components/FooterComponent/FooterComponent';
 import ScrollTop from '../../components/ScrollTop/ScrollTop';
 import config from "../../config";
+
 const {catalog} = config.SLUGS;
 const {DEFAULT_TITLE} = config;
 
@@ -23,8 +24,8 @@ class CatalogPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            terraceNavHeader : 'Комплектующие для террасной доски',
-            thermoNavHeader : 'Комплектующие для термо доски',
+            terraceNavHeader: 'Комплектующие для террасной доски',
+            thermoNavHeader: 'Система ограждений',
             slug: catalog
         };
     }
@@ -37,7 +38,11 @@ class CatalogPage extends Component {
                 return false;
             });
         }
-        return currentPost;
+        if (typeof currentPost === "string") {
+            return posts.shift();
+        } else {
+            return currentPost;
+        }
     }
 
     render() {
@@ -54,7 +59,7 @@ class CatalogPage extends Component {
             const {slug} = this.state;
             const {data} = this.props.pages;
             const currentPage = getPageDataBySlug(data, slug);
-            const title = currentPage.title.rendered.length > 1 ? `${DEFAULT_TITLE} - ${currentPage.title.rendered}` : DEFAULT_TITLE;
+            const title = currentPage && (currentPage.title.rendered.length > 1) ? `${DEFAULT_TITLE} - ${currentPage.title.rendered}` : DEFAULT_TITLE;
             const description = currentPage.acf.meta_description;
             const keywords = currentPage.acf.meta_key_words;
 
@@ -79,20 +84,26 @@ class CatalogPage extends Component {
                                                 <h2 className="vertical-menu-title">{terraceNavHeader}</h2>
                                                 {terrace.map((product, key) => (
                                                     <Link activeClassName="active" key={key}
-                                                          to={`/catalog/${product.slug}?id=${product.id}`}><i className="fas fa-caret-right"></i>&nbsp;{product.title.rendered}</Link>))}
+                                                          to={`/catalog?id=${product.id}`}><i
+                                                        className="fas fa-caret-right"></i>&nbsp;{product.title.rendered}
+                                                    </Link>))}
                                             </div>
                                             <hr/>
                                             <div className="vertical-menu">
                                                 <h2 className="vertical-menu-title">{thermoNavHeader}</h2>
                                                 {thermo.map((product, key) => (
                                                     <Link activeClassName="active" key={key}
-                                                          to={`/catalog/${product.slug}?id=${product.id}`}><i className="fas fa-caret-right"></i>&nbsp;{product.title.rendered}</Link>))}
+                                                          to={`/catalog?id=${product.id}`}><i
+                                                        className="fas fa-caret-right"></i>&nbsp;{product.title.rendered}
+                                                    </Link>))}
                                             </div>
                                         </Col>
                                         <Col md={9}>
                                             <h2 className="product-title">{content.title.rendered}</h2>
                                             <div className="product-img">
-                                                <img className="img-responsive" src={content.better_featured_image.source_url} alt=""/>
+                                                {(content.better_featured_image && content.better_featured_image.source_url) &&
+                                                <img className="img-responsive"
+                                                     src={content.better_featured_image.source_url} alt=""/>}
                                             </div>
                                             <div
                                                 dangerouslySetInnerHTML={createMarkup(content.content.rendered)}></div>
