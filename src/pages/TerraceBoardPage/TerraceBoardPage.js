@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { StickyContainer } from 'react-sticky';
 import Loader from 'react-loader-spinner';
 import { Helmet } from 'react-helmet';
+import Lightbox from 'react-image-lightbox';
 
 import './TerraceBoardPage.css';
 import { drawSticky, getPageDataBySlug } from '../../functions';
@@ -55,11 +56,24 @@ import config from "../../config";
 const {terraceBoard} = config.SLUGS;
 const {DEFAULT_TITLE} = config;
 
+const images = [
+    ExampleImage01,
+    ExampleImage02,
+    ExampleImage03,
+    ExampleImage04,
+    ExampleImage05,
+    ExampleImage06,
+    ExampleImage07,
+    ExampleImage08
+];
+
 class TerraceBoardPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            slug: terraceBoard
+            slug: terraceBoard,
+            photoIndex: 0,
+            isOpen: false
         };
     }
     handleClick = (e) => this.showMsg(e);
@@ -67,9 +81,17 @@ class TerraceBoardPage extends Component {
     showMsg(e) {
         swal('Доставка по РФ и странам СНГ осуществляется любой транспортной компанией исходя из предпочтений заказчика. Мы ценим плоды своего труда, поэтому перед отправкой все изделия тщательно упаковываются для обеспечения сохранности при транспортировке')
     }
+
+    openPicture(key = 0) {
+        this.setState({photoIndex: key, isOpen: true});
+    }
+
+
+
     render() {
         const {isSettingsReady, isAdminReady} = this.props.admin;
         const {isPagesReady} = this.props.pages;
+        const {photoIndex, isOpen} = this.state;
         if (isSettingsReady && isAdminReady && isPagesReady) {
             const {slug} = this.state;
             const {data} = this.props.pages;
@@ -379,49 +401,49 @@ class TerraceBoardPage extends Component {
                                             <Col xs={12}>
                                                 <h1>Примеры использования террасной доски</h1>
                                                 <div className="terrace-board-examples-wrapper">
-                                                    <div className="terrace-board-example-image-wrapper">
+                                                    <div className="terrace-board-example-image-wrapper" onClick={() => this.openPicture()}>
                                                         <img src={ExampleImage01} alt="example-01"
                                                              className="img-responsive"/>
                                                         <span className="terrace-board-example-zoom"><i
                                                             className="fas fa-search"/></span>
                                                     </div>
-                                                    <div className="terrace-board-example-image-wrapper">
+                                                    <div className="terrace-board-example-image-wrapper" onClick={() => this.openPicture(1)}>
                                                         <img src={ExampleImage02} alt="example-02"
                                                              className="img-responsive"/>
                                                         <span className="terrace-board-example-zoom"><i
                                                             className="fas fa-search"/></span>
                                                     </div>
-                                                    <div className="terrace-board-example-image-wrapper">
+                                                    <div className="terrace-board-example-image-wrapper" onClick={() => this.openPicture(2)}>
                                                         <img src={ExampleImage03} alt="example-03"
                                                              className="img-responsive"/>
                                                         <span className="terrace-board-example-zoom"><i
                                                             className="fas fa-search"/></span>
                                                     </div>
-                                                    <div className="terrace-board-example-image-wrapper">
+                                                    <div className="terrace-board-example-image-wrapper" onClick={() => this.openPicture(3)}>
                                                         <img src={ExampleImage04} alt="example-04"
                                                              className="img-responsive"/>
                                                         <span className="terrace-board-example-zoom"><i
                                                             className="fas fa-search"/></span>
                                                     </div>
-                                                    <div className="terrace-board-example-image-wrapper">
+                                                    <div className="terrace-board-example-image-wrapper" onClick={() => this.openPicture(4)}>
                                                         <img src={ExampleImage05} alt="example-05"
                                                              className="img-responsive"/>
                                                         <span className="terrace-board-example-zoom"><i
                                                             className="fas fa-search"/></span>
                                                     </div>
-                                                    <div className="terrace-board-example-image-wrapper">
+                                                    <div className="terrace-board-example-image-wrapper" onClick={() => this.openPicture(5)}>
                                                         <img src={ExampleImage06} alt="example-06"
                                                              className="img-responsive"/>
                                                         <span className="terrace-board-example-zoom"><i
                                                             className="fas fa-search"/></span>
                                                     </div>
-                                                    <div className="terrace-board-example-image-wrapper">
+                                                    <div className="terrace-board-example-image-wrapper" onClick={() => this.openPicture(6)}>
                                                         <img src={ExampleImage07} alt="example-07"
                                                              className="img-responsive"/>
                                                         <span className="terrace-board-example-zoom"><i
                                                             className="fas fa-search"/></span>
                                                     </div>
-                                                    <div className="terrace-board-example-image-wrapper">
+                                                    <div className="terrace-board-example-image-wrapper" onClick={() => this.openPicture(7)}>
                                                         <img src={ExampleImage08} alt="example-08"
                                                              className="img-responsive"/>
                                                         <span className="terrace-board-example-zoom"><i
@@ -431,6 +453,24 @@ class TerraceBoardPage extends Component {
                                             </Col>
                                         </Row>
                                     </Grid>
+                                    {isOpen && (
+                                        <Lightbox
+                                            mainSrc={images[photoIndex]}
+                                            nextSrc={images[(photoIndex + 1) % images.length]}
+                                            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+                                            onCloseRequest={() => this.setState({isOpen: false})}
+                                            onMovePrevRequest={() =>
+                                                this.setState({
+                                                    photoIndex: (photoIndex + images.length - 1) % images.length,
+                                                })
+                                            }
+                                            onMoveNextRequest={() =>
+                                                this.setState({
+                                                    photoIndex: (photoIndex + 1) % images.length,
+                                                })
+                                            }
+                                        />
+                                    )}
                                 </div>
                                 <div className="terrace-board-description">
                                     <Grid>

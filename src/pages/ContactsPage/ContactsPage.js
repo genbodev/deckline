@@ -22,9 +22,9 @@ export const {HOST} = CONFIG;
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
         defaultZoom={17}
-        defaultCenter={{lat: 52.763107, lng: 103.637306}}
+        defaultCenter={{lat: 52.750149, lng: 103.633323}}
     >
-        {props.isMarkerShown && <Marker position={{lat: 52.763107, lng: 103.637306}}/>}
+        {props.isMarkerShown && <Marker position={{lat: 52.750149, lng: 103.633323}}/>}
     </GoogleMap>
 ));
 
@@ -92,7 +92,7 @@ class ContactsPage extends Component {
 
             console.log('All fields is valid!');
 
-            let ajaxurl = '/wp-admin/admin-ajax.php';
+            let ajaxurl = HOST + 'wp-admin/admin-ajax.php';
             let request = new Request(ajaxurl + '?action=send_mail', {
                 headers: new Headers({
                     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
