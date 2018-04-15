@@ -8,7 +8,23 @@ import logoFooter from './logo-90-prz.png';
 import InstagramEmbed from 'react-instagram-embed';
 
 class FooterComponent extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            defaultData : {
+                phone : "(39543) 52953, 52952",
+                address : "Иркутская обл. г.Усолье-Сибирское, район Усолье-Сибирского Химфарм завода!!!",
+                email : "baikaltexcom@rambler.ru",
+                workingHours : "Понедельник - Пятница - 09:00 до 18:00",
+                copyrightText : "© 2018 СибЛесСтрой - Все права защищены.",
+                descriptionText : "Производитель изделий из ДПК, террасная доска, ограждения."
+            }
+        };
+    }
     render() {
+        const {data} = this.props;
+        const {address, phone, email, workingHours, copyrightText, descriptionText } = this.state.defaultData;
+
         return (
             <div id="FooterComponent">
                 <div className="footer-first-wrapper">
@@ -22,7 +38,7 @@ class FooterComponent extends Component {
                                     </div>
                                     <div className="footer-first-text">
                                         <p>
-                                            <strong>Адрес: </strong>Иркутская обл. г.Усолье-Сибирское, район Усолье-Сибирского Химфарм завода
+                                            <strong>Адрес: </strong> {(data && data['opt-textarea-address']) ? data['opt-textarea-address'] : address}
                                         </p>
                                     </div>
                                 </div>
@@ -33,20 +49,10 @@ class FooterComponent extends Component {
                                     <div className="footer-first-text">
                                         <p>
                                             <strong>Телефон: </strong><span
-                                            className="footer-first-text-phone">(39543) 52953, 52952</span>
+                                            className="footer-first-text-phone">{(data && data['opt-text-numeric-phone']) ? data['opt-text-numeric-phone'] : phone}</span>
                                         </p>
                                     </div>
                                 </div>
-                                {/*<div className="footer-first-icon-text-wrapper">
-                                    <div className="footer-first-icon">
-                                        <i className="fas fa-phone"></i>
-                                    </div>
-                                    <div className="footer-first-text">
-                                        <p>
-                                            <strong>Телефон: </strong>(39543) 52953, 52952
-                                        </p>
-                                    </div>
-                                </div>*/}
                                 <div className="footer-first-icon-text-wrapper">
                                     <div className="footer-first-icon">
                                         <i className="fas fa-envelope"></i>
@@ -54,7 +60,7 @@ class FooterComponent extends Component {
                                     <div className="footer-first-text">
                                         <p>
                                             <strong>E-mail: </strong><a
-                                            href="mailto:baikaltexcom@rambler.ru">baikaltexcom@rambler.ru</a>
+                                            href="mailto:baikaltexcom@rambler.ru">{(data && data['opt-text-user-email']) ? data['opt-text-user-email'] : email}</a>
                                         </p>
                                     </div>
                                 </div>
@@ -64,7 +70,7 @@ class FooterComponent extends Component {
                                     </div>
                                     <div className="footer-first-text">
                                         <p>
-                                            <strong>Рабочее время: </strong>с 09:00 до 18:00
+                                            <strong>Рабочее время: </strong>{(data && data['opt-textarea-working-hours']) ? data['opt-textarea-working-hours'] : workingHours}
                                         </p>
                                     </div>
                                 </div>
@@ -87,15 +93,6 @@ class FooterComponent extends Component {
                                         <a href="/files/doska-price.xls">ДПК террасная доска, прайс-лист</a>
                                     </div>
                                 </div>
-                                {/*<div className="footer-first-icon-text-wrapper">
-                                    <div className="footer-first-icon">
-                                        <i className="fas fa-download"></i>
-                                    </div>
-                                    <div className="footer-first-text">
-                                        <a href="zakluchenie-po-ispytaniyam-dpk-deckline.pdf">Скачать экспертное
-                                            заключение по испытаниям</a>
-                                    </div>
-                                </div>*/}
                                 <div className="footer-first-icon-text-wrapper">
                                     <div className="footer-first-icon">
                                         <i className="fas fa-download"></i>
@@ -136,14 +133,13 @@ class FooterComponent extends Component {
                                         <img src={logoFooter} alt="footer-logo"/>
                                     </div>
                                     <div className="footer-second-info">
-                                        <p>© 2018 СибЛесСтрой - Все права защищены.</p>
-                                        <p>Производитель изделий из ДПК, террасная доска, ограждения.</p>
+                                        <p>{(data && data['opt-textarea-html-copyright']) ? <span dangerouslySetInnerHTML={{__html : data['opt-textarea-html-copyright']}}></span> : copyrightText}</p>
+                                        <p>{(data && data['opt-textarea-html-description']) ? <span dangerouslySetInnerHTML={{__html : data['opt-textarea-html-description']}}></span> : descriptionText}</p>
                                     </div>
                                 </div>
                             </Col>
                             <Col sm={12} md={6} xsHidden smHidden>
                                 <div className="footer-second-links-wrapper">
-                                    <p><Link to="#">Вопрос-ответ</Link></p>
                                     <p><Link to="#">Карта сайта</Link></p>
                                     <p><Link to="/contacts">Контакты</Link></p>
                                 </div>
@@ -157,7 +153,10 @@ class FooterComponent extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {}
+    const {data} = state.admin;
+    return {
+        data
+    }
 };
 
 const mapDispatchToProps = (dispatch) => {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { Col, Row, Grid, DropdownButton, Button, Clearfix } from 'react-bootstrap';
+import { connect } from 'react-redux';
 
 import './TopPanelComponent.css';
 
@@ -21,6 +22,7 @@ class TopPanelComponent extends Component {
     }
 
     render() {
+        const {data} = this.props;
         const {topMenuTitle, topMenuItems, contactsTitle, phone} = this.state;
         return (
             <Clearfix visibleMdBlock visibleLgBlock>
@@ -41,7 +43,7 @@ class TopPanelComponent extends Component {
                                         </DropdownButton>
                                         <Button bsStyle="link"><Link to='/contacts'><i
                                             className="fas fa-angle-right"></i>&nbsp;{contactsTitle}</Link></Button>
-                                        <span className="phone"><i className="fas fa-phone"></i>&nbsp;<span>{phone}</span></span>
+                                        <span className="phone"><i className="fas fa-phone"></i>&nbsp;{(data && data['opt-text-numeric-phone']) ? data['opt-text-numeric-phone'] : phone}</span>
                                     </div>
                                 </Col>
                             </Row>
@@ -54,4 +56,15 @@ class TopPanelComponent extends Component {
 
 }
 
-export default TopPanelComponent;
+const mapStateToProps = (state) => {
+    const {data} = state.admin;
+    return {
+        data
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {}
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TopPanelComponent);

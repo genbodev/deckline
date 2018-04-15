@@ -20,3 +20,8 @@
     top: 100%;
     left: 50%;
     transform: translateX(-50%); }
+
+#Assortment a {
+  color: #6c912b; }
+  #Assortment a:hover {
+    color: #6c912b; }

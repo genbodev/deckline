@@ -8,7 +8,9 @@ class ScrollTop extends Component {
         super(props);
         this.state = {
             scrollText : 'Наверх',
-            scrollOffset : 160
+            scrollOffset : 160,
+            position : "absolute",
+            zIndex : "999"
         };
     }
 

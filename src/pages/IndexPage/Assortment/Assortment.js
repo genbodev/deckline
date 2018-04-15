@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router';
 
 import './Assortment.css';
 
@@ -29,6 +30,8 @@ class Assortment extends Component {
 
     render() {
         const {items} = this.state;
+        const {terrace, thermo} = this.props.posts;
+        console.log(`terrace`, terrace, thermo);
         return (
             <div id="Assortment">
                 <Grid>
@@ -46,14 +49,13 @@ class Assortment extends Component {
                                                 {item.title}
                                                 <p className="lead">{item.text}</p>
                                                 <div className="assortment-list">
-                                                    {item.tags.map((tagItem, key) => {
-                                                        if (key !== item.tags.length - 1) {
-                                                            return <span className="assortment-tag" key={key}>{tagItem}&nbsp;,&nbsp;</span>
+                                                    {(terrace && terrace.length) ? terrace.map((tagItem, key) => {
+                                                        if (key !== terrace.length - 1) {
+                                                            return <span className="assortment-tag" key={key}>{<Link activeClassName="active" key={key} to={`/catalog?id=${tagItem.id}`} target="_blank">{tagItem.title.rendered}</Link>}&nbsp;,&nbsp;</span>
                                                         } else {
-                                                            return <span className="assortment-tag" key={key}>{tagItem}&nbsp;.</span>
+                                                            return <span className="assortment-tag" key={key}>{<Link activeClassName="active" key={key} to={`/catalog?id=${tagItem.id}`} target="_blank">{tagItem.title.rendered}</Link>}&nbsp;.</span>
                                                         }
-
-                                                    })}
+                                                    }) : null}
                                                 </div>
                                             </div>
                                         </Col>
@@ -70,14 +72,14 @@ class Assortment extends Component {
                                                 {item.title}
                                                 <p className="lead">{item.text}</p>
                                                 <div className="assortment-list">
-                                                    {item.tags.map((tagItem, key) => {
+                                                    {(thermo && thermo.length) ? thermo.map((tagItem, key) => {
                                                         if (key !== item.tags.length - 1) {
-                                                            return <span className="assortment-tag" key={key}>{tagItem}&nbsp;,&nbsp;</span>
+                                                            return <span className="assortment-tag" key={key}>{<Link activeClassName="active" key={key} to={`/catalog?id=${tagItem.id}`} target="_blank">{tagItem.title.rendered}</Link>}&nbsp;,&nbsp;</span>
                                                         } else {
-                                                            return <span className="assortment-tag" key={key}>{tagItem}&nbsp;.</span>
+                                                            return <span className="assortment-tag" key={key}>{<Link activeClassName="active" key={key} to={`/catalog?id=${tagItem.id}`} target="_blank">{tagItem.title.rendered}</Link>}&nbsp;.</span>
                                                         }
 
-                                                    })}
+                                                    }) : null}
                                                 </div>
                                             </div>
                                         </Col>

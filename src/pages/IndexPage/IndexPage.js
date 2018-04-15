@@ -35,8 +35,9 @@ class IndexPage extends Component {
     render() {
         const {isSettingsReady, isAdminReady} = this.props.admin;
         const {isPagesReady} = this.props.pages;
+        const {posts} = this.props;
 
-        if (isSettingsReady && isAdminReady && isPagesReady) {
+        if (isSettingsReady && isAdminReady && isPagesReady && posts && posts.isPostsReady) {
             const {slug} = this.state;
             const {data} = this.props.pages;
             const currentPage = getPageDataBySlug(data, slug);
@@ -60,7 +61,7 @@ class IndexPage extends Component {
                                 <MainCarousel/>
                                 <Cooperation/>
                                 <Benefits/>
-                                <Assortment/>
+                                <Assortment posts={this.props.posts}/>
                                 <Certificates/>
                                 <ScrollTop/>
                             </Fragment>
@@ -85,7 +86,8 @@ class IndexPage extends Component {
 const mapStateToProps = (state) => {
     return {
         admin: state.admin,
-        pages: state.pages
+        pages: state.pages,
+        posts: state.posts
     }
 };
 
