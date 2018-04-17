@@ -30,8 +30,8 @@ class Assortment extends Component {
 
     render() {
         const {items} = this.state;
-        const {terrace, thermo} = this.props.posts;
-        //console.log(`terrace`, terrace, thermo);
+        const {terrace, fencing} = this.props.posts;
+        //console.log(`terrace`, terrace, fencing);
         return (
             <div id="Assortment">
                 <Grid>
@@ -72,7 +72,7 @@ class Assortment extends Component {
                                                 {item.title}
                                                 <p className="lead">{item.text}</p>
                                                 <div className="assortment-list">
-                                                    {(thermo && thermo.length) ? thermo.map((tagItem, key) => {
+                                                    {(fencing && fencing.length) ? fencing.map((tagItem, key) => {
                                                         if (key !== item.tags.length - 1) {
                                                             return <span className="assortment-tag" key={key}>{<Link activeClassName="active" key={key} to={`/catalog?id=${tagItem.id}`} target="_blank">{tagItem.title.rendered}</Link>}&nbsp;,&nbsp;</span>
                                                         } else {
