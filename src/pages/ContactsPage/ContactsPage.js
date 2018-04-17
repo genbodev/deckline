@@ -15,6 +15,7 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-map
 import Inputmask from "inputmask";
 import swal from 'sweetalert2'
 import CONFIG from "../../config";
+import $ from 'jquery';
 
 export const {SITE_KEY} = CONFIG;
 export const {HOST} = CONFIG;
@@ -28,39 +29,40 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     </GoogleMap>
 ));
 
-const Recaptcha = require('react-recaptcha');
 const validator = require('validator');
+
 
 class ContactsPage extends Component {
     static defaultProps = {
         name: '',
         email: '',
         phone: '',
-        comment: ''
+        comment: '',
+        captcha: ''
     };
     state = {
         name: this.props.name,
         email: this.props.email,
         phone: this.props.phone,
         comment: this.props.comment,
+        captcha: this.props.captcha,
 
         isNameValid: false,
         isEmailValid: true,
         isPhoneValid: false,
+        isCaptchaValid: false,
     };
     handleOnNameChange = (e) => this.onNameChange(e);
     handleOnEmailChange = (e) => this.onEmailChange(e);
     handleOnPhoneChange = (e) => this.onPhoneChange(e);
     handleOnCommentChange = (e) => this.onCommentChange(e);
-
-    handleVerifyCallback = (e) => this.verifyCallback(e);
-    handleCallback = (e) => this.callback(e);
+    handleOnCaptchaChange = (e) => this.onCaptchaChange(e);
 
     handleSubmit = (e) => this.submit(e);
 
     onNameChange(e) {
         let val = e.target.value;
-        this.setState({name: val, isNameValid: validator.isAlpha(val, 'ru-RU')});
+        this.setState({name: val, isNameValid: !validator.isEmpty(val)});
     }
 
     onEmailChange(e) {
@@ -83,9 +85,13 @@ class ContactsPage extends Component {
         this.setState({comment: val});
     }
 
+    onCaptchaChange(e) {
+        let val = e.target.value;
+        this.setState({captcha: val, isCaptchaValid: !!val});
+    }
+
     submit(e) {
         e.preventDefault();
-        debugger;
         if (this.state.isNameValid === true &&
             this.state.isEmailValid === true &&
             this.state.isPhoneValid === true) {
@@ -93,27 +99,29 @@ class ContactsPage extends Component {
             console.log('All fields is valid!');
 
             let ajaxurl = HOST + 'wp-admin/admin-ajax.php';
-            let request = new Request(ajaxurl + '?action=send_mail', {
-                headers: new Headers({
-                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-                }),
-                method: 'POST',
-                body: JSON.stringify(
-                    {
-                        name: this.state.name,
-                        email: this.state.email,
-                        phone: this.state.phone,
-                        comment: this.state.comment,
-                    }
-                )
-            });
+            let name = this.state.name;
+            let email = this.state.email;
+            let phone = this.state.phone;
+            let comment = this.state.comment;
 
-            fetch(request).then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                console.log(data);
-            }).catch(function (error) {
-                console.log('Request failed', error);
+            $.ajax({
+                type: "POST",
+                url: ajaxurl + "?action=send_mail",
+                data: {"name": name, "email": email, "phone": phone, "comment": comment},
+                cache: false,
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response);
+                    swal(
+                        'Успешно!',
+                        'Письмо отправлено',
+                        'success'
+                    )
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status);
+                    alert(thrownError);
+                },
             });
 
         } else {
@@ -127,6 +135,9 @@ class ContactsPage extends Component {
             if (this.state.isPhoneValid === false) {
                 msg = 'Кажется Вы не правильно ввели номер телефона';
             }
+            if (this.state.isCaptchaValid === false) {
+                msg = 'Не правильно введены символы с картинки';
+            }
             swal({
                 type: 'error',
                 title: 'Ошибка',
@@ -134,14 +145,6 @@ class ContactsPage extends Component {
                 footer: msg,
             })
         }
-    }
-
-    verifyCallback(e) {
-        console.log('verify');
-    }
-
-    callback(e) {
-        console.log('callback');
     }
 
     componentDidMount() {
@@ -213,12 +216,16 @@ class ContactsPage extends Component {
                                                             onChange={this.handleOnCommentChange}
                                                         />
                                                     </FormGroup>
-                                                    <Recaptcha
-                                                        sitekey={SITE_KEY}
-                                                        render="explicit"
-                                                        verifyCallback={this.handleVerifyCallback}
-                                                        onloadCallback={this.handleCallback}
-                                                    />
+                                                    {/*<FormGroup>
+                                                        <ControlLabel>Сообщение</ControlLabel>
+                                                        <FormControl
+                                                            id="captcha"
+                                                            type="text"
+                                                            label="Контактный телефон"
+                                                            value={this.state.captcha}
+                                                            onChange={this.handleOnCaptchaChange}
+                                                        />
+                                                    </FormGroup>*/}
                                                     <br/>
 
                                                     <Button bsStyle="success" type="submit">Отправить</Button>
@@ -246,7 +253,9 @@ class ContactsPage extends Component {
                                                         </div>
                                                         <div className="contacts-info-office-text">
                                                             <p>
-                                                                <strong>Адрес: </strong>Иркутская обл. г.Усолье-Сибирское, район Усолье-Сибирского Химфарм завода
+                                                                <strong>Адрес: </strong>Иркутская обл.
+                                                                г.Усолье-Сибирское, район Усолье-Сибирского Химфарм
+                                                                завода
                                                             </p>
                                                         </div>
                                                     </div>

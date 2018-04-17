@@ -25,7 +25,7 @@ class CatalogPage extends Component {
         super(props);
         this.state = {
             terraceNavHeader: 'Комплектующие для террасной доски',
-            thermoNavHeader: 'Система ограждений',
+            fencingNavHeader: 'Система ограждений',
             slug: catalog
         };
     }
@@ -51,10 +51,10 @@ class CatalogPage extends Component {
         const {isPagesReady} = this.props.pages;
 
         if (posts && posts.isPostsReady && isSettingsReady && isAdminReady && isPagesReady) {
-            const {terrace, thermo, product} = posts;
+            const {terrace, fencing, product} = posts;
             const {query} = this.props.location;
             const {id} = query;
-            const {terraceNavHeader, thermoNavHeader} = this.state;
+            const {terraceNavHeader, fencingNavHeader} = this.state;
             const content = this.getContentById(product, id);
             const {slug} = this.state;
             const {data} = this.props.pages;
@@ -90,8 +90,8 @@ class CatalogPage extends Component {
                                             </div>
                                             <hr/>
                                             <div className="vertical-menu">
-                                                <h2 className="vertical-menu-title">{thermoNavHeader}</h2>
-                                                {thermo.map((product, key) => (
+                                                <h2 className="vertical-menu-title">{fencingNavHeader}</h2>
+                                                {fencing.map((product, key) => (
                                                     <Link activeClassName="active" key={key}
                                                           to={`/catalog?id=${product.id}`}><i
                                                         className="fas fa-caret-right"></i>&nbsp;{product.title.rendered}
