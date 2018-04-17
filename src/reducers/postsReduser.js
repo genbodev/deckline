@@ -1,7 +1,7 @@
 import CONFIG from '../config';
 
 const {CATEGORIES} = CONFIG;
-const {regularPosts, productPosts, thermoBoardPosts, terraceBoardPosts} = CATEGORIES;
+const {regularPosts, productPosts, fencingSystemPosts, terraceBoardPosts} = CATEGORIES;
 
 const sortPostsByCategoryId = (data = [], categotyId = regularPosts.id) => {
     if (data && data.length) {
@@ -30,7 +30,7 @@ const postsReducer = (state = null, action) => {
                 ...state,
                 regular: sortPostsByCategoryId(action.payload),
                 product: sortPostsByCategoryId(action.payload, productPosts.id),
-                thermo: sortPostsByCategoryId(action.payload, thermoBoardPosts.id),
+                fencing: sortPostsByCategoryId(action.payload, fencingSystemPosts.id),
                 terrace: sortPostsByCategoryId(action.payload, terraceBoardPosts.id),
                 isPostsReady: true
             };

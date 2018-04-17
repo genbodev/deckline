@@ -31,7 +31,7 @@ class Assortment extends Component {
     render() {
         const {items} = this.state;
         const {terrace, thermo} = this.props.posts;
-        console.log(`terrace`, terrace, thermo);
+        //console.log(`terrace`, terrace, thermo);
         return (
             <div id="Assortment">
                 <Grid>

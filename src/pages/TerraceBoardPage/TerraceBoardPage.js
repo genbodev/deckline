@@ -23,15 +23,6 @@ import LightBrownColorImage from './light-brown.png';
 import DarkBrownColorImage from './dark-brown.png';
 import BlackColorImage from './black.png';
 
-import ProductImage01 from './product01.jpg';
-import ProductImage02 from './product02.jpg';
-import ProductImage03 from './product03.jpg';
-import ProductImage04 from './product04.jpg';
-import ProductImage05 from './product05.jpg';
-import ProductImage06 from './product06.jpg';
-import ProductImage07 from './product07.jpg';
-import ProductImage08 from './product08.jpg';
-
 import OperatorImage from './operator.png';
 
 import ExampleImage01 from './terrasnaya-doska-01.jpg';
@@ -86,20 +77,19 @@ class TerraceBoardPage extends Component {
         this.setState({photoIndex: key, isOpen: true});
     }
 
-
-
     render() {
         const {isSettingsReady, isAdminReady} = this.props.admin;
         const {isPagesReady} = this.props.pages;
         const {photoIndex, isOpen} = this.state;
-        if (isSettingsReady && isAdminReady && isPagesReady) {
+        const {posts} = this.props;
+        if (isSettingsReady && isAdminReady && isPagesReady && posts && posts.isPostsReady) {
             const {slug} = this.state;
             const {data} = this.props.pages;
             const currentPage = getPageDataBySlug(data, slug);
             const title = currentPage.title.rendered.length > 1 ? `${DEFAULT_TITLE} - ${currentPage.title.rendered}` : DEFAULT_TITLE;
             const description = currentPage.acf.meta_description;
             const keywords = currentPage.acf.meta_key_words;
-
+            const {terrace} = this.props.posts;
             return (
                 <div id="TerraceBoardPage">
                     <Helmet>
@@ -202,135 +192,32 @@ class TerraceBoardPage extends Component {
                                 </div>
                                 <div className="terrace-board-products">
                                     <Grid>
-                                        <Row>
-                                            <h1>Комплектующие</h1>
-                                            <Col sm={4}>
-                                                <div className="terrace-board-products-image-text-wrapper">
-                                                    <div>
-                                                        <Link to="#">
-                                                            <img src={ProductImage01} alt="product-01"
-                                                                 className="img-responsive"/>
-                                                        </Link>
-                                                    </div>
-                                                    <div className="terrace-board-products-text">
-                                                        <Link to="#">
-                                                            Уголок завершающий (4 цвета) 43х43х3000мм
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            </Col>
-                                            <Col sm={4}>
-                                                <div className="terrace-board-products-image-text-wrapper">
-                                                    <div>
-                                                        <Link to="#">
-                                                            <img src={ProductImage02} alt="product-02"
-                                                                 className="img-responsive"/>
-                                                        </Link>
-                                                    </div>
-                                                    <div className="terrace-board-products-text">
-                                                        <Link to="#">
-                                                            Заглушка торцевая (4 цвета) 17х23х140 мм
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            </Col>
-                                            <Col sm={4}>
-                                                <div className="terrace-board-products-image-text-wrapper">
-                                                    <div>
-                                                        <Link to="#">
-                                                            <img src={ProductImage03} alt="product-03"
-                                                                 className="img-responsive"/>
-                                                        </Link>
-                                                    </div>
-                                                    <div className="terrace-board-products-text">
-                                                        <Link to="#">
-                                                            Универсальная доска (4 цвета) 10х140х3000 мм
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col sm={4}>
-                                                <div className="terrace-board-products-image-text-wrapper">
-                                                    <div>
-                                                        <Link to="#">
-                                                            <img src={ProductImage04} alt="product-04"
-                                                                 className="img-responsive"/>
-                                                        </Link>
-                                                    </div>
-                                                    <div className="terrace-board-products-text">
-                                                        <Link to="#">
-                                                            Кляймер металлический (зазор 5мм) 9х27х40мм
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            </Col>
-                                            <Col sm={4}>
-                                                <div className="terrace-board-products-image-text-wrapper">
-                                                    <div>
-                                                        <Link to="#">
-                                                            <img src={ProductImage05} alt="product-05"
-                                                                 className="img-responsive"/>
-                                                        </Link>
-                                                    </div>
-                                                    <div className="terrace-board-products-text">
-                                                        <Link to="#">
-                                                            Кляймер стартовый металлический 9х15х28мм
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            </Col>
-                                            <Col sm={4}>
-                                                <div className="terrace-board-products-image-text-wrapper">
-                                                    <div>
-                                                        <Link to="#">
-                                                            <img src={ProductImage06} alt="product-06"
-                                                                 className="img-responsive"/>
-                                                        </Link>
-                                                    </div>
-                                                    <div className="terrace-board-products-text">
-                                                        <Link to="#">
-                                                            Кляймер пластиковый (зазор 5мм) 9х17х40мм
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col sm={4}>
-                                                <div className="terrace-board-products-image-text-wrapper">
-                                                    <div>
-                                                        <Link to="#">
-                                                            <img src={ProductImage07} alt="product-07"
-                                                                 className="img-responsive"/>
-                                                        </Link>
-                                                    </div>
-                                                    <div className="terrace-board-products-text">
-                                                        <Link to="#">
-                                                            Лага ДПК 30х40х3000 мм.
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            </Col>
-                                            <Col sm={4}>
-                                                <div className="terrace-board-products-image-text-wrapper">
-                                                    <div>
-                                                        <Link to="#">
-                                                            <img src={ProductImage08} alt="product-08"
-                                                                 className="img-responsive"/>
-                                                        </Link>
-                                                    </div>
-                                                    <div className="terrace-board-products-text">
-                                                        <Link to="#">
-                                                            Лага алюминивая 28х37х3000 мм.
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            </Col>
-                                            <Col sm={4}>
-                                            </Col>
-                                        </Row>
+                                        <h1>Комплектующие</h1>
+                                        <div className="terrace-board-accessories-wrapper">
+                                            {(terrace && terrace.length) ? terrace.map((tagItem, key) => {
+                                                if (tagItem['better_featured_image']) {
+                                                    return (<div key={key} className="terrace-board-products-image-text-wrapper">
+                                                        <div className="terrace-board-products-image-wrapper">
+                                                            <Link activeClassName="active"
+                                                                  to={`/catalog?id=${tagItem.id}`} target="_blank">
+                                                                <img
+                                                                    src={`${tagItem['better_featured_image']['source_url']}`}
+                                                                    alt={`product-${key}`}
+                                                                    className=""/>
+                                                            </Link>
+                                                        </div>
+                                                        <div className="terrace-board-products-text">
+                                                            <Link activeClassName="active"
+                                                                  to={`/catalog?id=${tagItem.id}`} target="_blank">
+                                                                {tagItem.title.rendered}
+                                                            </Link>
+                                                        </div>
+                                                    </div>)
+                                                } else {
+                                                    return null;
+                                                }
+                                            }) : null}
+                                        </div>
                                     </Grid>
                                 </div>
                                 <div className="terrace-board-have-questions">
@@ -567,7 +454,8 @@ class TerraceBoardPage extends Component {
 const mapStateToProps = (state) => {
     return {
         admin: state.admin,
-        pages: state.pages
+        pages: state.pages,
+        posts: state.posts
     }
 };
 

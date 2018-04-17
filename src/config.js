@@ -7,7 +7,7 @@ const CONFIG = {
     CATEGORIES: {
         regularPosts: {id: 2, slug: 'main-posts'},
         productPosts: {id: 3, slug: 'products'},
-        thermoBoardPosts: {id: 5, slug: 'thermo-board-category'},
+        fencingSystemPosts: {id: 5, slug: 'fencing-system-category'},
         terraceBoardPosts: {id: 4, slug: 'terrace-board-category'},
     },
     POSTS_PER_PAGE: 120,

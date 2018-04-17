@@ -65,10 +65,28 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 25px;
+    width: 300px;
+    height: 300px;
+    margin: 30px;
+  }
+  .terrace-board-accessories-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .terrace-board-products-image-wrapper {
+    width: 300px;
+    height: 200px;
+    img {
+      width: 300px;
+      height: 200px;
+    }
   }
   .terrace-board-products-text {
     text-align: center;
+    flex: 1;
+    margin-top: 20px;
   }
   .terrace-board-have-questions {
     background-color: $sushi;

@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router';
 import Loader from 'react-loader-spinner';
 import { Helmet } from 'react-helmet';
+import Lightbox from 'react-image-lightbox';
 
 import './FencingSystemPage.css';
 import { connect } from 'react-redux';
@@ -22,15 +23,6 @@ import LightBrownColorImage from './light-brown.png';
 import DarkBrownColorImage from './dark-brown.png';
 import BlackColorImage from './black.png';
 
-import ProductImage01 from './product01.jpg';
-import ProductImage02 from './product02.jpg';
-import ProductImage03 from './product03.jpg';
-import ProductImage04 from './product04.jpg';
-import ProductImage05 from './product05.jpg';
-import ProductImage06 from './product06.jpg';
-import ProductImage07 from './product07.jpg';
-import ProductImage08 from './product08.jpg';
-
 import OperatorImage from './operator.png';
 
 import ExampleImage01 from './fencing-01.jpg';
@@ -48,11 +40,23 @@ import config from "../../config";
 const {fencingSystem} = config.SLUGS;
 const {DEFAULT_TITLE} = config;
 
+const images = [
+    ExampleImage01,
+    ExampleImage02,
+    ExampleImage03,
+    ExampleImage04,
+    ExampleImage05,
+    ExampleImage06,
+    ExampleImage07
+];
+
 class FencingSystemPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            slug: fencingSystem
+            slug: fencingSystem,
+            photoIndex: 0,
+            isOpen: false
         };
     }
     handleClick = (e) => this.showMsg(e);
@@ -60,18 +64,24 @@ class FencingSystemPage extends Component {
     showMsg(e) {
         swal('Доставка по РФ и странам СНГ осуществляется любой транспортной компанией исходя из предпочтений заказчика. Мы ценим плоды своего труда, поэтому перед отправкой все изделия тщательно упаковываются для обеспечения сохранности при транспортировке')
     }
+
+    openPicture(key = 0) {
+        this.setState({photoIndex: key, isOpen: true});
+    }
+
     render() {
         const {isSettingsReady, isAdminReady} = this.props.admin;
         const {isPagesReady} = this.props.pages;
-
-        if (isSettingsReady && isAdminReady && isPagesReady) {
+        const {photoIndex, isOpen} = this.state;
+        const {posts} = this.props;
+        if (isSettingsReady && isAdminReady && isPagesReady && posts && posts.isPostsReady) {
             const {slug} = this.state;
             const {data} = this.props.pages;
             const currentPage = getPageDataBySlug(data, slug);
             const title = currentPage.title.rendered.length > 1 ? `${DEFAULT_TITLE} - ${currentPage.title.rendered}` : DEFAULT_TITLE;
             const description = currentPage.acf.meta_description;
             const keywords = currentPage.acf.meta_key_words;
-
+            const {fencing} = this.props.posts;
             return (
                 <div id="FencingSystemPage">
                     <Helmet>
@@ -175,135 +185,32 @@ class FencingSystemPage extends Component {
                                 </div>
                                 <div className="fencing-system-products">
                                     <Grid>
-                                        <Row>
-                                            <h1>Комплектующие</h1>
-                                            <Col sm={4}>
-                                                <div className="fencing-system-products-image-text-wrapper">
-                                                    <div>
-                                                        <Link to="#">
-                                                            <img src={ProductImage01} alt="product-01"
-                                                                 className="img-responsive"/>
-                                                        </Link>
-                                                    </div>
-                                                    <div className="fencing-system-products-text">
-                                                        <Link to="#">
-                                                            Уголок завершающий (4 цвета) 43х43х3000мм
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            </Col>
-                                            <Col sm={4}>
-                                                <div className="fencing-system-products-image-text-wrapper">
-                                                    <div>
-                                                        <Link to="#">
-                                                            <img src={ProductImage02} alt="product-02"
-                                                                 className="img-responsive"/>
-                                                        </Link>
-                                                    </div>
-                                                    <div className="fencing-system-products-text">
-                                                        <Link to="#">
-                                                            Заглушка торцевая (4 цвета) 17х23х140 мм
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            </Col>
-                                            <Col sm={4}>
-                                                <div className="fencing-system-products-image-text-wrapper">
-                                                    <div>
-                                                        <Link to="#">
-                                                            <img src={ProductImage03} alt="product-03"
-                                                                 className="img-responsive"/>
-                                                        </Link>
-                                                    </div>
-                                                    <div className="fencing-system-products-text">
-                                                        <Link to="#">
-                                                            Универсальная доска (4 цвета) 10х140х3000 мм
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col sm={4}>
-                                                <div className="fencing-system-products-image-text-wrapper">
-                                                    <div>
-                                                        <Link to="#">
-                                                            <img src={ProductImage04} alt="product-04"
-                                                                 className="img-responsive"/>
-                                                        </Link>
-                                                    </div>
-                                                    <div className="fencing-system-products-text">
-                                                        <Link to="#">
-                                                            Кляймер металлический (зазор 5мм) 9х27х40мм
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            </Col>
-                                            <Col sm={4}>
-                                                <div className="fencing-system-products-image-text-wrapper">
-                                                    <div>
-                                                        <Link to="#">
-                                                            <img src={ProductImage05} alt="product-05"
-                                                                 className="img-responsive"/>
-                                                        </Link>
-                                                    </div>
-                                                    <div className="fencing-system-products-text">
-                                                        <Link to="#">
-                                                            Кляймер стартовый металлический 9х15х28мм
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            </Col>
-                                            <Col sm={4}>
-                                                <div className="fencing-system-products-image-text-wrapper">
-                                                    <div>
-                                                        <Link to="#">
-                                                            <img src={ProductImage06} alt="product-06"
-                                                                 className="img-responsive"/>
-                                                        </Link>
-                                                    </div>
-                                                    <div className="fencing-system-products-text">
-                                                        <Link to="#">
-                                                            Кляймер пластиковый (зазор 5мм) 9х17х40мм
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col sm={4}>
-                                                <div className="fencing-system-products-image-text-wrapper">
-                                                    <div>
-                                                        <Link to="#">
-                                                            <img src={ProductImage07} alt="product-07"
-                                                                 className="img-responsive"/>
-                                                        </Link>
-                                                    </div>
-                                                    <div className="fencing-system-products-text">
-                                                        <Link to="#">
-                                                            Лага ДПК 30х40х3000 мм.
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            </Col>
-                                            <Col sm={4}>
-                                                <div className="fencing-system-products-image-text-wrapper">
-                                                    <div>
-                                                        <Link to="#">
-                                                            <img src={ProductImage08} alt="product-08"
-                                                                 className="img-responsive"/>
-                                                        </Link>
-                                                    </div>
-                                                    <div className="fencing-system-products-text">
-                                                        <Link to="#">
-                                                            Лага алюминивая 28х37х3000 мм.
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            </Col>
-                                            <Col sm={4}>
-                                            </Col>
-                                        </Row>
+                                        <h1>Комплектующие</h1>
+                                        <div className="fencing-system-accessories-wrapper">
+                                            {(fencing && fencing.length) ? fencing.map((tagItem, key) => {
+                                                if (tagItem['better_featured_image']) {
+                                                    return (<div key={key} className="fencing-system-products-image-text-wrapper">
+                                                        <div className="fencing-system-products-image-wrapper">
+                                                            <Link activeClassName="active"
+                                                                  to={`/catalog?id=${tagItem.id}`} target="_blank">
+                                                                <img
+                                                                    src={`${tagItem['better_featured_image']['source_url']}`}
+                                                                    alt={`product-${key}`}
+                                                                    className=""/>
+                                                            </Link>
+                                                        </div>
+                                                        <div className="fencing-system-products-text">
+                                                            <Link activeClassName="active"
+                                                                  to={`/catalog?id=${tagItem.id}`} target="_blank">
+                                                                {tagItem.title.rendered}
+                                                            </Link>
+                                                        </div>
+                                                    </div>)
+                                                } else {
+                                                    return null;
+                                                }
+                                            }): null}
+                                        </div>
                                     </Grid>
                                 </div>
                                 <div className="fencing-system-have-questions">
@@ -375,43 +282,43 @@ class FencingSystemPage extends Component {
                                             <Col xs={12}>
                                                 <h1>Примеры использования системы ограждений</h1>
                                                 <div className="fencing-system-examples-wrapper">
-                                                    <div className="fencing-system-example-image-wrapper">
+                                                    <div className="fencing-system-example-image-wrapper" onClick={() => this.openPicture()}>
                                                         <img src={ExampleImage01} alt="example-01"
                                                              className="img-responsive"/>
                                                         <span className="fencing-system-example-zoom"><i
                                                             className="fas fa-search"/></span>
                                                     </div>
-                                                    <div className="fencing-system-example-image-wrapper">
+                                                    <div className="fencing-system-example-image-wrapper" onClick={() => this.openPicture(1)}>
                                                         <img src={ExampleImage02} alt="example-02"
                                                              className="img-responsive"/>
                                                         <span className="fencing-system-example-zoom"><i
                                                             className="fas fa-search"/></span>
                                                     </div>
-                                                    <div className="fencing-system-example-image-wrapper">
+                                                    <div className="fencing-system-example-image-wrapper" onClick={() => this.openPicture(2)}>
                                                         <img src={ExampleImage03} alt="example-03"
                                                              className="img-responsive"/>
                                                         <span className="fencing-system-example-zoom"><i
                                                             className="fas fa-search"/></span>
                                                     </div>
-                                                    <div className="fencing-system-example-image-wrapper">
+                                                    <div className="fencing-system-example-image-wrapper" onClick={() => this.openPicture(3)}>
                                                         <img src={ExampleImage04} alt="example-04"
                                                              className="img-responsive"/>
                                                         <span className="fencing-system-example-zoom"><i
                                                             className="fas fa-search"/></span>
                                                     </div>
-                                                    <div className="fencing-system-example-image-wrapper">
+                                                    <div className="fencing-system-example-image-wrapper" onClick={() => this.openPicture(4)}>
                                                         <img src={ExampleImage05} alt="example-05"
                                                              className="img-responsive"/>
                                                         <span className="fencing-system-example-zoom"><i
                                                             className="fas fa-search"/></span>
                                                     </div>
-                                                    <div className="fencing-system-example-image-wrapper">
+                                                    <div className="fencing-system-example-image-wrapper" onClick={() => this.openPicture(5)}>
                                                         <img src={ExampleImage06} alt="example-06"
                                                              className="img-responsive"/>
                                                         <span className="fencing-system-example-zoom"><i
                                                             className="fas fa-search"/></span>
                                                     </div>
-                                                    <div className="fencing-system-example-image-wrapper">
+                                                    <div className="fencing-system-example-image-wrapper" onClick={() => this.openPicture(6)}>
                                                         <img src={ExampleImage07} alt="example-07"
                                                              className="img-responsive"/>
                                                         <span className="fencing-system-example-zoom"><i
@@ -421,6 +328,24 @@ class FencingSystemPage extends Component {
                                             </Col>
                                         </Row>
                                     </Grid>
+                                    {isOpen && (
+                                        <Lightbox
+                                            mainSrc={images[photoIndex]}
+                                            nextSrc={images[(photoIndex + 1) % images.length]}
+                                            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+                                            onCloseRequest={() => this.setState({isOpen: false})}
+                                            onMovePrevRequest={() =>
+                                                this.setState({
+                                                    photoIndex: (photoIndex + images.length - 1) % images.length,
+                                                })
+                                            }
+                                            onMoveNextRequest={() =>
+                                                this.setState({
+                                                    photoIndex: (photoIndex + 1) % images.length,
+                                                })
+                                            }
+                                        />
+                                    )}
                                 </div>
                                 <div className="fencing-system-description">
                                     <Grid>
@@ -468,7 +393,8 @@ class FencingSystemPage extends Component {
 const mapStateToProps = (state) => {
     return {
         admin: state.admin,
-        pages: state.pages
+        pages: state.pages,
+        posts: state.posts
     }
 };
 
