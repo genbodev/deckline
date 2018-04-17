@@ -61,7 +61,7 @@ class MobileNavigation extends Component {
                             </nav>
                             <h4>Контакты</h4>
                             <p className="contacts-p">
-                                <i className="fas fa-envelope"></i>&nbsp;<span>user@gmail.com</span>
+                                <i className="fas fa-envelope"></i>&nbsp;<span>baikaltexcom@rambler.ru</span>
                             </p>
                             <p className="contacts-p">
                                 <i className="fas fa-phone"></i>&nbsp;<span>(39543) 52953, 52952</span>
