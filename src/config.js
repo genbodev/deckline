@@ -1,5 +1,5 @@
 const CONFIG = {
-    HOST: 'http://deck-line.ru/',
+    HOST: 'http://deckline/',
     MEDIA: 'wp-content/uploads/',
     REST_API_URL: 'wp-json/wp/v2/',
     LOGIN: 'admin',

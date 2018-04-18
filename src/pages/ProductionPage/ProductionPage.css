@@ -22,6 +22,9 @@
   #ProductionPage .production-advantage-image-03 {
     background: url("proizv-03.jpg") center no-repeat;
     background-size: cover; }
+  #ProductionPage .production-advantage-image-04 {
+    background: url("proizv-04.jpg") center no-repeat;
+    background-size: cover; }
 
 #ProductionPage .production-advantage-text {
   padding: 60px; }
