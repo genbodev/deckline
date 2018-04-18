@@ -47,7 +47,7 @@ store.dispatch(getPostsData());
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router history={history}>
+        <Router onUpdate={() => window.scrollTo(0, 0)} history={history}>
             <Route path='/' component={IndexPage}/>
             {/*<Route path='/about' component={AboutPage}/>*/}
             <Route path='/catalog' component={CatalogPage}/>

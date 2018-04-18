@@ -51,6 +51,14 @@ class ContactsPage extends Component {
         isEmailValid: true,
         isPhoneValid: false,
         isCaptchaValid: false,
+
+        defaultData: {
+            address : "Иркутская обл. г.Усолье-Сибирское, район Усолье-Сибирского Химфарм завода",
+            phone : "(39543) 52953, 52952",
+            email : "baikaltexcom@rambler.ru",
+            workingHours : "Понедельник - Пятница - 09:00 до 18:00",
+            weekend : "Суббота, Воскресенье - Выходной"
+        }
     };
     handleOnNameChange = (e) => this.onNameChange(e);
     handleOnEmailChange = (e) => this.onEmailChange(e);
@@ -152,6 +160,9 @@ class ContactsPage extends Component {
     }
 
     render() {
+        console.log(`data`, this.props.data);
+        const {address, phone, email, workingHours, weekend} = this.state.defaultData;
+        const {data} = this.props;
         return (
             <div id="ContactsPage" className="wrapper">
                 <div className="content">
@@ -253,9 +264,7 @@ class ContactsPage extends Component {
                                                         </div>
                                                         <div className="contacts-info-office-text">
                                                             <p>
-                                                                <strong>Адрес: </strong>Иркутская обл.
-                                                                г.Усолье-Сибирское, район Усолье-Сибирского Химфарм
-                                                                завода
+                                                                <strong>Адрес: </strong> {(data && data['opt-textarea-address']) ? data['opt-textarea-address'] : address}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -265,17 +274,7 @@ class ContactsPage extends Component {
                                                         </div>
                                                         <div className="contacts-info-office-text">
                                                             <p>
-                                                                <strong>Телефон: </strong>(39543) 52953, 52952
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <div className="contacts-info-office-icon-text-wrapper">
-                                                        <div className="contacts-info-office-icon">
-                                                            <i className="fas fa-phone"/>
-                                                        </div>
-                                                        <div className="contacts-info-office-text">
-                                                            <p>
-                                                                <strong>Телефон: </strong>(39543) 52953, 52952
+                                                                <strong>Телефон: </strong>{(data && data['opt-text-numeric-phone']) ? data['opt-text-numeric-phone'] : phone}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -286,7 +285,7 @@ class ContactsPage extends Component {
                                                         <div className="contacts-info-office-text">
                                                             <p>
                                                                 <strong>Email: </strong><a
-                                                                href="mailto:baikaltexcom@rambler.ru">baikaltexcom@rambler.ru</a>
+                                                                href="mailto:baikaltexcom@rambler.ru">{(data && data['opt-text-user-email']) ? data['opt-text-user-email'] : email}</a>
                                                             </p>
                                                         </div>
                                                     </div>
@@ -300,7 +299,7 @@ class ContactsPage extends Component {
                                                         </div>
                                                         <div className="contacts-info-time-text">
                                                             <p>
-                                                                Понедельник - Пятница - 09:00 до 18:00
+                                                                {(data && data['opt-textarea-working-hours']) ? data['opt-textarea-working-hours'] : workingHours}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -310,7 +309,7 @@ class ContactsPage extends Component {
                                                         </div>
                                                         <div className="contacts-info-time-text">
                                                             <p>
-                                                                Суббота, Воскресенье - Выходной
+                                                                {(data && data['opt-textarea-weekend']) ? data['opt-textarea-weekend'] : weekend}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -350,7 +349,10 @@ class ContactsPage extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {}
+    const {data} = state.admin;
+    return {
+        data
+    }
 };
 
 const mapDispatchToProps = (dispatch) => {

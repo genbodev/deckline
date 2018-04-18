@@ -39,7 +39,9 @@ class CatalogPage extends Component {
             });
         }
         if (typeof currentPost === "string") {
-            return posts.shift();
+            let currentPost = posts[0];
+            this.props.location.query.id = currentPost.id;
+            return currentPost;
         } else {
             return currentPost;
         }
@@ -53,7 +55,7 @@ class CatalogPage extends Component {
         if (posts && posts.isPostsReady && isSettingsReady && isAdminReady && isPagesReady) {
             const {terrace, fencing, product} = posts;
             const {query} = this.props.location;
-            const {id} = query;
+            let {id} = query;
             const {terraceNavHeader, fencingNavHeader} = this.state;
             const content = this.getContentById(product, id);
             const {slug} = this.state;

@@ -17,6 +17,7 @@ class MobileNavigation extends Component {
                 {title: 'Система ограждений', slug: '/fencing-system'},
                 {title: 'Производство', slug: '/production'},
                 {title: 'Каталог', slug: '/catalog'},
+                {title: 'Контакты', slug: '/contacts'}
             ]
         };
     }

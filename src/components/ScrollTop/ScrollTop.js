@@ -20,7 +20,7 @@ class ScrollTop extends Component {
     render() {
         const { scrollText, scrollOffset } = this.state;
         return (
-            <ScrollToTop showUnder={scrollOffset}>
+            <ScrollToTop showUnder={scrollOffset} style={{zIndex : '999'}}>
                 <div id="Scroll-to-top">
                     <i className="scroll-icon far fa-arrow-alt-circle-up"></i>
                     <p className="scroll-text">{scrollText}</p>
