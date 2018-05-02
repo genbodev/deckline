@@ -1,10 +1,10 @@
 const CONFIG = {
-    HOST: 'http://deckline/',
+    HOST: 'http://deck-line.ru/',
     MEDIA: 'wp-content/uploads/',
     REST_API_URL: 'wp-json/wp/v2/',
     LOGIN: 'admin',
     PASSWORD: 'zqjy%x#GxsI@lGm$a9',
-   // PASSWORD: '$P$BfVRHs3C3XLY2LxfZVIjhoqmk9teeT1',
+    // PASSWORD: '$P$BfVRHs3C3XLY2LxfZVIjhoqmk9teeT1',
     CATEGORIES: {
         regularPosts: {id: 2, slug: 'main-posts'},
         productPosts: {id: 3, slug: 'products'},
