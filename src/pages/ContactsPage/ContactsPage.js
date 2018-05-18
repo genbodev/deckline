@@ -23,9 +23,9 @@ export const {HOST} = CONFIG;
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
         defaultZoom={17}
-        defaultCenter={{lat: 52.750149, lng: 103.633323}}
+        defaultCenter={{lat: 52.790526, lng: 103.592413}}
     >
-        {props.isMarkerShown && <Marker position={{lat: 52.750149, lng: 103.633323}}/>}
+        {props.isMarkerShown && <Marker position={{lat: 52.790526, lng: 103.592413}}/>}
     </GoogleMap>
 ));
 
@@ -37,7 +37,7 @@ class ContactsPage extends Component {
         name: '',
         email: '',
         phone: '',
-        comment: '',
+        comment: 'Запросить прайс-лист на продукцию',
         captcha: ''
     };
     state = {
@@ -45,12 +45,11 @@ class ContactsPage extends Component {
         email: this.props.email,
         phone: this.props.phone,
         comment: this.props.comment,
-        captcha: this.props.captcha,
 
         isNameValid: false,
-        isEmailValid: true,
+        isEmailValid: false,
         isPhoneValid: false,
-        isCaptchaValid: false,
+        isCommentValid: true,
 
         defaultData: {
             address : "Иркутская обл. г.Усолье-Сибирское, район Усолье-Сибирского Химфарм завода",
@@ -64,7 +63,6 @@ class ContactsPage extends Component {
     handleOnEmailChange = (e) => this.onEmailChange(e);
     handleOnPhoneChange = (e) => this.onPhoneChange(e);
     handleOnCommentChange = (e) => this.onCommentChange(e);
-    handleOnCaptchaChange = (e) => this.onCaptchaChange(e);
 
     handleSubmit = (e) => this.submit(e);
 
@@ -77,8 +75,6 @@ class ContactsPage extends Component {
         let val = e.target.value;
         if (val !== '') {
             this.setState({email: val, isEmailValid: validator.isEmail(val)});
-        } else {
-            this.setState({email: val, isEmailValid: true});
         }
     }
 
@@ -90,19 +86,15 @@ class ContactsPage extends Component {
 
     onCommentChange(e) {
         let val = e.target.value;
-        this.setState({comment: val});
-    }
-
-    onCaptchaChange(e) {
-        let val = e.target.value;
-        this.setState({captcha: val, isCaptchaValid: !!val});
+        this.setState({comment: val, isCommentValid: !validator.isEmpty(val)});
     }
 
     submit(e) {
         e.preventDefault();
         if (this.state.isNameValid === true &&
             this.state.isEmailValid === true &&
-            this.state.isPhoneValid === true) {
+            this.state.isPhoneValid === true &&
+            this.state.isCommentValid === true) {
 
             console.log('All fields is valid!');
 
@@ -143,8 +135,8 @@ class ContactsPage extends Component {
             if (this.state.isPhoneValid === false) {
                 msg = 'Кажется Вы не правильно ввели номер телефона';
             }
-            if (this.state.isCaptchaValid === false) {
-                msg = 'Не правильно введены символы с картинки';
+            if (this.state.isCommentValid === false) {
+                msg = 'Кажется Вы не ввели комментарий';
             }
             swal({
                 type: 'error',
@@ -221,22 +213,12 @@ class ContactsPage extends Component {
                                                         <FormControl
                                                             id="comment"
                                                             componentClass="textarea"
-                                                            placeholder="Как стать Вашим партнером?"
+                                                            placeholder="Запросить прайс-лист на продукцию"
                                                             rows="10"
                                                             value={this.state.comment}
                                                             onChange={this.handleOnCommentChange}
                                                         />
                                                     </FormGroup>
-                                                    {/*<FormGroup>
-                                                        <ControlLabel>Сообщение</ControlLabel>
-                                                        <FormControl
-                                                            id="captcha"
-                                                            type="text"
-                                                            label="Контактный телефон"
-                                                            value={this.state.captcha}
-                                                            onChange={this.handleOnCaptchaChange}
-                                                        />
-                                                    </FormGroup>*/}
                                                     <br/>
 
                                                     <Button bsStyle="success" type="submit">Отправить</Button>
@@ -245,17 +227,7 @@ class ContactsPage extends Component {
                                         </Col>
                                         <Col lg={6}>
                                             <div className="contacts-info-wrapper">
-                                                <div>
-                                                    <p>
-                                                        В настоящее время DECKLINE GROUP – успешная компания. Этот успех
-                                                        мы
-                                                        заслужили
-                                                        своим трудом, ответственностью, инновационным подходом. Мы
-                                                        продолжаем свое
-                                                        развитие и готовы к новым достижениям.
-                                                    </p>
-                                                </div>
-                                                <hr/>
+
                                                 <div className="contacts-info-office">
                                                     <h3 className="header-accent"><strong>Офис</strong></h3>
                                                     <div className="contacts-info-office-icon-text-wrapper">
@@ -315,22 +287,6 @@ class ContactsPage extends Component {
                                                     </div>
                                                 </div>
                                                 <hr/>
-                                                {/*<div className="contacts-info-requisites">
-                                                    <h3 className="header-accent"><strong>Реквизиты</strong></h3>
-                                                    <p>ООО "СибЛесСтрой"</p>
-                                                    <p><strong>Адрес: </strong>Иркутская обл. г.Усолье-Сибирское, район Усолье-Сибирского Химфарм завода
-                                                    </p>
-                                                    <br/>
-                                                    <p><strong>ИНН: </strong>3819018599</p>
-                                                    <p><strong>КПП: </strong>381901001</p>
-                                                    <p><strong>ОГРН: </strong>1073819000420</p>
-                                                    <br/>
-                                                    <p><strong>Расчетный счет: </strong>40702810434150000082</p>
-                                                    <p><strong>Банк: </strong>Филиал "АТБ" (ОАО) в г.Улан-Удэ ОО№111 в
-                                                        г.Усолье-Сибирское</p>
-                                                    <p><strong>Корреспондентский счёт: </strong>30101810700000000744</p>
-                                                    <p><strong>БИК: </strong>048142744</p>
-                                                </div>*/}
                                             </div>
                                         </Col>
                                     </Row>

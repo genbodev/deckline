@@ -17,16 +17,52 @@
   .vertical-menu-title {
     @include font-size(14);
     text-transform: uppercase;
-    text-align: center;
+    text-align: left;
     font-weight: 500;
+    margin-left: 15px;
   }
   .product-title {
     text-align: center;
   }
   .product-img {
     text-align: center;
+    margin-bottom: 30px;
     img {
       display: inline-block;
     }
   }
+
+  .catalog-colors-main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+  .catalog-colors-image-text-wrapper {
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .catalog-colors-text {
+    text-align: center;
+    @include font-size(12);
+  }
+  .catalog-colors-parameters-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #000000;
+    margin-bottom: 5px;
+    @include font-size(20);
+  }
+  .catalog-colors-parameters-key {
+    font-weight: 600;
+  }
+  .catalog-colors-parameters-value {
+    font-weight: 200;
+  }
+  
 }

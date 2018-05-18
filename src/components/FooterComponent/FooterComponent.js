@@ -82,7 +82,7 @@ class FooterComponent extends Component {
                                         <i className="fas fa-download"></i>
                                     </div>
                                     <div className="footer-first-text">
-                                        <a href="/files/ogr-price.xls">ДПК ограждения, прайс-лист</a>
+                                        <a href="/files/ogr-price.xls" download>ДПК ограждения, прайс-лист</a>
                                     </div>
                                 </div>
                                 <div className="footer-first-icon-text-wrapper">
@@ -90,7 +90,7 @@ class FooterComponent extends Component {
                                         <i className="fas fa-download"></i>
                                     </div>
                                     <div className="footer-first-text">
-                                        <a href="/files/doska-price.xls">ДПК террасная доска, прайс-лист</a>
+                                        <a href="/files/doska-price.xls" download>ДПК террасная доска, прайс-лист</a>
                                     </div>
                                 </div>
                                 <div className="footer-first-icon-text-wrapper">
@@ -98,7 +98,7 @@ class FooterComponent extends Component {
                                         <i className="fas fa-download"></i>
                                     </div>
                                     <div className="footer-first-text">
-                                        <a href="/files/instr.doc">Скачать инструкцию по монтажу</a>
+                                        <a href="/files/instr.doc" download>Скачать инструкцию по монтажу</a>
                                     </div>
                                 </div>
                             </Col>

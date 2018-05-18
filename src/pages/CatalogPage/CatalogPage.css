@@ -10,13 +10,47 @@
 #CatalogPage .vertical-menu-title {
   font-size: 0.875rem;
   text-transform: uppercase;
-  text-align: center;
-  font-weight: 500; }
+  text-align: left;
+  font-weight: 500;
+  margin-left: 15px; }
 
 #CatalogPage .product-title {
   text-align: center; }
 
 #CatalogPage .product-img {
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 30px; }
   #CatalogPage .product-img img {
     display: inline-block; }
+
+#CatalogPage .catalog-colors-main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px; }
+
+#CatalogPage .catalog-colors-image-text-wrapper {
+  width: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+#CatalogPage .catalog-colors-text {
+  text-align: center;
+  font-size: 0.75rem; }
+
+#CatalogPage .catalog-colors-parameters-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #000000;
+  margin-bottom: 5px;
+  font-size: 1.25rem; }
+
+#CatalogPage .catalog-colors-parameters-key {
+  font-weight: 600; }
+
+#CatalogPage .catalog-colors-parameters-value {
+  font-weight: 200; }

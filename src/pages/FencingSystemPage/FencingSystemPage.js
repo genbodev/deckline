@@ -116,7 +116,7 @@ class FencingSystemPage extends Component {
                                                     <div className="fencing-system-colors-image-text-wrapper">
                                                         <img src={SandColorImage} alt="sand-color"
                                                              className="img-responsive"/>
-                                                        <div className="fencing-system-colors-text">Песочный</div>
+                                                        <div className="fencing-system-colors-text">Бук</div>
                                                     </div>
                                                 </div>
                                             </Col>
@@ -126,7 +126,7 @@ class FencingSystemPage extends Component {
                                                     <div className="fencing-system-colors-image-text-wrapper">
                                                         <img src={LightBrownColorImage} alt="light-brown-color"
                                                              className="img-responsive"/>
-                                                        <div className="fencing-system-colors-text">Светло-коричневый</div>
+                                                        <div className="fencing-system-colors-text">Венге светлый</div>
                                                     </div>
                                                 </div>
                                             </Col>
@@ -137,7 +137,7 @@ class FencingSystemPage extends Component {
                                                     <div className="fencing-system-colors-image-text-wrapper">
                                                         <img src={DarkBrownColorImage} alt="dark-brown"
                                                              className="img-responsive"/>
-                                                        <div className="fencing-system-colors-text">Темно-коричневый</div>
+                                                        <div className="fencing-system-colors-text">Венге темный</div>
                                                     </div>
                                                 </div>
                                             </Col>
@@ -152,33 +152,6 @@ class FencingSystemPage extends Component {
                                                 </div>
                                             </Col>
                                             <Col xs={0} md={2} lg={4}>
-                                            </Col>
-                                        </Row>
-                                    </Grid>
-                                    <Grid>
-                                        <Row>
-                                            <Col sm={4}>
-                                                <div className="fencing-system-colors-parameters-wrapper">
-                                                    <div className="fencing-system-colors-parameters-key">Высота</div>
-                                                    <div className="fencing-system-colors-parameters-value">23 мм</div>
-                                                </div>
-                                            </Col>
-                                            <Col sm={4}>
-                                                <div>
-                                                    <div className="fencing-system-colors-parameters-wrapper">
-                                                        <div className="fencing-system-colors-parameters-key">Ширина</div>
-                                                        <div className="fencing-system-colors-parameters-value">140 мм</div>
-                                                    </div>
-                                                </div>
-                                            </Col>
-                                            <Col sm={4}>
-                                                <div>
-                                                    <div className="fencing-system-colors-parameters-wrapper">
-                                                        <div className="fencing-system-colors-parameters-key">Длина</div>
-                                                        <div className="fencing-system-colors-parameters-value">3000 мм
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </Col>
                                         </Row>
                                     </Grid>
@@ -233,7 +206,7 @@ class FencingSystemPage extends Component {
                                                     <div className="fencing-system-have-questions-download"><i
                                                         className="fas fa-download"/>
                                                         <a href="/files/ogr-price.xls"
-                                                           className="fencing-system-have-questions-link">
+                                                           className="fencing-system-have-questions-link" download>
                                                             Скачать каталог продукции
                                                         </a>
                                                     </div>
@@ -249,7 +222,7 @@ class FencingSystemPage extends Component {
                                                     <div className="fencing-system-have-questions-button">
                                                         <i className="fas fa-briefcase"/>
                                                         <a href="/files/prices.zip"
-                                                           className="fencing-system-have-questions-link">
+                                                           className="fencing-system-have-questions-link" download>
                                                             Оптовикам
                                                         </a>
                                                     </div>
@@ -267,7 +240,7 @@ class FencingSystemPage extends Component {
                                                     <div className="fencing-system-have-questions-button">
                                                         <i className="far far fa-folder"/>
                                                         <a href="/files/instr.doc"
-                                                           className="fencing-system-have-questions-link">
+                                                           className="fencing-system-have-questions-link" download>
                                                             Монтажные схемы
                                                         </a>
                                                     </div>

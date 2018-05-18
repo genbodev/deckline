@@ -124,7 +124,7 @@ class TerraceBoardPage extends Component {
                                                     <div className="terrace-board-colors-image-text-wrapper">
                                                         <img src={SandColorImage} alt="sand-color"
                                                              className="img-responsive"/>
-                                                        <div className="terrace-board-colors-text">Песочный</div>
+                                                        <div className="terrace-board-colors-text">Бук</div>
                                                     </div>
                                                 </div>
                                             </Col>
@@ -134,7 +134,7 @@ class TerraceBoardPage extends Component {
                                                     <div className="terrace-board-colors-image-text-wrapper">
                                                         <img src={LightBrownColorImage} alt="light-brown-color"
                                                              className="img-responsive"/>
-                                                        <div className="terrace-board-colors-text">Светло-коричневый</div>
+                                                        <div className="terrace-board-colors-text">Венге светлый</div>
                                                     </div>
                                                 </div>
                                             </Col>
@@ -145,7 +145,7 @@ class TerraceBoardPage extends Component {
                                                     <div className="terrace-board-colors-image-text-wrapper">
                                                         <img src={DarkBrownColorImage} alt="dark-brown"
                                                              className="img-responsive"/>
-                                                        <div className="terrace-board-colors-text">Темно-коричневый</div>
+                                                        <div className="terrace-board-colors-text">Венге темный</div>
                                                     </div>
                                                 </div>
                                             </Col>
@@ -239,7 +239,7 @@ class TerraceBoardPage extends Component {
                                                     <div className="terrace-board-have-questions-download"><i
                                                         className="fas fa-download"/>
                                                         <a href="/files/doska-price.xls"
-                                                           className="terrace-board-have-questions-link">
+                                                           className="terrace-board-have-questions-link" download>
                                                             Скачать каталог продукции
                                                         </a>
                                                     </div>
@@ -255,7 +255,7 @@ class TerraceBoardPage extends Component {
                                                     <div className="terrace-board-have-questions-button">
                                                         <i className="fas fa-briefcase"/>
                                                         <a href="/files/prices.zip"
-                                                           className="terrace-board-have-questions-link">
+                                                           className="terrace-board-have-questions-link" download>
                                                             Оптовикам
                                                         </a>
                                                     </div>
@@ -273,7 +273,7 @@ class TerraceBoardPage extends Component {
                                                     <div className="terrace-board-have-questions-button">
                                                         <i className="far far fa-folder"/>
                                                         <a href="/files/instr.doc"
-                                                           className="terrace-board-have-questions-link">
+                                                           className="terrace-board-have-questions-link" download>
                                                             Монтажные схемы
                                                         </a>
                                                     </div>
