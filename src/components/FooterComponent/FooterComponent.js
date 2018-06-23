@@ -7,6 +7,9 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import logoFooter from './logo-90-prz.png';
 import InstagramEmbed from 'react-instagram-embed';
 
+import Modal from 'react-responsive-modal';
+import PriceOrderComponent from '../../components/PriceOrderComponent/PriceOrderComponent';
+
 class FooterComponent extends Component {
     constructor(props) {
         super(props);
@@ -18,12 +21,25 @@ class FooterComponent extends Component {
                 workingHours : "Понедельник - Пятница - 09:00 до 18:00",
                 copyrightText : "© 2018 СибЛесСтрой - Все права защищены.",
                 descriptionText : "Производитель изделий из ДПК, террасная доска, ограждения."
-            }
+            },
+            modalOpen: false
         };
     }
+
+    handleClick = (e) => this.onOpenModal(e);
+
+    onOpenModal = () => {
+        this.setState({modalOpen: true});
+    };
+
+    onCloseModal = () => {
+        this.setState({modalOpen: false});
+    };
+
     render() {
         const {data} = this.props;
         const {address, phone, email, workingHours, copyrightText, descriptionText } = this.state.defaultData;
+        const {modalOpen} = this.state;
 
         return (
             <div id="FooterComponent">
@@ -82,7 +98,7 @@ class FooterComponent extends Component {
                                         <i className="fas fa-download"></i>
                                     </div>
                                     <div className="footer-first-text">
-                                        <a href="/files/ogr-price.xls" download>ДПК ограждения, прайс-лист</a>
+                                        <div className="footer-first-link" onClick={this.handleClick}>ДПК ограждения, прайс-лист</div>
                                     </div>
                                 </div>
                                 <div className="footer-first-icon-text-wrapper">
@@ -90,9 +106,12 @@ class FooterComponent extends Component {
                                         <i className="fas fa-download"></i>
                                     </div>
                                     <div className="footer-first-text">
-                                        <a href="/files/doska-price.xls" download>ДПК террасная доска, прайс-лист</a>
+                                        <div className="footer-first-link"  onClick={this.handleClick}>ДПК террасная доска, прайс-лист</div>
                                     </div>
                                 </div>
+                                <Modal open={modalOpen} onClose={this.onCloseModal} center>
+                                    <PriceOrderComponent />
+                                </Modal>
                                 <div className="footer-first-icon-text-wrapper">
                                     <div className="footer-first-icon">
                                         <i className="fas fa-download"></i>

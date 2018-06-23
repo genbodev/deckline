@@ -15,6 +15,9 @@ import Footer from '../../components/FooterComponent/FooterComponent';
 import { Grid, Row, Col, Clearfix } from 'react-bootstrap';
 import ScrollTop from '../../components/ScrollTop/ScrollTop';
 import swal from "sweetalert2";
+import Modal from 'react-responsive-modal';
+import PriceOrderComponent from '../../components/PriceOrderComponent/PriceOrderComponent';
+
 
 import PageCarousel from './PageCarousel/PageCarousel';
 
@@ -56,14 +59,26 @@ class FencingSystemPage extends Component {
         this.state = {
             slug: fencingSystem,
             photoIndex: 0,
-            isOpen: false
+            isOpen: false,
+            modalOpen: false
         };
     }
-    handleClick = (e) => this.showMsg(e);
+    handleClick1 = (e) => this.onOpenModal(e);
+    handleClick2 = (e) => this.showMsg(e);
+
+    //handleClick3 = (e) => this.showMsg(e);
 
     showMsg(e) {
         swal('Доставка по РФ и странам СНГ осуществляется любой транспортной компанией исходя из предпочтений заказчика. Мы ценим плоды своего труда, поэтому перед отправкой все изделия тщательно упаковываются для обеспечения сохранности при транспортировке')
     }
+
+    onOpenModal = () => {
+        this.setState({modalOpen: true});
+    };
+
+    onCloseModal = () => {
+        this.setState({modalOpen: false});
+    };
 
     openPicture(key = 0) {
         this.setState({photoIndex: key, isOpen: true});
@@ -73,6 +88,7 @@ class FencingSystemPage extends Component {
         const {isSettingsReady, isAdminReady} = this.props.admin;
         const {isPagesReady} = this.props.pages;
         const {photoIndex, isOpen} = this.state;
+        const {modalOpen} = this.state;
         const {posts} = this.props;
         if (isSettingsReady && isAdminReady && isPagesReady && posts && posts.isPostsReady) {
             const {slug} = this.state;
@@ -203,13 +219,13 @@ class FencingSystemPage extends Component {
                                                     </div>
                                                     <div className="fencing-system-have-questions-time">с 9:00 до 18:00
                                                     </div>
-                                                    <div className="fencing-system-have-questions-download"><i
+                                                    {/*<div className="fencing-system-have-questions-download"><i
                                                         className="fas fa-download"/>
                                                         <a href="/files/ogr-price.xls"
                                                            className="fencing-system-have-questions-link" download>
                                                             Скачать каталог продукции
                                                         </a>
-                                                    </div>
+                                                    </div>*/}
                                                 </div>
                                             </Col>
                                             <Clearfix visibleMdBlock/>
@@ -221,10 +237,13 @@ class FencingSystemPage extends Component {
                                                     </div>
                                                     <div className="fencing-system-have-questions-button">
                                                         <i className="fas fa-briefcase"/>
-                                                        <a href="/files/prices.zip"
-                                                           className="fencing-system-have-questions-link" download>
+                                                        <div className="fencing-system-have-questions-link"
+                                                             onClick={this.handleClick1}>
                                                             Оптовикам
-                                                        </a>
+                                                        </div>
+                                                        <Modal open={modalOpen} onClose={this.onCloseModal} center>
+                                                            <PriceOrderComponent />
+                                                        </Modal>
                                                     </div>
                                                 </div>
                                             </Col>
@@ -233,7 +252,7 @@ class FencingSystemPage extends Component {
                                                     <div className="fencing-system-have-questions-button">
                                                         <i className="fas fa-car"/>
                                                         <div className="fencing-system-have-questions-link"
-                                                             onClick={this.handleClick}>
+                                                             onClick={this.handleClick2}>
                                                             Доставка по РФ
                                                         </div>
                                                     </div>

@@ -15,6 +15,8 @@ import Footer from '../../components/FooterComponent/FooterComponent';
 import { Grid, Row, Col, Clearfix } from 'react-bootstrap';
 import ScrollTop from '../../components/ScrollTop/ScrollTop';
 import swal from 'sweetalert2'
+import Modal from 'react-responsive-modal';
+import PriceOrderComponent from '../../components/PriceOrderComponent/PriceOrderComponent';
 
 import PageCarousel from './PageCarousel/PageCarousel';
 
@@ -64,14 +66,27 @@ class TerraceBoardPage extends Component {
         this.state = {
             slug: terraceBoard,
             photoIndex: 0,
-            isOpen: false
+            isOpen: false,
+            modalOpen: false
         };
     }
-    handleClick = (e) => this.showMsg(e);
+
+    handleClick1 = (e) => this.onOpenModal(e);
+    handleClick2 = (e) => this.showMsg(e);
+
+    //handleClick3 = (e) => this.showMsg(e);
 
     showMsg(e) {
         swal('Доставка по РФ и странам СНГ осуществляется любой транспортной компанией исходя из предпочтений заказчика. Мы ценим плоды своего труда, поэтому перед отправкой все изделия тщательно упаковываются для обеспечения сохранности при транспортировке')
     }
+
+    onOpenModal = () => {
+        this.setState({modalOpen: true});
+    };
+
+    onCloseModal = () => {
+        this.setState({modalOpen: false});
+    };
 
     openPicture(key = 0) {
         this.setState({photoIndex: key, isOpen: true});
@@ -81,6 +96,7 @@ class TerraceBoardPage extends Component {
         const {isSettingsReady, isAdminReady} = this.props.admin;
         const {isPagesReady} = this.props.pages;
         const {photoIndex, isOpen} = this.state;
+        const {modalOpen} = this.state;
         const {posts} = this.props;
         if (isSettingsReady && isAdminReady && isPagesReady && posts && posts.isPostsReady) {
             const {slug} = this.state;
@@ -174,8 +190,10 @@ class TerraceBoardPage extends Component {
                                             <Col sm={4}>
                                                 <div>
                                                     <div className="terrace-board-colors-parameters-wrapper">
-                                                        <div className="terrace-board-colors-parameters-key">Ширина</div>
-                                                        <div className="terrace-board-colors-parameters-value">140 мм</div>
+                                                        <div className="terrace-board-colors-parameters-key">Ширина
+                                                        </div>
+                                                        <div className="terrace-board-colors-parameters-value">140 мм
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </Col>
@@ -183,7 +201,8 @@ class TerraceBoardPage extends Component {
                                                 <div>
                                                     <div className="terrace-board-colors-parameters-wrapper">
                                                         <div className="terrace-board-colors-parameters-key">Длина</div>
-                                                        <div className="terrace-board-colors-parameters-value">3000 мм</div>
+                                                        <div className="terrace-board-colors-parameters-value">3000 мм
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </Col>
@@ -196,7 +215,8 @@ class TerraceBoardPage extends Component {
                                         <div className="terrace-board-accessories-wrapper">
                                             {(terrace && terrace.length) ? terrace.map((tagItem, key) => {
                                                 if (tagItem['better_featured_image']) {
-                                                    return (<div key={key} className="terrace-board-products-image-text-wrapper">
+                                                    return (<div key={key}
+                                                                 className="terrace-board-products-image-text-wrapper">
                                                         <div className="terrace-board-products-image-wrapper">
                                                             <Link activeClassName="active"
                                                                   to={`/catalog?id=${tagItem.id}`} target="_blank">
@@ -230,19 +250,21 @@ class TerraceBoardPage extends Component {
                                             </Col>
                                             <Col md={6} lg={4}>
                                                 <div className="terrace-board-have-questions-text-wrapper">
-                                                    <div className="terrace-board-have-questions-title">Остались вопросы?
+                                                    <div className="terrace-board-have-questions-title">Остались
+                                                        вопросы?
                                                     </div>
-                                                    <div className="terrace-board-have-questions-phone"> (39543) 52953, 52952
+                                                    <div className="terrace-board-have-questions-phone"> (39543) 52953,
+                                                        52952
                                                     </div>
                                                     <div className="terrace-board-have-questions-time">с 9:00 до 18:00
                                                     </div>
-                                                    <div className="terrace-board-have-questions-download"><i
+                                                    {/*<div className="terrace-board-have-questions-download"><i
                                                         className="fas fa-download"/>
                                                         <a href="/files/doska-price.xls"
                                                            className="terrace-board-have-questions-link" download>
-                                                            Скачать каталог продукции
+                                                           Скачать каталог продукции
                                                         </a>
-                                                    </div>
+                                                    </div>*/}
                                                 </div>
                                             </Col>
                                             <Clearfix visibleMdBlock/>
@@ -254,10 +276,13 @@ class TerraceBoardPage extends Component {
                                                     </div>
                                                     <div className="terrace-board-have-questions-button">
                                                         <i className="fas fa-briefcase"/>
-                                                        <a href="/files/prices.zip"
-                                                           className="terrace-board-have-questions-link" download>
+                                                        <div className="terrace-board-have-questions-link"
+                                                             onClick={this.handleClick1}>
                                                             Оптовикам
-                                                        </a>
+                                                        </div>
+                                                        <Modal open={modalOpen} onClose={this.onCloseModal} center>
+                                                            <PriceOrderComponent />
+                                                        </Modal>
                                                     </div>
                                                 </div>
                                             </Col>
@@ -266,7 +291,7 @@ class TerraceBoardPage extends Component {
                                                     <div className="terrace-board-have-questions-button">
                                                         <i className="fas fa-car"/>
                                                         <div className="terrace-board-have-questions-link"
-                                                             onClick={this.handleClick}>
+                                                             onClick={this.handleClick2}>
                                                             Доставка по РФ
                                                         </div>
                                                     </div>
@@ -288,49 +313,57 @@ class TerraceBoardPage extends Component {
                                             <Col xs={12}>
                                                 <h1>Примеры использования террасной доски</h1>
                                                 <div className="terrace-board-examples-wrapper">
-                                                    <div className="terrace-board-example-image-wrapper" onClick={() => this.openPicture()}>
+                                                    <div className="terrace-board-example-image-wrapper"
+                                                         onClick={() => this.openPicture()}>
                                                         <img src={ExampleImage01} alt="example-01"
                                                              className="img-responsive"/>
                                                         <span className="terrace-board-example-zoom"><i
                                                             className="fas fa-search"/></span>
                                                     </div>
-                                                    <div className="terrace-board-example-image-wrapper" onClick={() => this.openPicture(1)}>
+                                                    <div className="terrace-board-example-image-wrapper"
+                                                         onClick={() => this.openPicture(1)}>
                                                         <img src={ExampleImage02} alt="example-02"
                                                              className="img-responsive"/>
                                                         <span className="terrace-board-example-zoom"><i
                                                             className="fas fa-search"/></span>
                                                     </div>
-                                                    <div className="terrace-board-example-image-wrapper" onClick={() => this.openPicture(2)}>
+                                                    <div className="terrace-board-example-image-wrapper"
+                                                         onClick={() => this.openPicture(2)}>
                                                         <img src={ExampleImage03} alt="example-03"
                                                              className="img-responsive"/>
                                                         <span className="terrace-board-example-zoom"><i
                                                             className="fas fa-search"/></span>
                                                     </div>
-                                                    <div className="terrace-board-example-image-wrapper" onClick={() => this.openPicture(3)}>
+                                                    <div className="terrace-board-example-image-wrapper"
+                                                         onClick={() => this.openPicture(3)}>
                                                         <img src={ExampleImage04} alt="example-04"
                                                              className="img-responsive"/>
                                                         <span className="terrace-board-example-zoom"><i
                                                             className="fas fa-search"/></span>
                                                     </div>
-                                                    <div className="terrace-board-example-image-wrapper" onClick={() => this.openPicture(4)}>
+                                                    <div className="terrace-board-example-image-wrapper"
+                                                         onClick={() => this.openPicture(4)}>
                                                         <img src={ExampleImage05} alt="example-05"
                                                              className="img-responsive"/>
                                                         <span className="terrace-board-example-zoom"><i
                                                             className="fas fa-search"/></span>
                                                     </div>
-                                                    <div className="terrace-board-example-image-wrapper" onClick={() => this.openPicture(5)}>
+                                                    <div className="terrace-board-example-image-wrapper"
+                                                         onClick={() => this.openPicture(5)}>
                                                         <img src={ExampleImage06} alt="example-06"
                                                              className="img-responsive"/>
                                                         <span className="terrace-board-example-zoom"><i
                                                             className="fas fa-search"/></span>
                                                     </div>
-                                                    <div className="terrace-board-example-image-wrapper" onClick={() => this.openPicture(6)}>
+                                                    <div className="terrace-board-example-image-wrapper"
+                                                         onClick={() => this.openPicture(6)}>
                                                         <img src={ExampleImage07} alt="example-07"
                                                              className="img-responsive"/>
                                                         <span className="terrace-board-example-zoom"><i
                                                             className="fas fa-search"/></span>
                                                     </div>
-                                                    <div className="terrace-board-example-image-wrapper" onClick={() => this.openPicture(7)}>
+                                                    <div className="terrace-board-example-image-wrapper"
+                                                         onClick={() => this.openPicture(7)}>
                                                         <img src={ExampleImage08} alt="example-08"
                                                              className="img-responsive"/>
                                                         <span className="terrace-board-example-zoom"><i
@@ -366,10 +399,13 @@ class TerraceBoardPage extends Component {
                                                 <h1>Террасная доска из ДПК DECKLINE</h1>
                                                 <p>
                                                     Это новый, качественный и современный настил из древесно-полимерного
-                                                    композита. Профиль имеет четыре рабочие поверхности - мелкий вельвет,
+                                                    композита. Профиль имеет четыре рабочие поверхности - мелкий
+                                                    вельвет,
                                                     широкая полоска, текстура дерева и глубокая текстура дерева. Цвет
-                                                    песочный, светло-коричневый, темно-коричневый и черный. Террасная доска
-                                                    DECKLINE (Россия) производится с учетом всех эксплуатационных нагрузок -
+                                                    песочный, светло-коричневый, темно-коричневый и черный. Террасная
+                                                    доска
+                                                    DECKLINE (Россия) производится с учетом всех эксплуатационных
+                                                    нагрузок -
                                                     сфера применения от небольших частных террас до мест общественного
                                                     пользования. Материал не прихотлив и не требует дополнительной
                                                     обработки. Большая номенклатура комплектующих элементов позволяет
@@ -377,11 +413,15 @@ class TerraceBoardPage extends Component {
                                                 </p>
                                                 <p>
                                                     Изготавливается террасная доска в следующих пропорциях: на 58% из
-                                                    древесной муки, на 35% из полиэтилена и на 7% из добавок. Использование
-                                                    в производстве полиэтилен обеспечило террасной доске DECKLINE высокую
+                                                    древесной муки, на 35% из полиэтилена и на 7% из добавок.
+                                                    Использование
+                                                    в производстве полиэтилен обеспечило террасной доске DECKLINE
+                                                    высокую
                                                     износостойкость и устойчивость к ультрафиолетовым лучам и резким
-                                                    перепадам температуры, что отличает ее от других аналогов, например, на
-                                                    поливинилхлоридной основе. Наличие в составе доски настоящей древесины
+                                                    перепадам температуры, что отличает ее от других аналогов, например,
+                                                    на
+                                                    поливинилхлоридной основе. Наличие в составе доски настоящей
+                                                    древесины
                                                     дает поверхности антискользящий эффект и придает характерный запах с
                                                     приятной текстурой.
                                                 </p>
@@ -441,7 +481,7 @@ class TerraceBoardPage extends Component {
                 </div>
             );
         } else {
-            return(
+            return (
                 <div id="Loader">
                     <Loader type="Circles" color="#6c912b" height={80} width={80}/>
                 </div>
