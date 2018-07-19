@@ -54,3 +54,7 @@
 
 #CatalogPage .catalog-colors-parameters-value {
   font-weight: 200; }
+
+#CatalogPage .catalog-price-button {
+  margin-bottom: 40px;
+  text-align: center; }

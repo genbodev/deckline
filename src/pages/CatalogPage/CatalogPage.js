@@ -1,14 +1,14 @@
-import React, { Component, Fragment } from 'react';
-import { StickyContainer } from 'react-sticky';
-import { Link } from 'react-router';
-import { connect } from 'react-redux';
-import { Grid, Col, Row, Clearfix } from 'react-bootstrap';
+import React, {Component, Fragment} from 'react';
+import {StickyContainer} from 'react-sticky';
+import {Link} from 'react-router';
+import {connect} from 'react-redux';
+import {Grid, Col, Row, Clearfix, Button} from 'react-bootstrap';
 import Loader from 'react-loader-spinner';
-import { Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
 
 import './CatalogPage.css';
 
-import { drawSticky, createMarkup, getPageDataBySlug } from "../../functions";
+import {drawSticky, createMarkup, getPageDataBySlug} from "../../functions";
 import TopPanelComponent from '../../components/TopPanelComponent/TopPanelComponent';
 import MainNavigation from '../../components/MainNavigation/MainNavigation';
 import MobileNavigation from '../../components/MobileNavigation/MobileNavigation';
@@ -22,6 +22,8 @@ import LightBrownColorImage from './light-brown.png';
 import DarkBrownColorImage from './dark-brown.png';
 import BlackColorImage from './black.png';
 
+import Modal from 'react-responsive-modal';
+import PriceOrderComponent from '../../components/PriceOrderComponent/PriceOrderComponent';
 
 const {catalog} = config.SLUGS;
 const {DEFAULT_TITLE} = config;
@@ -33,12 +35,22 @@ class CatalogPage extends Component {
         this.state = {
             terraceNavHeader: 'Террасная доска и комплектующие',
             fencingNavHeader: 'Система ограждений',
-            slug: catalog
+            slug: catalog,
+            modalOpen: false
         };
     }
 
+    handleClick = (e) => this.onOpenModal(e);
+
+    onOpenModal = () => {
+        this.setState({modalOpen: true});
+    };
+
+    onCloseModal = () => {
+        this.setState({modalOpen: false});
+    };
+
     getContentById(posts = [], id) {
-        debugger;
         let currentPost = '';
         if (posts && posts.length) {
             posts.map((post) => {
@@ -65,6 +77,7 @@ class CatalogPage extends Component {
         const {posts} = this.props;
         const {isSettingsReady, isAdminReady} = this.props.admin;
         const {isPagesReady} = this.props.pages;
+        const {modalOpen} = this.state;
 
         if (posts && posts.isPostsReady && isSettingsReady && isAdminReady && isPagesReady) {
             const {terrace, fencing, product} = posts;
@@ -82,6 +95,13 @@ class CatalogPage extends Component {
             let isColor = false;
             if (content.acf && content.acf.colors && content.acf.colors[0]) {
                 isColor = true;
+            }
+
+            let isPrice = false;
+            let priceButtonText = '';
+            if (content.acf && content.acf.price && content.acf.price !== '') {
+                isPrice = true;
+                priceButtonText = content.acf.price;
             }
 
             return (
@@ -176,9 +196,21 @@ class CatalogPage extends Component {
                                                 </Col>
                                             </Row>
                                             }
+                                            {isPrice &&
+                                            <Row>
+                                                <Col>
+                                                    <div className="catalog-price-button">
+                                                        <Button bsStyle="success" onClick={this.handleClick}>{priceButtonText}</Button>
+                                                    </div>
+                                                </Col>
+                                            </Row>
+                                            }
                                             <div
                                                 dangerouslySetInnerHTML={createMarkup(content.content.rendered)}>
                                             </div>
+                                            <Modal open={modalOpen} onClose={this.onCloseModal} center>
+                                                <PriceOrderComponent/>
+                                            </Modal>
                                         </Col>
                                     </Row>
                                 </Grid>
