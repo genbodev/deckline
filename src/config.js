@@ -1,5 +1,8 @@
+let isLocalServer = false;
+let isReact = false; // for different paths
 const CONFIG = {
-    HOST: 'http://deck-line.ru/',
+    REACT_ENV: isReact,
+    HOST: (isLocalServer === true) ? 'http://deckline.local/' : 'http://deck-line.ru/',
     MEDIA: 'wp-content/uploads/',
     REST_API_URL: 'wp-json/wp/v2/',
     LOGIN: 'admin',

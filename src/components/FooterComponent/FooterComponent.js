@@ -10,6 +10,9 @@ import InstagramEmbed from 'react-instagram-embed';
 import Modal from 'react-responsive-modal';
 import PriceOrderComponent from '../../components/PriceOrderComponent/PriceOrderComponent';
 
+import CONFIG from "../../config";
+export const {REACT_ENV} = CONFIG;
+
 class FooterComponent extends Component {
     constructor(props) {
         super(props);
@@ -40,6 +43,7 @@ class FooterComponent extends Component {
         const {data} = this.props;
         const {address, phone, email, workingHours, copyrightText, descriptionText } = this.state.defaultData;
         const {modalOpen} = this.state;
+        const instructionPath = (REACT_ENV === false) ? '/wp-content/themes/deckline/frontend/public' : '';
 
         return (
             <div id="FooterComponent">
@@ -117,7 +121,7 @@ class FooterComponent extends Component {
                                         <i className="fas fa-download"></i>
                                     </div>
                                     <div className="footer-first-text">
-                                        <a href="/files/instr.doc" download>Скачать инструкцию по монтажу</a>
+                                        <a href={instructionPath + '/files/instr.doc'} download>Скачать инструкцию по монтажу</a>
                                     </div>
                                 </div>
                             </Col>

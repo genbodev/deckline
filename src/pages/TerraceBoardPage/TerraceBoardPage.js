@@ -49,6 +49,8 @@ import config from "../../config";
 const {terraceBoard} = config.SLUGS;
 const {DEFAULT_TITLE} = config;
 
+export const {REACT_ENV} = config;
+
 const images = [
     ExampleImage01,
     ExampleImage02,
@@ -93,6 +95,7 @@ class TerraceBoardPage extends Component {
     }
 
     render() {
+        const instructionPath = (REACT_ENV === false) ? '/wp-content/themes/deckline/frontend/public' : '';
         const {isSettingsReady, isAdminReady} = this.props.admin;
         const {isPagesReady} = this.props.pages;
         const {photoIndex, isOpen} = this.state;
@@ -297,7 +300,7 @@ class TerraceBoardPage extends Component {
                                                     </div>
                                                     <div className="terrace-board-have-questions-button">
                                                         <i className="far far fa-folder"/>
-                                                        <a href="/files/instr.doc"
+                                                        <a href={instructionPath + '/files/instr.doc'}
                                                            className="terrace-board-have-questions-link" download>
                                                             Монтажные схемы
                                                         </a>

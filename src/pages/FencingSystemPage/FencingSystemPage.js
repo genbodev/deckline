@@ -39,6 +39,7 @@ import ExampleImage07 from './fencing-07.jpg';
 import Certificates from '../IndexPage/Certificates/Certificates';
 
 import config from "../../config";
+export const {REACT_ENV} = config;
 
 const {fencingSystem} = config.SLUGS;
 const {DEFAULT_TITLE} = config;
@@ -85,6 +86,7 @@ class FencingSystemPage extends Component {
     }
 
     render() {
+        const instructionPath = (REACT_ENV === false) ? '/wp-content/themes/deckline/frontend/public' : '';
         const {isSettingsReady, isAdminReady} = this.props.admin;
         const {isPagesReady} = this.props.pages;
         const {photoIndex, isOpen} = this.state;
@@ -258,7 +260,7 @@ class FencingSystemPage extends Component {
                                                     </div>
                                                     <div className="fencing-system-have-questions-button">
                                                         <i className="far far fa-folder"/>
-                                                        <a href="/files/instr.doc"
+                                                        <a href={instructionPath + '/files/instr.doc'}
                                                            className="fencing-system-have-questions-link" download>
                                                             Монтажные схемы
                                                         </a>
